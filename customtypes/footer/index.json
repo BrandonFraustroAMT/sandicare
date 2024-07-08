@@ -1,0 +1,47 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "imagen_footer": {
+        "type": "Image",
+        "config": {
+          "label": "Imagen footer",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "direccion": {
+        "type": "Text",
+        "config": {
+          "label": "Direccion",
+          "placeholder": ""
+        }
+      },
+      "footer_links": {
+        "type": "Text",
+        "config": {
+          "label": "Footer link uno",
+          "placeholder": ""
+        }
+      },
+      "footer_link_dos": {
+        "type": "Text",
+        "config": {
+          "label": "Footer link dos",
+          "placeholder": ""
+        }
+      },
+      "footer_link_tres": {
+        "type": "Text",
+        "config": {
+          "label": "Footer link tres",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

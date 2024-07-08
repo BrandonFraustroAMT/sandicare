@@ -1,0 +1,69 @@
+{
+  "id": "menu",
+  "type": "SharedSlice",
+  "name": "Menu",
+  "description": "Menu",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "Logo",
+            "constraint": {
+              "width": 150,
+              "height": 50
+            },
+            "thumbnails": []
+          }
+        },
+        "groupmenu": {
+          "type": "Group",
+          "config": {
+            "label": "GroupMenu",
+            "repeat": true,
+            "fields": {
+              "linklabel": {
+                "type": "Link",
+                "config": {
+                  "label": "LinkLabel",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "linkbutton": {
+          "type": "Link",
+          "config": {
+            "label": "LinkButton",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "labelbutton": {
+          "type": "Text",
+          "config": {
+            "label": "LabelButton",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

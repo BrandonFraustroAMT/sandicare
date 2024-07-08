@@ -1,0 +1,49 @@
+{
+  "format": "custom",
+  "id": "body",
+  "label": "HeaderContent",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "herogif": {
+        "type": "Image",
+        "config": {
+          "label": "herogif",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "title_header": {
+        "type": "Text",
+        "config": {
+          "label": "Title header",
+          "placeholder": ""
+        }
+      },
+      "palabras": {
+        "type": "Group",
+        "config": {
+          "label": "Palabras",
+          "repeat": true,
+          "fields": {
+            "palabra": {
+              "type": "Text",
+              "config": {
+                "label": "Palabra",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "text_header": {
+        "type": "Text",
+        "config": {
+          "label": "Text header",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

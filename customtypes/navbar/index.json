@@ -1,0 +1,35 @@
+{
+  "id": "navbar",
+  "label": "Navbar",
+  "repeatable": false,
+  "status": false,
+  "format": "custom",
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "boton_link": {
+        "type": "Link",
+        "config": {
+          "label": "Boton Link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "botontext": {
+        "type": "Text",
+        "config": {
+          "label": "BotonText",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
