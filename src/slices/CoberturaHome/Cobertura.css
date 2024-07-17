@@ -1,0 +1,38 @@
+.cobertura-slice {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cobertura-slice__container {
+    background-color: #fff;
+    width: 70%;
+    margin: 100px 0;
+    padding: 100px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cobertura-slice__title {
+    width: 100%;
+    padding: 0 20px;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.cobertura-slice__subtitle {
+    font-size: 1rem;
+    padding-bottom: 30px;
+}
+
+.cobertura-slice__link {
+    padding: 10px 20px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}

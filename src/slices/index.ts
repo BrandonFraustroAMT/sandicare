@@ -3,5 +3,14 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  clientes_home: dynamic(() => import("./ClientesHome")),
+  cobertura_home: dynamic(() => import("./CoberturaHome")),
+  empresas_home: dynamic(() => import("./EmpresasHome")),
+  footer: dynamic(() => import("./Footer")),
+  formulario_home: dynamic(() => import("./FormularioHome")),
+  hero: dynamic(() => import("./HeroHome")),
   menu: dynamic(() => import("./Menu")),
+  orgullo_home: dynamic(() => import("./OrgulloHome")),
+  satisfaccion_home: dynamic(() => import("./SatisfaccionHome")),
+  servicios_home: dynamic(() => import("./ServiciosHome")),
 };

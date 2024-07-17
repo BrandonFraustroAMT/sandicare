@@ -41,6 +41,17 @@
           "label": "Footer link tres",
           "placeholder": ""
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "footer": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }

@@ -1,0 +1,153 @@
+{
+  "id": "servicios_home",
+  "type": "SharedSlice",
+  "name": "ServiciosHome",
+  "description": "ServiciosHome",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "groupservicioshome": {
+          "type": "Group",
+          "config": {
+            "label": "GroupServiciosHome",
+            "repeat": true,
+            "fields": {
+              "firstlabel": {
+                "type": "Text",
+                "config": {
+                  "label": "FirstLabel",
+                  "placeholder": ""
+                }
+              },
+              "title": {
+                "type": "Text",
+                "config": {
+                  "label": "Title",
+                  "placeholder": ""
+                }
+              },
+              "subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Subtitle",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              },
+              "linkbutton1": {
+                "type": "Link",
+                "config": {
+                  "label": "LinkButton1",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "select": null
+                }
+              },
+              "labelbutton1": {
+                "type": "Text",
+                "config": {
+                  "label": "LabelButton1",
+                  "placeholder": ""
+                }
+              },
+              "linkbutton2": {
+                "type": "Link",
+                "config": {
+                  "label": "LinkButton2",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "labelbutton2": {
+                "type": "Text",
+                "config": {
+                  "label": "LabelButton2",
+                  "placeholder": ""
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "list1": {
+                "type": "Text",
+                "config": {
+                  "label": "List1",
+                  "placeholder": ""
+                }
+              },
+              "list2": {
+                "type": "Text",
+                "config": {
+                  "label": "List2",
+                  "placeholder": ""
+                }
+              },
+              "list3": {
+                "type": "Text",
+                "config": {
+                  "label": "List3",
+                  "placeholder": ""
+                }
+              },
+              "list4": {
+                "type": "Text",
+                "config": {
+                  "label": "List4",
+                  "placeholder": ""
+                }
+              },
+              "list5": {
+                "type": "Text",
+                "config": {
+                  "label": "List5",
+                  "placeholder": ""
+                }
+              },
+              "list6": {
+                "type": "Text",
+                "config": {
+                  "label": "List6",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

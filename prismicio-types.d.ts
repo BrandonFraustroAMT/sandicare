@@ -578,6 +578,8 @@ export type BodycontentDocument<Lang extends string = string> =
     Lang
   >;
 
+type FooterDocumentDataSlicesSlice = FooterSlice;
+
 /**
  * Content for Footer documents
  */
@@ -636,6 +638,17 @@ interface FooterDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   footer_link_tres: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Footer*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<FooterDocumentDataSlicesSlice>;
 }
 
 /**
@@ -653,6 +666,46 @@ export type FooterDocument<Lang extends string = string> =
     "footer",
     Lang
   >;
+
+type HomeDocumentDataSlicesSlice =
+  | ServiciosHomeSlice
+  | SatisfaccionHomeSlice
+  | OrgulloHomeSlice
+  | HeroSlice
+  | FormularioHomeSlice
+  | EmpresasHomeSlice
+  | CoberturaHomeSlice
+  | ClientesHomeSlice;
+
+/**
+ * Content for Home documents
+ */
+interface HomeDocumentData {
+  /**
+   * Slice Zone field in *Home*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice>;
+}
+
+/**
+ * Home document from Prismic
+ *
+ * - **API ID**: `home`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
+
+type NavbarDocumentDataSlicesSlice = MenuSlice;
 
 /**
  * Content for Navbar documents
@@ -690,6 +743,17 @@ interface NavbarDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   botontext: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Navbar*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<NavbarDocumentDataSlicesSlice>;
 }
 
 /**
@@ -712,7 +776,530 @@ export type AllDocumentTypes =
   | BodyDocument
   | BodycontentDocument
   | FooterDocument
+  | HomeDocument
   | NavbarDocument;
+
+/**
+ * Item in *ClientesHome → Default → Primary → GroupClientes*
+ */
+export interface ClientesHomeSliceDefaultPrimaryGroupclientesItem {
+  /**
+   * Text field in *ClientesHome → Default → Primary → GroupClientes*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clientes_home.default.primary.groupclientes[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Image field in *ClientesHome → Default → Primary → GroupClientes*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clientes_home.default.primary.groupclientes[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ClientesHome → Default → Primary*
+ */
+export interface ClientesHomeSliceDefaultPrimary {
+  /**
+   * Title field in *ClientesHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clientes_home.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * GroupClientes field in *ClientesHome → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clientes_home.default.primary.groupclientes[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupclientes: prismic.GroupField<
+    Simplify<ClientesHomeSliceDefaultPrimaryGroupclientesItem>
+  >;
+}
+
+/**
+ * Default variation for ClientesHome Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ClientesHomeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ClientesHomeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ClientesHome*
+ */
+type ClientesHomeSliceVariation = ClientesHomeSliceDefault;
+
+/**
+ * ClientesHome Shared Slice
+ *
+ * - **API ID**: `clientes_home`
+ * - **Description**: ClientesHome
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ClientesHomeSlice = prismic.SharedSlice<
+  "clientes_home",
+  ClientesHomeSliceVariation
+>;
+
+/**
+ * Primary content in *CoberturaHome → Default → Primary*
+ */
+export interface CoberturaHomeSliceDefaultPrimary {
+  /**
+   * Title field in *CoberturaHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cobertura_home.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *CoberturaHome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cobertura_home.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * LinkButton field in *CoberturaHome → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cobertura_home.default.primary.linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *CoberturaHome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cobertura_home.default.primary.labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for CoberturaHome Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CoberturaHomeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CoberturaHomeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CoberturaHome*
+ */
+type CoberturaHomeSliceVariation = CoberturaHomeSliceDefault;
+
+/**
+ * CoberturaHome Shared Slice
+ *
+ * - **API ID**: `cobertura_home`
+ * - **Description**: CoberturaHome
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CoberturaHomeSlice = prismic.SharedSlice<
+  "cobertura_home",
+  CoberturaHomeSliceVariation
+>;
+
+/**
+ * Item in *EmpresasHome → Default → Primary → GroupEmpresasHome*
+ */
+export interface EmpresasHomeSliceDefaultPrimaryGroupempresashomeItem {
+  /**
+   * LinkImage field in *EmpresasHome → Default → Primary → GroupEmpresasHome*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: empresas_home.default.primary.groupempresashome[].linkimage
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkimage: prismic.LinkField;
+
+  /**
+   * Image field in *EmpresasHome → Default → Primary → GroupEmpresasHome*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: empresas_home.default.primary.groupempresashome[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *EmpresasHome → Default → Primary*
+ */
+export interface EmpresasHomeSliceDefaultPrimary {
+  /**
+   * Title field in *EmpresasHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: empresas_home.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * GroupEmpresasHome field in *EmpresasHome → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: empresas_home.default.primary.groupempresashome[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupempresashome: prismic.GroupField<
+    Simplify<EmpresasHomeSliceDefaultPrimaryGroupempresashomeItem>
+  >;
+}
+
+/**
+ * Default variation for EmpresasHome Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmpresasHomeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EmpresasHomeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *EmpresasHome*
+ */
+type EmpresasHomeSliceVariation = EmpresasHomeSliceDefault;
+
+/**
+ * EmpresasHome Shared Slice
+ *
+ * - **API ID**: `empresas_home`
+ * - **Description**: EmpresasHome
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmpresasHomeSlice = prismic.SharedSlice<
+  "empresas_home",
+  EmpresasHomeSliceVariation
+>;
+
+/**
+ * Item in *Footer → Default → Primary → GroupRedes*
+ */
+export interface FooterSliceDefaultPrimaryGroupredesItem {
+  /**
+   * LinkIcon field in *Footer → Default → Primary → GroupRedes*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.groupredes[].linkicon
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkicon: prismic.LinkField;
+
+  /**
+   * Icon field in *Footer → Default → Primary → GroupRedes*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.groupredes[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Footer → Default → Primary*
+ */
+export interface FooterSliceDefaultPrimary {
+  /**
+   * LinkLogo field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.linklogo
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linklogo: prismic.LinkField;
+
+  /**
+   * Logo field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
+  /**
+   * Text field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * GroupRedes field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.groupredes[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupredes: prismic.GroupField<
+    Simplify<FooterSliceDefaultPrimaryGroupredesItem>
+  >;
+}
+
+/**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FooterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Footer*
+ */
+type FooterSliceVariation = FooterSliceDefault;
+
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: Footer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
+
+/**
+ * Primary content in *FormularioHome → Default → Primary*
+ */
+export interface FormularioHomeSliceDefaultPrimary {
+  /**
+   * Title field in *FormularioHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: formulario_home.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *FormularioHome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: formulario_home.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * LinkButton field in *FormularioHome → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: formulario_home.default.primary.linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *FormularioHome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: formulario_home.default.primary.labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for FormularioHome Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormularioHomeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FormularioHomeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FormularioHome*
+ */
+type FormularioHomeSliceVariation = FormularioHomeSliceDefault;
+
+/**
+ * FormularioHome Shared Slice
+ *
+ * - **API ID**: `formulario_home`
+ * - **Description**: FormularioHome
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FormularioHomeSlice = prismic.SharedSlice<
+  "formulario_home",
+  FormularioHomeSliceVariation
+>;
+
+/**
+ * Item in *HeroHome → Default → Primary → GroupButton*
+ */
+export interface HeroSliceDefaultPrimaryGroupbuttonItem {
+  /**
+   * LinkButton field in *HeroHome → Default → Primary → GroupButton*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.groupbutton[].linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *HeroHome → Default → Primary → GroupButton*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.groupbutton[].labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *HeroHome → Default → Primary*
+ */
+export interface HeroSliceDefaultPrimary {
+  /**
+   * Title field in *HeroHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *HeroHome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *HeroHome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * GroupButton field in *HeroHome → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.groupbutton[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupbutton: prismic.GroupField<
+    Simplify<HeroSliceDefaultPrimaryGroupbuttonItem>
+  >;
+
+  /**
+   * HeroGif field in *HeroHome → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.herogif
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  herogif: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for HeroHome Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroHome*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * HeroHome Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
  * Item in *Menu → Default → Primary → GroupMenu*
@@ -811,6 +1398,412 @@ type MenuSliceVariation = MenuSliceDefault;
  */
 export type MenuSlice = prismic.SharedSlice<"menu", MenuSliceVariation>;
 
+/**
+ * Item in *OrgulloHome → Default → Primary → GroupOrgullo*
+ */
+export interface OrgulloHomeSliceDefaultPrimaryGrouporgulloItem {
+  /**
+   * Image field in *OrgulloHome → Default → Primary → GroupOrgullo*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: orgullo_home.default.primary.grouporgullo[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *OrgulloHome → Default → Primary*
+ */
+export interface OrgulloHomeSliceDefaultPrimary {
+  /**
+   * Title field in *OrgulloHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: orgullo_home.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *OrgulloHome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: orgullo_home.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * GroupOrgullo field in *OrgulloHome → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: orgullo_home.default.primary.grouporgullo[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grouporgullo: prismic.GroupField<
+    Simplify<OrgulloHomeSliceDefaultPrimaryGrouporgulloItem>
+  >;
+}
+
+/**
+ * Default variation for OrgulloHome Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OrgulloHomeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OrgulloHomeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *OrgulloHome*
+ */
+type OrgulloHomeSliceVariation = OrgulloHomeSliceDefault;
+
+/**
+ * OrgulloHome Shared Slice
+ *
+ * - **API ID**: `orgullo_home`
+ * - **Description**: OrgulloHome
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OrgulloHomeSlice = prismic.SharedSlice<
+  "orgullo_home",
+  OrgulloHomeSliceVariation
+>;
+
+/**
+ * Item in *SatisfaccionHome → Default → Primary → GroupSatisfaccion*
+ */
+export interface SatisfaccionHomeSliceDefaultPrimaryGroupsatisfaccionItem {
+  /**
+   * Subtitle field in *SatisfaccionHome → Default → Primary → GroupSatisfaccion*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: satisfaccion_home.default.primary.groupsatisfaccion[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *SatisfaccionHome → Default → Primary → GroupSatisfaccion*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: satisfaccion_home.default.primary.groupsatisfaccion[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Image field in *SatisfaccionHome → Default → Primary → GroupSatisfaccion*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: satisfaccion_home.default.primary.groupsatisfaccion[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *SatisfaccionHome → Default → Primary*
+ */
+export interface SatisfaccionHomeSliceDefaultPrimary {
+  /**
+   * Title field in *SatisfaccionHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: satisfaccion_home.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *SatisfaccionHome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: satisfaccion_home.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * GroupSatisfaccion field in *SatisfaccionHome → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: satisfaccion_home.default.primary.groupsatisfaccion[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupsatisfaccion: prismic.GroupField<
+    Simplify<SatisfaccionHomeSliceDefaultPrimaryGroupsatisfaccionItem>
+  >;
+}
+
+/**
+ * Default variation for SatisfaccionHome Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SatisfaccionHomeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SatisfaccionHomeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SatisfaccionHome*
+ */
+type SatisfaccionHomeSliceVariation = SatisfaccionHomeSliceDefault;
+
+/**
+ * SatisfaccionHome Shared Slice
+ *
+ * - **API ID**: `satisfaccion_home`
+ * - **Description**: SatisfaccionHome
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SatisfaccionHomeSlice = prismic.SharedSlice<
+  "satisfaccion_home",
+  SatisfaccionHomeSliceVariation
+>;
+
+/**
+ * Item in *ServiciosHome → Default → Primary → GroupServiciosHome*
+ */
+export interface ServiciosHomeSliceDefaultPrimaryGroupservicioshomeItem {
+  /**
+   * FirstLabel field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].firstlabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  firstlabel: prismic.KeyTextField;
+
+  /**
+   * Title field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * LinkButton1 field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].linkbutton1
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton1: prismic.LinkField;
+
+  /**
+   * LabelButton1 field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].labelbutton1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton1: prismic.KeyTextField;
+
+  /**
+   * LinkButton2 field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].linkbutton2
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton2: prismic.LinkField;
+
+  /**
+   * LabelButton2 field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].labelbutton2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton2: prismic.KeyTextField;
+
+  /**
+   * Image field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * List1 field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].list1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  list1: prismic.KeyTextField;
+
+  /**
+   * List2 field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].list2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  list2: prismic.KeyTextField;
+
+  /**
+   * List3 field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].list3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  list3: prismic.KeyTextField;
+
+  /**
+   * List4 field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].list4
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  list4: prismic.KeyTextField;
+
+  /**
+   * List5 field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].list5
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  list5: prismic.KeyTextField;
+
+  /**
+   * List6 field in *ServiciosHome → Default → Primary → GroupServiciosHome*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[].list6
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  list6: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ServiciosHome → Default → Primary*
+ */
+export interface ServiciosHomeSliceDefaultPrimary {
+  /**
+   * Title field in *ServiciosHome → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *ServiciosHome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * GroupServiciosHome field in *ServiciosHome → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: servicios_home.default.primary.groupservicioshome[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupservicioshome: prismic.GroupField<
+    Simplify<ServiciosHomeSliceDefaultPrimaryGroupservicioshomeItem>
+  >;
+}
+
+/**
+ * Default variation for ServiciosHome Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiciosHomeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiciosHomeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServiciosHome*
+ */
+type ServiciosHomeSliceVariation = ServiciosHomeSliceDefault;
+
+/**
+ * ServiciosHome Shared Slice
+ *
+ * - **API ID**: `servicios_home`
+ * - **Description**: ServiciosHome
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiciosHomeSlice = prismic.SharedSlice<
+  "servicios_home",
+  ServiciosHomeSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -833,14 +1826,62 @@ declare module "@prismicio/client" {
       BodycontentDocumentDataGroupFiveItem,
       FooterDocument,
       FooterDocumentData,
+      FooterDocumentDataSlicesSlice,
+      HomeDocument,
+      HomeDocumentData,
+      HomeDocumentDataSlicesSlice,
       NavbarDocument,
       NavbarDocumentData,
+      NavbarDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ClientesHomeSlice,
+      ClientesHomeSliceDefaultPrimaryGroupclientesItem,
+      ClientesHomeSliceDefaultPrimary,
+      ClientesHomeSliceVariation,
+      ClientesHomeSliceDefault,
+      CoberturaHomeSlice,
+      CoberturaHomeSliceDefaultPrimary,
+      CoberturaHomeSliceVariation,
+      CoberturaHomeSliceDefault,
+      EmpresasHomeSlice,
+      EmpresasHomeSliceDefaultPrimaryGroupempresashomeItem,
+      EmpresasHomeSliceDefaultPrimary,
+      EmpresasHomeSliceVariation,
+      EmpresasHomeSliceDefault,
+      FooterSlice,
+      FooterSliceDefaultPrimaryGroupredesItem,
+      FooterSliceDefaultPrimary,
+      FooterSliceVariation,
+      FooterSliceDefault,
+      FormularioHomeSlice,
+      FormularioHomeSliceDefaultPrimary,
+      FormularioHomeSliceVariation,
+      FormularioHomeSliceDefault,
+      HeroSlice,
+      HeroSliceDefaultPrimaryGroupbuttonItem,
+      HeroSliceDefaultPrimary,
+      HeroSliceVariation,
+      HeroSliceDefault,
       MenuSlice,
       MenuSliceDefaultPrimaryGroupmenuItem,
       MenuSliceDefaultPrimary,
       MenuSliceVariation,
       MenuSliceDefault,
+      OrgulloHomeSlice,
+      OrgulloHomeSliceDefaultPrimaryGrouporgulloItem,
+      OrgulloHomeSliceDefaultPrimary,
+      OrgulloHomeSliceVariation,
+      OrgulloHomeSliceDefault,
+      SatisfaccionHomeSlice,
+      SatisfaccionHomeSliceDefaultPrimaryGroupsatisfaccionItem,
+      SatisfaccionHomeSliceDefaultPrimary,
+      SatisfaccionHomeSliceVariation,
+      SatisfaccionHomeSliceDefault,
+      ServiciosHomeSlice,
+      ServiciosHomeSliceDefaultPrimaryGroupservicioshomeItem,
+      ServiciosHomeSliceDefaultPrimary,
+      ServiciosHomeSliceVariation,
+      ServiciosHomeSliceDefault,
     };
   }
 }
