@@ -1,0 +1,59 @@
+{
+  "id": "checka_tu_salud_hero",
+  "type": "SharedSlice",
+  "name": "CheckaTuSaludHero",
+  "description": "CheckaTuSaludHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "grouphero": {
+          "type": "Group",
+          "config": {
+            "label": "GroupHero",
+            "repeat": true,
+            "fields": {
+              "linkbutton": {
+                "type": "Link",
+                "config": {
+                  "label": "LinkButton",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "labelbutton": {
+                "type": "Text",
+                "config": {
+                  "label": "LabelButton",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "format": "custom",
+  "id": "sandicheck",
+  "label": "Sandicheck",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "sandicheck",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "proceso_sandicheck": {
+              "type": "SharedSlice"
+            },
+            "porque_sandicheck": {
+              "type": "SharedSlice"
+            },
+            "empieza_sandicheck": {
+              "type": "SharedSlice"
+            },
+            "hero_sandicheck": {
+              "type": "SharedSlice"
+            },
+            "concepto_sandicheck": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

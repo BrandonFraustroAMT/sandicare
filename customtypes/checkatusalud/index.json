@@ -1,0 +1,47 @@
+{
+  "format": "custom",
+  "id": "checkatusalud",
+  "label": "CheckaTuSalud",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "checkatusalud",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "checka_tu_salud_lideres": {
+              "type": "SharedSlice"
+            },
+            "checka_tu_salud_slider": {
+              "type": "SharedSlice"
+            },
+            "checka_tu_salud_organizacion": {
+              "type": "SharedSlice"
+            },
+            "checka_tu_salud_cuida": {
+              "type": "SharedSlice"
+            },
+            "checka_tu_salud_agenda": {
+              "type": "SharedSlice"
+            },
+            "checka_tu_salud_bienestar": {
+              "type": "SharedSlice"
+            },
+            "checka_tu_salud_hero": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

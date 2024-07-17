@@ -578,6 +578,47 @@ export type BodycontentDocument<Lang extends string = string> =
     Lang
   >;
 
+type CheckatusaludDocumentDataSlicesSlice =
+  | CheckaTuSaludLideresSlice
+  | CheckaTuSaludSliderSlice
+  | CheckaTuSaludOrganizacionSlice
+  | CheckaTuSaludCuidaSlice
+  | CheckaTuSaludAgendaSlice
+  | CheckaTuSaludBienestarSlice
+  | CheckaTuSaludHeroSlice;
+
+/**
+ * Content for CheckaTuSalud documents
+ */
+interface CheckatusaludDocumentData {
+  /**
+   * Slice Zone field in *CheckaTuSalud*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checkatusalud.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CheckatusaludDocumentDataSlicesSlice>;
+}
+
+/**
+ * CheckaTuSalud document from Prismic
+ *
+ * - **API ID**: `checkatusalud`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CheckatusaludDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<CheckatusaludDocumentData>,
+    "checkatusalud",
+    Lang
+  >;
+
 type FooterDocumentDataSlicesSlice = FooterSlice;
 
 /**
@@ -772,12 +813,558 @@ export type NavbarDocument<Lang extends string = string> =
     Lang
   >;
 
+type SandicheckDocumentDataSlicesSlice =
+  | ProcesoSandicheckSlice
+  | PorqueSandicheckSlice
+  | EmpiezaSandicheckSlice
+  | HeroSandicheckSlice
+  | ConceptoSandicheckSlice;
+
+/**
+ * Content for Sandicheck documents
+ */
+interface SandicheckDocumentData {
+  /**
+   * Slice Zone field in *Sandicheck*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sandicheck.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SandicheckDocumentDataSlicesSlice>;
+}
+
+/**
+ * Sandicheck document from Prismic
+ *
+ * - **API ID**: `sandicheck`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SandicheckDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SandicheckDocumentData>,
+    "sandicheck",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | BodyDocument
   | BodycontentDocument
+  | CheckatusaludDocument
   | FooterDocument
   | HomeDocument
-  | NavbarDocument;
+  | NavbarDocument
+  | SandicheckDocument;
+
+/**
+ * Primary content in *CheckaTuSaludAgenda → Default → Primary*
+ */
+export interface CheckaTuSaludAgendaSliceDefaultPrimary {
+  /**
+   * Title field in *CheckaTuSaludAgenda → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_agenda.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * LinkButton field in *CheckaTuSaludAgenda → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_agenda.default.primary.linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *CheckaTuSaludAgenda → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_agenda.default.primary.labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for CheckaTuSaludAgenda Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludAgendaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CheckaTuSaludAgendaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CheckaTuSaludAgenda*
+ */
+type CheckaTuSaludAgendaSliceVariation = CheckaTuSaludAgendaSliceDefault;
+
+/**
+ * CheckaTuSaludAgenda Shared Slice
+ *
+ * - **API ID**: `checka_tu_salud_agenda`
+ * - **Description**: CheckaTuSaludAgenda
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludAgendaSlice = prismic.SharedSlice<
+  "checka_tu_salud_agenda",
+  CheckaTuSaludAgendaSliceVariation
+>;
+
+/**
+ * Item in *CheckaTuSaludBienestar → Default → Primary → GroupBienestar*
+ */
+export interface CheckaTuSaludBienestarSliceDefaultPrimaryGroupbienestarItem {
+  /**
+   * Text field in *CheckaTuSaludBienestar → Default → Primary → GroupBienestar*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_bienestar.default.primary.groupbienestar[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Image field in *CheckaTuSaludBienestar → Default → Primary → GroupBienestar*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_bienestar.default.primary.groupbienestar[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *CheckaTuSaludBienestar → Default → Primary*
+ */
+export interface CheckaTuSaludBienestarSliceDefaultPrimary {
+  /**
+   * Title field in *CheckaTuSaludBienestar → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_bienestar.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * GroupBienestar field in *CheckaTuSaludBienestar → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_bienestar.default.primary.groupbienestar[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupbienestar: prismic.GroupField<
+    Simplify<CheckaTuSaludBienestarSliceDefaultPrimaryGroupbienestarItem>
+  >;
+
+  /**
+   * Description field in *CheckaTuSaludBienestar → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_bienestar.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for CheckaTuSaludBienestar Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludBienestarSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CheckaTuSaludBienestarSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CheckaTuSaludBienestar*
+ */
+type CheckaTuSaludBienestarSliceVariation = CheckaTuSaludBienestarSliceDefault;
+
+/**
+ * CheckaTuSaludBienestar Shared Slice
+ *
+ * - **API ID**: `checka_tu_salud_bienestar`
+ * - **Description**: CheckaTuSaludBienestar
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludBienestarSlice = prismic.SharedSlice<
+  "checka_tu_salud_bienestar",
+  CheckaTuSaludBienestarSliceVariation
+>;
+
+/**
+ * Primary content in *CheckaTuSaludCuida → Default → Primary*
+ */
+export interface CheckaTuSaludCuidaSliceDefaultPrimary {
+  /**
+   * Title field in *CheckaTuSaludCuida → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_cuida.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for CheckaTuSaludCuida Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludCuidaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CheckaTuSaludCuidaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CheckaTuSaludCuida*
+ */
+type CheckaTuSaludCuidaSliceVariation = CheckaTuSaludCuidaSliceDefault;
+
+/**
+ * CheckaTuSaludCuida Shared Slice
+ *
+ * - **API ID**: `checka_tu_salud_cuida`
+ * - **Description**: CheckaTuSaludCuida
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludCuidaSlice = prismic.SharedSlice<
+  "checka_tu_salud_cuida",
+  CheckaTuSaludCuidaSliceVariation
+>;
+
+/**
+ * Item in *CheckaTuSaludHero → Default → Primary → GroupHero*
+ */
+export interface CheckaTuSaludHeroSliceDefaultPrimaryGroupheroItem {
+  /**
+   * LinkButton field in *CheckaTuSaludHero → Default → Primary → GroupHero*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_hero.default.primary.grouphero[].linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *CheckaTuSaludHero → Default → Primary → GroupHero*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_hero.default.primary.grouphero[].labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *CheckaTuSaludHero → Default → Primary*
+ */
+export interface CheckaTuSaludHeroSliceDefaultPrimary {
+  /**
+   * Title field in *CheckaTuSaludHero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_hero.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *CheckaTuSaludHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_hero.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * GroupHero field in *CheckaTuSaludHero → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_hero.default.primary.grouphero[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grouphero: prismic.GroupField<
+    Simplify<CheckaTuSaludHeroSliceDefaultPrimaryGroupheroItem>
+  >;
+}
+
+/**
+ * Default variation for CheckaTuSaludHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CheckaTuSaludHeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CheckaTuSaludHero*
+ */
+type CheckaTuSaludHeroSliceVariation = CheckaTuSaludHeroSliceDefault;
+
+/**
+ * CheckaTuSaludHero Shared Slice
+ *
+ * - **API ID**: `checka_tu_salud_hero`
+ * - **Description**: CheckaTuSaludHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludHeroSlice = prismic.SharedSlice<
+  "checka_tu_salud_hero",
+  CheckaTuSaludHeroSliceVariation
+>;
+
+/**
+ * Item in *CheckaTuSaludLideres → Default → Primary → GroupLideres*
+ */
+export interface CheckaTuSaludLideresSliceDefaultPrimaryGrouplideresItem {
+  /**
+   * Image field in *CheckaTuSaludLideres → Default → Primary → GroupLideres*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_lideres.default.primary.grouplideres[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *CheckaTuSaludLideres → Default → Primary*
+ */
+export interface CheckaTuSaludLideresSliceDefaultPrimary {
+  /**
+   * Title field in *CheckaTuSaludLideres → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_lideres.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *CheckaTuSaludLideres → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_lideres.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * GroupLideres field in *CheckaTuSaludLideres → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_lideres.default.primary.grouplideres[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grouplideres: prismic.GroupField<
+    Simplify<CheckaTuSaludLideresSliceDefaultPrimaryGrouplideresItem>
+  >;
+}
+
+/**
+ * Default variation for CheckaTuSaludLideres Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludLideresSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CheckaTuSaludLideresSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CheckaTuSaludLideres*
+ */
+type CheckaTuSaludLideresSliceVariation = CheckaTuSaludLideresSliceDefault;
+
+/**
+ * CheckaTuSaludLideres Shared Slice
+ *
+ * - **API ID**: `checka_tu_salud_lideres`
+ * - **Description**: CheckaTuSaludLideres
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludLideresSlice = prismic.SharedSlice<
+  "checka_tu_salud_lideres",
+  CheckaTuSaludLideresSliceVariation
+>;
+
+/**
+ * Primary content in *CheckaTuSaludOrganizacion → Default → Primary*
+ */
+export interface CheckaTuSaludOrganizacionSliceDefaultPrimary {
+  /**
+   * Title field in *CheckaTuSaludOrganizacion → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_organizacion.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for CheckaTuSaludOrganizacion Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludOrganizacionSliceDefault =
+  prismic.SharedSliceVariation<
+    "default",
+    Simplify<CheckaTuSaludOrganizacionSliceDefaultPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *CheckaTuSaludOrganizacion*
+ */
+type CheckaTuSaludOrganizacionSliceVariation =
+  CheckaTuSaludOrganizacionSliceDefault;
+
+/**
+ * CheckaTuSaludOrganizacion Shared Slice
+ *
+ * - **API ID**: `checka_tu_salud_organizacion`
+ * - **Description**: CheckaTuSaludOrganizacion
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludOrganizacionSlice = prismic.SharedSlice<
+  "checka_tu_salud_organizacion",
+  CheckaTuSaludOrganizacionSliceVariation
+>;
+
+/**
+ * Item in *CheckaTuSaludSlider → Default → Primary → GroupSlider*
+ */
+export interface CheckaTuSaludSliderSliceDefaultPrimaryGroupsliderItem {
+  /**
+   * Description field in *CheckaTuSaludSlider → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_slider.default.primary.groupslider[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Icon field in *CheckaTuSaludSlider → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_slider.default.primary.groupslider[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Image field in *CheckaTuSaludSlider → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_slider.default.primary.groupslider[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *CheckaTuSaludSlider → Default → Primary*
+ */
+export interface CheckaTuSaludSliderSliceDefaultPrimary {
+  /**
+   * GroupSlider field in *CheckaTuSaludSlider → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_slider.default.primary.groupslider[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupslider: prismic.GroupField<
+    Simplify<CheckaTuSaludSliderSliceDefaultPrimaryGroupsliderItem>
+  >;
+}
+
+/**
+ * Default variation for CheckaTuSaludSlider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludSliderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CheckaTuSaludSliderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CheckaTuSaludSlider*
+ */
+type CheckaTuSaludSliderSliceVariation = CheckaTuSaludSliderSliceDefault;
+
+/**
+ * CheckaTuSaludSlider Shared Slice
+ *
+ * - **API ID**: `checka_tu_salud_slider`
+ * - **Description**: CheckaTuSaludSlider
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CheckaTuSaludSliderSlice = prismic.SharedSlice<
+  "checka_tu_salud_slider",
+  CheckaTuSaludSliderSliceVariation
+>;
 
 /**
  * Item in *ClientesHome → Default → Primary → GroupClientes*
@@ -934,6 +1521,247 @@ type CoberturaHomeSliceVariation = CoberturaHomeSliceDefault;
 export type CoberturaHomeSlice = prismic.SharedSlice<
   "cobertura_home",
   CoberturaHomeSliceVariation
+>;
+
+/**
+ * Item in *ConceptoSandicheck → Default → Primary → GroupConcepto*
+ */
+export interface ConceptoSandicheckSliceDefaultPrimaryGroupconceptoItem {
+  /**
+   * Label field in *ConceptoSandicheck → Default → Primary → GroupConcepto*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: concepto_sandicheck.default.primary.groupconcepto[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Image field in *ConceptoSandicheck → Default → Primary → GroupConcepto*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: concepto_sandicheck.default.primary.groupconcepto[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *ConceptoSandicheck → Default → Primary → GroupSlider*
+ */
+export interface ConceptoSandicheckSliceDefaultPrimaryGroupsliderItem {
+  /**
+   * Title field in *ConceptoSandicheck → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: concepto_sandicheck.default.primary.groupslider[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *ConceptoSandicheck → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: concepto_sandicheck.default.primary.groupslider[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Image field in *ConceptoSandicheck → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: concepto_sandicheck.default.primary.groupslider[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ConceptoSandicheck → Default → Primary*
+ */
+export interface ConceptoSandicheckSliceDefaultPrimary {
+  /**
+   * Title field in *ConceptoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: concepto_sandicheck.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *ConceptoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: concepto_sandicheck.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *ConceptoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: concepto_sandicheck.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * GroupConcepto field in *ConceptoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: concepto_sandicheck.default.primary.groupconcepto[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupconcepto: prismic.GroupField<
+    Simplify<ConceptoSandicheckSliceDefaultPrimaryGroupconceptoItem>
+  >;
+
+  /**
+   * GroupSlider field in *ConceptoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: concepto_sandicheck.default.primary.groupslider[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupslider: prismic.GroupField<
+    Simplify<ConceptoSandicheckSliceDefaultPrimaryGroupsliderItem>
+  >;
+}
+
+/**
+ * Default variation for ConceptoSandicheck Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ConceptoSandicheckSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ConceptoSandicheckSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ConceptoSandicheck*
+ */
+type ConceptoSandicheckSliceVariation = ConceptoSandicheckSliceDefault;
+
+/**
+ * ConceptoSandicheck Shared Slice
+ *
+ * - **API ID**: `concepto_sandicheck`
+ * - **Description**: ConceptoSandicheck
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ConceptoSandicheckSlice = prismic.SharedSlice<
+  "concepto_sandicheck",
+  ConceptoSandicheckSliceVariation
+>;
+
+/**
+ * Item in *EmpiezaSandicheck → Default → Primary → GroupEmpieza*
+ */
+export interface EmpiezaSandicheckSliceDefaultPrimaryGroupempiezaItem {
+  /**
+   * LinkButton field in *EmpiezaSandicheck → Default → Primary → GroupEmpieza*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: empieza_sandicheck.default.primary.groupempieza[].linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *EmpiezaSandicheck → Default → Primary → GroupEmpieza*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: empieza_sandicheck.default.primary.groupempieza[].labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *EmpiezaSandicheck → Default → Primary*
+ */
+export interface EmpiezaSandicheckSliceDefaultPrimary {
+  /**
+   * Title field in *EmpiezaSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: empieza_sandicheck.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *EmpiezaSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: empieza_sandicheck.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * GroupEmpieza field in *EmpiezaSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: empieza_sandicheck.default.primary.groupempieza[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupempieza: prismic.GroupField<
+    Simplify<EmpiezaSandicheckSliceDefaultPrimaryGroupempiezaItem>
+  >;
+}
+
+/**
+ * Default variation for EmpiezaSandicheck Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmpiezaSandicheckSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<EmpiezaSandicheckSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *EmpiezaSandicheck*
+ */
+type EmpiezaSandicheckSliceVariation = EmpiezaSandicheckSliceDefault;
+
+/**
+ * EmpiezaSandicheck Shared Slice
+ *
+ * - **API ID**: `empieza_sandicheck`
+ * - **Description**: EmpiezaSandicheck
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type EmpiezaSandicheckSlice = prismic.SharedSlice<
+  "empieza_sandicheck",
+  EmpiezaSandicheckSliceVariation
 >;
 
 /**
@@ -1302,6 +2130,98 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *HeroSandicheck → Default → Primary → GroupHero*
+ */
+export interface HeroSandicheckSliceDefaultPrimaryGroupheroItem {
+  /**
+   * LinkButton field in *HeroSandicheck → Default → Primary → GroupHero*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_sandicheck.default.primary.grouphero[].linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *HeroSandicheck → Default → Primary → GroupHero*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_sandicheck.default.primary.grouphero[].labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *HeroSandicheck → Default → Primary*
+ */
+export interface HeroSandicheckSliceDefaultPrimary {
+  /**
+   * Title field in *HeroSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_sandicheck.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *HeroSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_sandicheck.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * GroupHero field in *HeroSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_sandicheck.default.primary.grouphero[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grouphero: prismic.GroupField<
+    Simplify<HeroSandicheckSliceDefaultPrimaryGroupheroItem>
+  >;
+}
+
+/**
+ * Default variation for HeroSandicheck Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSandicheckSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSandicheckSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroSandicheck*
+ */
+type HeroSandicheckSliceVariation = HeroSandicheckSliceDefault;
+
+/**
+ * HeroSandicheck Shared Slice
+ *
+ * - **API ID**: `hero_sandicheck`
+ * - **Description**: HeroSandicheck
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSandicheckSlice = prismic.SharedSlice<
+  "hero_sandicheck",
+  HeroSandicheckSliceVariation
+>;
+
+/**
  * Item in *Menu → Default → Primary → GroupMenu*
  */
 export interface MenuSliceDefaultPrimaryGroupmenuItem {
@@ -1478,6 +2398,183 @@ type OrgulloHomeSliceVariation = OrgulloHomeSliceDefault;
 export type OrgulloHomeSlice = prismic.SharedSlice<
   "orgullo_home",
   OrgulloHomeSliceVariation
+>;
+
+/**
+ * Item in *PorqueSandicheck → Default → Primary → GroupPorque*
+ */
+export interface PorqueSandicheckSliceDefaultPrimaryGroupporqueItem {
+  /**
+   * Subtitle field in *PorqueSandicheck → Default → Primary → GroupPorque*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porque_sandicheck.default.primary.groupporque[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *PorqueSandicheck → Default → Primary → GroupPorque*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porque_sandicheck.default.primary.groupporque[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Image field in *PorqueSandicheck → Default → Primary → GroupPorque*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porque_sandicheck.default.primary.groupporque[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *PorqueSandicheck → Default → Primary*
+ */
+export interface PorqueSandicheckSliceDefaultPrimary {
+  /**
+   * Title field in *PorqueSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porque_sandicheck.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * GroupPorque field in *PorqueSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: porque_sandicheck.default.primary.groupporque[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupporque: prismic.GroupField<
+    Simplify<PorqueSandicheckSliceDefaultPrimaryGroupporqueItem>
+  >;
+}
+
+/**
+ * Default variation for PorqueSandicheck Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PorqueSandicheckSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PorqueSandicheckSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PorqueSandicheck*
+ */
+type PorqueSandicheckSliceVariation = PorqueSandicheckSliceDefault;
+
+/**
+ * PorqueSandicheck Shared Slice
+ *
+ * - **API ID**: `porque_sandicheck`
+ * - **Description**: PorqueSandicheck
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PorqueSandicheckSlice = prismic.SharedSlice<
+  "porque_sandicheck",
+  PorqueSandicheckSliceVariation
+>;
+
+/**
+ * Primary content in *ProcesoSandicheck → Default → Primary*
+ */
+export interface ProcesoSandicheckSliceDefaultPrimary {
+  /**
+   * Title field in *ProcesoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *ProcesoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Subtittle2 field in *ProcesoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.subtittle2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtittle2: prismic.KeyTextField;
+
+  /**
+   * Description field in *ProcesoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Image field in *ProcesoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ProcesoSandicheck Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProcesoSandicheckSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProcesoSandicheckSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ProcesoSandicheck*
+ */
+type ProcesoSandicheckSliceVariation = ProcesoSandicheckSliceDefault;
+
+/**
+ * ProcesoSandicheck Shared Slice
+ *
+ * - **API ID**: `proceso_sandicheck`
+ * - **Description**: ProcesoSandicheck
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProcesoSandicheckSlice = prismic.SharedSlice<
+  "proceso_sandicheck",
+  ProcesoSandicheckSliceVariation
 >;
 
 /**
@@ -1824,6 +2921,9 @@ declare module "@prismicio/client" {
       BodycontentDocumentDataGroupThreeItem,
       BodycontentDocumentDataGroupFourItem,
       BodycontentDocumentDataGroupFiveItem,
+      CheckatusaludDocument,
+      CheckatusaludDocumentData,
+      CheckatusaludDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
@@ -1833,7 +2933,42 @@ declare module "@prismicio/client" {
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataSlicesSlice,
+      SandicheckDocument,
+      SandicheckDocumentData,
+      SandicheckDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CheckaTuSaludAgendaSlice,
+      CheckaTuSaludAgendaSliceDefaultPrimary,
+      CheckaTuSaludAgendaSliceVariation,
+      CheckaTuSaludAgendaSliceDefault,
+      CheckaTuSaludBienestarSlice,
+      CheckaTuSaludBienestarSliceDefaultPrimaryGroupbienestarItem,
+      CheckaTuSaludBienestarSliceDefaultPrimary,
+      CheckaTuSaludBienestarSliceVariation,
+      CheckaTuSaludBienestarSliceDefault,
+      CheckaTuSaludCuidaSlice,
+      CheckaTuSaludCuidaSliceDefaultPrimary,
+      CheckaTuSaludCuidaSliceVariation,
+      CheckaTuSaludCuidaSliceDefault,
+      CheckaTuSaludHeroSlice,
+      CheckaTuSaludHeroSliceDefaultPrimaryGroupheroItem,
+      CheckaTuSaludHeroSliceDefaultPrimary,
+      CheckaTuSaludHeroSliceVariation,
+      CheckaTuSaludHeroSliceDefault,
+      CheckaTuSaludLideresSlice,
+      CheckaTuSaludLideresSliceDefaultPrimaryGrouplideresItem,
+      CheckaTuSaludLideresSliceDefaultPrimary,
+      CheckaTuSaludLideresSliceVariation,
+      CheckaTuSaludLideresSliceDefault,
+      CheckaTuSaludOrganizacionSlice,
+      CheckaTuSaludOrganizacionSliceDefaultPrimary,
+      CheckaTuSaludOrganizacionSliceVariation,
+      CheckaTuSaludOrganizacionSliceDefault,
+      CheckaTuSaludSliderSlice,
+      CheckaTuSaludSliderSliceDefaultPrimaryGroupsliderItem,
+      CheckaTuSaludSliderSliceDefaultPrimary,
+      CheckaTuSaludSliderSliceVariation,
+      CheckaTuSaludSliderSliceDefault,
       ClientesHomeSlice,
       ClientesHomeSliceDefaultPrimaryGroupclientesItem,
       ClientesHomeSliceDefaultPrimary,
@@ -1843,6 +2978,17 @@ declare module "@prismicio/client" {
       CoberturaHomeSliceDefaultPrimary,
       CoberturaHomeSliceVariation,
       CoberturaHomeSliceDefault,
+      ConceptoSandicheckSlice,
+      ConceptoSandicheckSliceDefaultPrimaryGroupconceptoItem,
+      ConceptoSandicheckSliceDefaultPrimaryGroupsliderItem,
+      ConceptoSandicheckSliceDefaultPrimary,
+      ConceptoSandicheckSliceVariation,
+      ConceptoSandicheckSliceDefault,
+      EmpiezaSandicheckSlice,
+      EmpiezaSandicheckSliceDefaultPrimaryGroupempiezaItem,
+      EmpiezaSandicheckSliceDefaultPrimary,
+      EmpiezaSandicheckSliceVariation,
+      EmpiezaSandicheckSliceDefault,
       EmpresasHomeSlice,
       EmpresasHomeSliceDefaultPrimaryGroupempresashomeItem,
       EmpresasHomeSliceDefaultPrimary,
@@ -1862,6 +3008,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HeroSandicheckSlice,
+      HeroSandicheckSliceDefaultPrimaryGroupheroItem,
+      HeroSandicheckSliceDefaultPrimary,
+      HeroSandicheckSliceVariation,
+      HeroSandicheckSliceDefault,
       MenuSlice,
       MenuSliceDefaultPrimaryGroupmenuItem,
       MenuSliceDefaultPrimary,
@@ -1872,6 +3023,15 @@ declare module "@prismicio/client" {
       OrgulloHomeSliceDefaultPrimary,
       OrgulloHomeSliceVariation,
       OrgulloHomeSliceDefault,
+      PorqueSandicheckSlice,
+      PorqueSandicheckSliceDefaultPrimaryGroupporqueItem,
+      PorqueSandicheckSliceDefaultPrimary,
+      PorqueSandicheckSliceVariation,
+      PorqueSandicheckSliceDefault,
+      ProcesoSandicheckSlice,
+      ProcesoSandicheckSliceDefaultPrimary,
+      ProcesoSandicheckSliceVariation,
+      ProcesoSandicheckSliceDefault,
       SatisfaccionHomeSlice,
       SatisfaccionHomeSliceDefaultPrimaryGroupsatisfaccionItem,
       SatisfaccionHomeSliceDefaultPrimary,

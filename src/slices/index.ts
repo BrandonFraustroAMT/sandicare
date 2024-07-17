@@ -3,14 +3,28 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  checka_tu_salud_agenda: dynamic(() => import("./CheckaTuSaludAgenda")),
+  checka_tu_salud_bienestar: dynamic(() => import("./CheckaTuSaludBienestar")),
+  checka_tu_salud_cuida: dynamic(() => import("./CheckaTuSaludCuida")),
+  checka_tu_salud_hero: dynamic(() => import("./CheckaTuSaludHero")),
+  checka_tu_salud_lideres: dynamic(() => import("./CheckaTuSaludLideres")),
+  checka_tu_salud_organizacion: dynamic(
+    () => import("./CheckaTuSaludOrganizacion"),
+  ),
+  checka_tu_salud_slider: dynamic(() => import("./CheckaTuSaludSlider")),
   clientes_home: dynamic(() => import("./ClientesHome")),
   cobertura_home: dynamic(() => import("./CoberturaHome")),
+  concepto_sandicheck: dynamic(() => import("./ConceptoSandicheck")),
+  empieza_sandicheck: dynamic(() => import("./EmpiezaSandicheck")),
   empresas_home: dynamic(() => import("./EmpresasHome")),
   footer: dynamic(() => import("./Footer")),
   formulario_home: dynamic(() => import("./FormularioHome")),
   hero: dynamic(() => import("./HeroHome")),
+  hero_sandicheck: dynamic(() => import("./HeroSandicheck")),
   menu: dynamic(() => import("./Menu")),
   orgullo_home: dynamic(() => import("./OrgulloHome")),
+  porque_sandicheck: dynamic(() => import("./PorqueSandicheck")),
+  proceso_sandicheck: dynamic(() => import("./ProcesoSandicheck")),
   satisfaccion_home: dynamic(() => import("./SatisfaccionHome")),
   servicios_home: dynamic(() => import("./ServiciosHome")),
 };
