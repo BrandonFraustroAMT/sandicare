@@ -4,15 +4,15 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "../prismicio";
 import { components } from "../slices";
 import Home from "@/pages/Home";
+import SandiCheck from "@/pages/SandiCheck";
 
 export default async function Page() {
-  const client = createClient();
-  const page = await client.getSingle("home");
   
 
   return (
     <main className={styles.main}>
-      <Home />
+      {/* <Home /> */}
+      <SandiCheck />
     </main>
   );
 }

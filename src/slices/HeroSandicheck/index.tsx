@@ -1,5 +1,7 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicNextLink } from "@prismicio/next";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import './Hero.css'
 
 /**
  * Props for `HeroSandicheck`.
@@ -16,8 +18,29 @@ const HeroSandicheck = ({ slice }: HeroSandicheckProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for hero_sandicheck (variation: {slice.variation})
-      Slices
+      <div className="hero-sandicheck">
+        <div className="hero-sandicheck__container">
+          <div className="hero-sandicheck__title">
+            <h2>
+              <PrismicRichText field={slice.primary.title} />
+            </h2>
+          </div>
+          <div className="hero-sandicheck__subtitle">
+            <>{slice.primary.subtitle}</>
+          </div>
+          <div className="hero-sandicheck__btn">
+          <>
+            {slice.primary.grouphero.map((item) => (
+              <>
+                <PrismicNextLink field={item.linkbutton} className="hero-sandicheck__link">
+                  <>{item.labelbutton}</>
+                </PrismicNextLink>
+              </>
+            ))}
+          </>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
