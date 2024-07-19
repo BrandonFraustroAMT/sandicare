@@ -1,5 +1,8 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+
+import './CheckatAgenda.css'
+import { PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `CheckaTuSaludAgenda`.
@@ -18,8 +21,16 @@ const CheckaTuSaludAgenda = ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for checka_tu_salud_agenda (variation:{" "}
-      {slice.variation}) Slices
+      <div className="checkat-agenda">
+        <div className="checkat-agenda__container">
+          <div className="checkat-agenda__title"><h2><PrismicRichText field={slice.primary.title} /></h2></div>
+          <div className="checkat-agenda__btn">
+            <PrismicNextLink field={slice.primary.linkbutton} className="checkat-agenda__link">
+              <>{slice.primary.labelbutton}</>
+            </PrismicNextLink>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

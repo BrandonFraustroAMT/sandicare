@@ -46,7 +46,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
@@ -64,7 +63,32 @@
 										},
 										"background": "transparent"
 									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
+								}
+							],
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Nostrud reprehenderit tempor laborum sint dolore eu. Consequat mollit duis eiusmod commodo nisi cillum voluptate."
+											}
+										}
+									]
+								}
+							],
+							[
+								"number",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "went",
+									"type": "Text"
 								}
 							]
 						]

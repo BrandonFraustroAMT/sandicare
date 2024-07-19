@@ -1,0 +1,22 @@
+.checkat-cuida {
+    width: 100%;
+}
+
+.checkat-cuida__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.checkat-cuida__title {
+    width: 90%;
+}
+.checkat-cuida__title h2{
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+}
+

@@ -1285,16 +1285,6 @@ export type CheckaTuSaludOrganizacionSlice = prismic.SharedSlice<
  */
 export interface CheckaTuSaludSliderSliceDefaultPrimaryGroupsliderItem {
   /**
-   * Description field in *CheckaTuSaludSlider → Default → Primary → GroupSlider*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: checka_tu_salud_slider.default.primary.groupslider[].description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  description: prismic.KeyTextField;
-
-  /**
    * Icon field in *CheckaTuSaludSlider → Default → Primary → GroupSlider*
    *
    * - **Field Type**: Image
@@ -1303,6 +1293,36 @@ export interface CheckaTuSaludSliderSliceDefaultPrimaryGroupsliderItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   icon: prismic.ImageField<never>;
+
+  /**
+   * Number field in *CheckaTuSaludSlider → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_slider.default.primary.groupslider[].number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  number: prismic.KeyTextField;
+
+  /**
+   * Title field in *CheckaTuSaludSlider → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_slider.default.primary.groupslider[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *CheckaTuSaludSlider → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_slider.default.primary.groupslider[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
 
   /**
    * Image field in *CheckaTuSaludSlider → Default → Primary → GroupSlider*

@@ -1,6 +1,8 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
+import './CheckatBienestar.css'
+import { PrismicNextImage } from "@prismicio/next";
 /**
  * Props for `CheckaTuSaludBienestar`.
  */
@@ -18,8 +20,27 @@ const CheckaTuSaludBienestar = ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for checka_tu_salud_bienestar (variation:{" "}
-      {slice.variation}) Slices
+      <div className="checkat-bienestar">
+        <div className="checkat-bienestar__container">
+          <div className="checkat-bienestar__title"><h2><PrismicRichText field={slice.primary.title} /></h2></div>
+          <div className="checkat-bienestar__list">
+            <>
+              {slice.primary.groupbienestar.map((item) => (
+                // Render the item
+                <>
+                  <div className="checkat-bienestar__column">
+                    <div className="checkat-bienestar__img">
+                      <PrismicNextImage field={item.image} />
+                    </div>
+                    <div className="checkat-bienestar__text"><>{item.text}</></div>
+                  </div>
+                </>
+              ))}
+            </>
+          </div>
+          <div className="checkat-bienestar__description"><>{slice.primary.description}</></div>
+        </div>
+      </div>
     </section>
   );
 };

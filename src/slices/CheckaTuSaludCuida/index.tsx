@@ -1,5 +1,7 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+
+import './CheckaCuida.css'
 
 /**
  * Props for `CheckaTuSaludCuida`.
@@ -18,8 +20,11 @@ const CheckaTuSaludCuida = ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for checka_tu_salud_cuida (variation:{" "}
-      {slice.variation}) Slices
+      <div className="checkat-cuida">
+        <div className="checkat-cuida__container">
+          <div className="checkat-cuida__title"><h2><PrismicRichText field={slice.primary.title} /></h2></div>
+        </div>
+      </div>
     </section>
   );
 };
