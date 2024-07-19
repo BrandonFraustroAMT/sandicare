@@ -1,6 +1,7 @@
 .hero-slice {
     width: 100%;
     height: 100vh;
+    padding-top: 100px;
 }
 .hero-slice__container {
     width: 100%;

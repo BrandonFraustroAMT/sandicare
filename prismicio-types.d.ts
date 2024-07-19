@@ -807,11 +807,7 @@ interface NavbarDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type NavbarDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<NavbarDocumentData>,
-    "navbar",
-    Lang
-  >;
+  prismic.PrismicDocumentWithUID<Simplify<NavbarDocumentData>, "navbar", Lang>;
 
 type SandicheckDocumentDataSlicesSlice =
   | ProcesoSandicheckSlice
@@ -2228,12 +2224,12 @@ export interface MenuSliceDefaultPrimaryGroupmenuItem {
   /**
    * LinkLabel field in *Menu → Default → Primary → GroupMenu*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: menu.default.primary.groupmenu[].linklabel
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  linklabel: prismic.LinkField;
+  linklabel: prismic.KeyTextField;
 
   /**
    * Label field in *Menu → Default → Primary → GroupMenu*

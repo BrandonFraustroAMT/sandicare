@@ -30,11 +30,10 @@
             "repeat": true,
             "fields": {
               "linklabel": {
-                "type": "Link",
+                "type": "Text",
                 "config": {
                   "label": "LinkLabel",
-                  "placeholder": "",
-                  "select": null
+                  "placeholder": ""
                 }
               },
               "label": {

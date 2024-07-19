@@ -3,16 +3,14 @@ import styles from "./page.module.css";
 import { SliceZone } from "@prismicio/react";
 import { createClient } from "../prismicio";
 import { components } from "../slices";
-import Home from "@/pages/Home";
-import SandiCheck from "@/pages/SandiCheck";
+import Home from "./home/page";
+
 
 export default async function Page() {
   
-
   return (
     <main className={styles.main}>
-      {/* <Home /> */}
-      <SandiCheck />
+      <Home />
     </main>
   );
 }

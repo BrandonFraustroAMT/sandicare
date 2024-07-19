@@ -1,4 +1,5 @@
 'use client'; // Asegúrate de que este componente se ejecute del lado del cliente
+import Link from "next/link";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
@@ -19,24 +20,32 @@ const Menu = ({ slice }: MenuProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="menu-background"
     >
-      <div className="breakpointUtils__DesktopTabletOnly-sc-90pxmk-3 navbar">
-        <header className="DesktopTablet__Wrapper-sc-x1rrkn-0 iXruOj navbar-header">
-          <div className="DesktopTablet__Inner-sc-x1rrkn-1 ihApXk">
+      <div className="menu-slice">
+        <header className="menu-slice__container">
+          <div className="menu-slice__list">
             <div className="menu-slice__logo">
-              <a href="#" className="Link__Wrapper-sc-ct3g9f-1 chXumO">
+              <a href="#" className="menu-slice__img">
                 <PrismicNextImage alt="" field={slice.primary.logo} />
               </a>
             </div>
             
-            {slice.primary.groupmenu.map((item, index) => (
-              <PrismicNextLink key={index} field={item.linklabel} className="menu-slice__link">
-                {item.label}
-              </PrismicNextLink>
-            ))}
+            <div className="menu-slice__list-links">
+              {slice.primary.groupmenu.map((item, index) => (
+                <Link key={index} href={item.linklabel} className="menu-slice__page">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
             
             {/* Boton */}
-            <Button href={slice.primary.linkbutton} text={slice.primary.labelbutton}/>
+            {/* <Button href={slice.primary.linkbutton} text={slice.primary.labelbutton}/> */}
+            <div className="menu-slice__btn">
+              <PrismicNextLink field={slice.primary.linkbutton} className="menu-slice__link">
+                <>{slice.primary.labelbutton}</>
+              </PrismicNextLink>
+            </div>
           </div>
         </header>
       </div>

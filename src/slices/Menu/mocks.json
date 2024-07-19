@@ -33,20 +33,18 @@
 						"__TYPE__": "GroupItemContent",
 						"value": [
 							[
-								"linklabel",
-								{
-									"__TYPE__": "LinkContent",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "https://prismic.io"
-									}
-								}
-							],
-							[
 								"label",
 								{
 									"__TYPE__": "FieldContent",
 									"value": "largest",
+									"type": "Text"
+								}
+							],
+							[
+								"linklabel",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "pupil",
 									"type": "Text"
 								}
 							]
@@ -61,6 +59,14 @@
 									"__TYPE__": "FieldContent",
 									"type": "Text",
 									"value": "Another link"
+								}
+							],
+							[
+								"linklabel",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "but",
+									"type": "Text"
 								}
 							]
 						]
