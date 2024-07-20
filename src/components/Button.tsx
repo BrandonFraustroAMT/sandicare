@@ -8,13 +8,13 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ href, text }) => {
-  const url = href.url;  
+  /* const url = href.url;  
   const handleButtonClick = () => {
     gtag('event', 'conversion', {'send_to': 'AW-16565622841/GuaICLnUs7AZELmwjds9'});
-  };  
+  };   */
   return (
     <div className="button-container">
-      <a 
+      {/* <a 
           href={url}
           className="wrapper-link"
           onClick={handleButtonClick}
@@ -26,7 +26,7 @@ const Button: React.FC<ButtonProps> = ({ href, text }) => {
             </span>
           </div>
         </div>
-      </a>
+      </a> */}
     </div>
   );
 };
