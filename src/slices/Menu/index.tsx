@@ -33,9 +33,11 @@ const Menu = ({ slice }: MenuProps): JSX.Element => {
             
             <div className="menu-slice__list-links">
               {slice.primary.groupmenu.map((item, index) => (
+                item.linklabel ? (
                 <Link key={index} href={item.linklabel} className="menu-slice__page">
                   {item.label}
                 </Link>
+                ) : null
               ))}
             </div>
             
