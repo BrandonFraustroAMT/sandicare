@@ -103,3 +103,19 @@
     height: 100%;
     object-fit: cover;
 }
+
+.servicios-slice__item-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.servicios-slice__icon {
+    width: 10%;
+    height: 25px;
+}
+.servicios-slice__icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

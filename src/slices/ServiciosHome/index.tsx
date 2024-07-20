@@ -4,6 +4,8 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import './Servicios.css'
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { useState } from "react";
+import Image from "next/image";
+import iconcheck from '../../assets/images/icons8-de-acuerdo-30.png'
 
 /**
  * Props for `ServiciosHome`.
@@ -62,14 +64,50 @@ const ServiciosHome = ({ slice }: ServiciosHomeProps): JSX.Element => {
 
                       <div className="servicios-slice__item-list">
                         <div className="servicios-slice__item">
-                          <div><>{slice.primary.groupservicioshome[selectedIndex].list1}</></div>
-                          <div><>{slice.primary.groupservicioshome[selectedIndex].list2}</></div>
-                          <div><>{slice.primary.groupservicioshome[selectedIndex].list3}</></div>
+                          <div className="servicios-slice__item-data">
+                            <div className="servicios-slice__icon">
+                              <Image src="/assets/images/icons8-de-acuerdo-30.png" alt={"icon"} width={30} height={30} />
+                              {/* <img src="../../assets/images/icons8-de-acuerdo-30.png" alt="check" /> */}
+                            </div>
+                            <>{slice.primary.groupservicioshome[selectedIndex].list1}</>
+                          </div>
+                          <div className="servicios-slice__item-data">
+                            <div className="servicios-slice__icon">
+                              <Image src="/assets/images/icons8-de-acuerdo-30.png" alt={"icon"} width={30} height={30} />
+                              {/* <img src="../../assets/images/icons8-de-acuerdo-30.png" alt="check" /> */}
+                            </div>
+                            <>{slice.primary.groupservicioshome[selectedIndex].list2}</>
+                          </div>
+                          <div className="servicios-slice__item-data">
+                            <div className="servicios-slice__icon">
+                              <Image src="/assets/images/icons8-de-acuerdo-30.png" alt={"icon"} width={30} height={30} />
+                              {/* <img src="../../assets/images/icons8-de-acuerdo-30.png" alt="check" /> */}
+                            </div>
+                            <>{slice.primary.groupservicioshome[selectedIndex].list3}</>
+                          </div>
                         </div>
                         <div className="servicios-slice__item">
-                          <div><>{slice.primary.groupservicioshome[selectedIndex].list4}</></div>
-                          <div><>{slice.primary.groupservicioshome[selectedIndex].list5}</></div>
-                          <div><>{slice.primary.groupservicioshome[selectedIndex].list6}</></div>
+                          <div className="servicios-slice__item-data">
+                            <div className="servicios-slice__icon">
+                              <Image src="/assets/images/icons8-de-acuerdo-30.png" alt={"icon"} width={30} height={30} />
+                              {/* <img src="../../assets/images/icons8-de-acuerdo-30.png" alt="check" /> */}
+                            </div>
+                            <>{slice.primary.groupservicioshome[selectedIndex].list4}</>
+                          </div>
+                          <div className="servicios-slice__item-data">
+                            <div className="servicios-slice__icon">
+                              <Image src="/assets/images/icons8-de-acuerdo-30.png" alt={"icon"} width={30} height={30} />
+                              {/* <img src="../../assets/images/icons8-de-acuerdo-30.png" alt="check" /> */}
+                            </div>
+                            <>{slice.primary.groupservicioshome[selectedIndex].list5}</>
+                          </div>
+                          <div className="servicios-slice__item-data">
+                            <div className="servicios-slice__icon">
+                              <Image src="/assets/images/icons8-de-acuerdo-30.png" alt={"icon"} width={30} height={30} />
+                              {/* <img src="../../assets/images/icons8-de-acuerdo-30.png" alt="check" /> */}
+                            </div>
+                            <>{slice.primary.groupservicioshome[selectedIndex].list6}</>
+                          </div>
                         </div>
                       </div>
 
