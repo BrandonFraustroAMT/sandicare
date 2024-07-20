@@ -30,11 +30,18 @@
 }
 
 .servicios-slice__list {
-    width: 100%;
+    width: 70%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    
+}
+.servicios-slice__text {
     border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+.servicios-slice__text:hover {
+    cursor: pointer;
 }
 
 .servicios-slice__list-box {
@@ -65,12 +72,12 @@
 }
 
 .servicios-slice__buttons {
-    width: 80%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
 }
 .servicios-slice__link {
     padding: 10px 20px;
+    margin-right: 20px;
     background-color: #D9D9D9;
     border-radius: 10px;
 }
@@ -90,4 +97,9 @@
 .servicios-slice__img {
     height: 600px;
     background-color: #D9D9D9;
+}
+.servicios-slice__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
