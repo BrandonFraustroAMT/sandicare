@@ -84,6 +84,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "queen",
 				"type": "Text"
+			},
+			"labelhome": {
+				"__TYPE__": "FieldContent",
+				"value": "possible",
+				"type": "Text"
 			}
 		},
 		"items": []

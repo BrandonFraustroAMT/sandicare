@@ -4,6 +4,7 @@ import "./globals.css";
 import "./style.css"
 
 import MenuNav from "@/components/MenuNav";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,6 +46,7 @@ export default function RootLayout({
         </div>
         <MenuNav />
         {children}
+        <Footer />
       </body>
     </html>
   );

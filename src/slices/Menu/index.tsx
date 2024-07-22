@@ -26,8 +26,10 @@ const Menu = ({ slice }: MenuProps): JSX.Element => {
         <header className="menu-slice__container">
           <div className="menu-slice__list">
             <div className="menu-slice__logo">
-              <a href="#" className="menu-slice__img">
+              <Link href={"/"} className="menu-slice__page">
                 <PrismicNextImage alt="" field={slice.primary.logo} />
+              </Link>
+              <a href="#" className="menu-slice__img">
               </a>
             </div>
             

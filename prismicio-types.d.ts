@@ -702,11 +702,7 @@ interface FooterDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type FooterDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<FooterDocumentData>,
-    "footer",
-    Lang
-  >;
+  prismic.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
 
 type HomeDocumentDataSlicesSlice =
   | ServiciosHomeSlice
@@ -2266,6 +2262,16 @@ export interface MenuSliceDefaultPrimaryGroupmenuItem {
  * Primary content in *Menu → Default → Primary*
  */
 export interface MenuSliceDefaultPrimary {
+  /**
+   * Labelhome field in *Menu → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu.default.primary.labelhome
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelhome: prismic.KeyTextField;
+
   /**
    * Logo field in *Menu → Default → Primary*
    *

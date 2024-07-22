@@ -12,6 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "labelhome": {
+          "type": "Text",
+          "config": {
+            "label": "Labelhome",
+            "placeholder": ""
+          }
+        },
         "logo": {
           "type": "Image",
           "config": {
