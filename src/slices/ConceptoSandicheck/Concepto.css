@@ -50,7 +50,7 @@
 .concepto-sandicheck__img {
     width: 100%;
     height: 200px;
-    background-color: #D9D9D9;
+    background-color: #fff;
 }
 .concepto-sandicheck__img img{
     width: 100%;
@@ -81,7 +81,7 @@
 }
 
 .concepto-sandicheck__list-column1 {
-    width: 40%;
+    width: 50%;
     padding: 100px 0;
 }
 .concepto-sandicheck__list-column2 {
@@ -101,7 +101,7 @@
 .concepto-sandicheck__list-img {
     width: 90%;
     height: 500px;
-    background-color: #D9D9D9;
+    background-color: #fff;
 }
 .concepto-sandicheck__list-img img{
     width: 100%;

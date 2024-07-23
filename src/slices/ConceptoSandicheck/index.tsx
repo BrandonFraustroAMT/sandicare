@@ -35,10 +35,10 @@ const ConceptoSandicheck = ({
           </div>
           <div className="concepto-sandicheck__list-data">
             <>
-              {slice.primary.groupconcepto.map((item) => (
+              {slice.primary.groupconcepto.map((item, index) => (
                 // Render the item
                 <>
-                  <div className="concepto-sandicheck__data-box">
+                  <div className="concepto-sandicheck__data-box" key={index}>
                     <div className="concepto-sandicheck__img">
                       <PrismicNextImage field={item.image} />
                     </div>
@@ -52,25 +52,42 @@ const ConceptoSandicheck = ({
           </div>
           <div className="concepto-sandicheck__list-text">
             <>
-              {slice.primary.groupslider.map((item) => (
+              {slice.primary.groupslider.map((item, index) => (
                 // Render the item
-                <>
-                  <div className="concepto-sandicheck__list-column">
-                    <div className="concepto-sandicheck__list-column1">
-                      <div className="concepto-sandicheck__list-title">
-                        <>{item.title}</>
-                      </div>
-                      <div className="concepto-sandicheck__list-subtitle">
-                        <>{item.subtitle}</>
-                      </div>
-                    </div>
-                    <div className="concepto-sandicheck__list-column2">
-                      <div className="concepto-sandicheck__list-img">
-                        <PrismicNextImage field={item.image} />
-                      </div>
-                    </div>
+                <div className="concepto-sandicheck__list-column" key={index}>
+                    {
+                      index % 2 == 0 ? (
+                        <><div className="concepto-sandicheck__list-column1">
+                        <div className="concepto-sandicheck__list-title">
+                          <>{item.title}</>
+                        </div>
+                        <div className="concepto-sandicheck__list-subtitle">
+                          <>{item.subtitle}</>
+                        </div>
+                      </div><div className="concepto-sandicheck__list-column2">
+                          <div className="concepto-sandicheck__list-img">
+                            <PrismicNextImage field={item.image} />
+                          </div>
+                        </div></>
+                      ) : (
+                        <>
+                          <div className="concepto-sandicheck__list-column2">
+                            <div className="concepto-sandicheck__list-img">
+                              <PrismicNextImage field={item.image} />
+                            </div>
+                          </div>
+                          <div className="concepto-sandicheck__list-column1">
+                            <div className="concepto-sandicheck__list-title">
+                              <>{item.title}</>
+                            </div>
+                            <div className="concepto-sandicheck__list-subtitle">
+                              <>{item.subtitle}</>
+                            </div>
+                          </div>
+                        </>
+                      )
+                    }
                   </div>
-                </>
               ))}
             </>
           </div>
