@@ -17,8 +17,8 @@
     width: 80%;
 }
 .servicios-slice__title h2{
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2rem;
+    line-height: 2rem;
     text-align: center;
 }
 
@@ -27,6 +27,7 @@
     font-size: 1.6rem;
     line-height: 2rem;
     padding-bottom: 30px;
+    text-align: center;
 }
 
 .servicios-slice__list {
@@ -47,24 +48,28 @@
 .servicios-slice__list-box {
     margin: 30px 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
 }
 
 .servicios-slice__column {
-    width: 40%;
+    width: 80%;
+    margin: 30px 0;
 }
 
 .servicios-slice__list-title {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
     padding: 20px 0;
+    text-align: center;
 }
 
 .servicios-slice__list-subtitle {
     font-size: 1.8rem;
     line-height: 2rem;
     padding: 20px 0;
+    text-align: center;
 }
 
 .servicios-slice__list-description {
@@ -74,6 +79,7 @@
 .servicios-slice__buttons {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .servicios-slice__link {
     padding: 10px 20px;
@@ -85,17 +91,19 @@
 .servicios-slice__item-list {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .servicios-slice__item {
     padding: 30px 0;
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 50%;
 }
 
 .servicios-slice__img {
-    height: 600px;
+    height: 400px;
     background-color: #D9D9D9;
 }
 .servicios-slice__img img{
@@ -111,11 +119,65 @@
 }
 
 .servicios-slice__icon {
-    width: 10%;
+    width: 25%;
     height: 25px;
 }
 .servicios-slice__icon img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+}
+
+@media (min-width: 480px) {
+    
+}
+@media (min-width: 768px) {
+    .servicios-slice__title h2{
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .servicios-slice__list-title {
+        font-size: 3rem;
+    }
+    .servicios-slice__column {
+        width: 70%;
+    }
+    .servicios-slice__item {
+        width: 45%;
+    }
+}
+@media (min-width: 992px) {
+    .servicios-slice__list-box {
+        flex-direction: row;
+    }
+    .servicios-slice__column {
+        width: 40%;
+    }
+    .servicios-slice__list-title {
+        text-align: left;
+    }
+    .servicios-slice__list-subtitle {
+        text-align: left;
+    }
+    .servicios-slice__item-list {
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .servicios-slice__buttons {
+        justify-content: flex-start;
+    }
+}
+@media (min-width: 1200px) {
+    .servicios-slice__title h2{
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+    .servicios-slice__img {
+        height: 500px;
+    }
+}
+@media (min-width: 1400px) {
+    .servicios-slice__img {
+        height: 600px;
+    }
 }

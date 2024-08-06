@@ -15,27 +15,28 @@
     width: 80%;
 }
 .satisfaccion-slice__title h2 {
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2rem;
+    line-height: 2rem;
     text-align: center;
 }
 
 .satisfaccion-slice__subtitle {
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
     padding-bottom: 30px;
+    text-align: center;
 }
 
 .satisfaccion-slice__list {
     width: 80%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .satisfaccion-slice__list-data {
-    width: 33%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +52,7 @@
 .satisfaccion-slice_img img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .satisfaccion-slice__list-subtitle {
@@ -66,4 +67,83 @@
 .satisfaccion-slice__list-description {
     font-size: 1rem;
     height: 150px;
+    text-align: center;
+}
+
+@media (min-width: 480px) {
+    .satisfaccion-slice_img {
+        width: 90%;
+    }
+}
+@media (min-width: 768px) {
+    .satisfaccion-slice__title h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    .satisfaccion-slice__subtitle {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .satisfaccion-slice_img {
+        width: 85%;
+    }
+}
+@media (min-width: 992px) {
+    .satisfaccion-slice__title h2 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+    .satisfaccion-slice__subtitle {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+    .satisfaccion-slice__list-subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+        height: 100px;
+        line-height: 1.7rem;
+    }
+    .satisfaccion-slice__list-data {
+        width: 33%;
+    }
+    .satisfaccion-slice__list {
+        flex-direction: row;
+    }
+    .satisfaccion-slice_img {
+        width: 80%;
+    }
+}
+@media (min-width: 1200px) {
+    .satisfaccion-slice__title h2 {
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+    }
+    .satisfaccion-slice__subtitle {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+    .satisfaccion-slice__list-subtitle {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        height: 150px;
+        line-height: 1.9rem;
+    }
+    .satisfaccion-slice_img {
+        width: 70%;
+    }
+}
+@media (min-width: 1400px) {
+    .satisfaccion-slice__title h2 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .satisfaccion-slice__subtitle {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+    .satisfaccion-slice__list-subtitle {
+        font-size: 2.1rem;
+        margin: 12px 0;
+        line-height: 2rem;
+    }
 }
