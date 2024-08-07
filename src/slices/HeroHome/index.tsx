@@ -1,5 +1,5 @@
 import { Content } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { useState, useEffect } from "react";
 import './hero.css'
@@ -41,6 +41,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           <div className="hero-slice__video">
             {/* VIDEO */}
             <div className="hero-slice__video-container">
+              <PrismicNextImage field={slice.primary.herogif} />
             </div>
           </div>
         </div>
