@@ -6,24 +6,25 @@
 .footer-slice__container {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    padding: 30px 30px;
 }
 
 .footer-slice__column1 {
-    width: 30%;
+    width: 85%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
 .footer-slice__column2 {
-    width: 60%;
+    width: 100%;
 }
 
 .footer-slice__link-img {
-    width: 80%;
+    width: 50%;
     border-radius: 10px;
     height: 100%;
     padding-bottom: 30px;
@@ -38,7 +39,7 @@
 
 .footer-slice__socialmedia {
     margin-top: 20px;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -59,6 +60,64 @@
 .footer-slice__list {
     width: 100%;
     border-radius: 10px;
-    height: 300px;
+    height: auto;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 50px 20px;
+    justify-content: space-around;
+}
+.footer-slice__list-col {
+
+}
+.footer-slice__list-title{
+    font-size: 1rem;
+}
+.footer-slice__list-link:hover {
+    text-decoration: underline;
+}
+.footer-slice__links {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 480px) {
+
+}
+@media (min-width: 768px) {
+    .footer-slice__column1 {
+        width: 40%;
+    }
+    .footer-slice__column2 {
+        width: 100%;
+    }
+    .footer-slice__link-img {
+        width: 80%;
+    }
+}
+@media (min-width: 992px) {
+    .footer-slice__container {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 30px 0;
+    }
+    .footer-slice__column1 {
+        width: 30%;
+    }
+    .footer-slice__column2 {
+        width: 60%;
+    }
+    .footer-slice__link-img {
+        width: 80%;
+    }
+    .footer-slice__list {
+        flex-direction: row;
+    }
+    .footer-slice__socialmedia {
+        width: 80%;
+    }
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 1400px) {
 }

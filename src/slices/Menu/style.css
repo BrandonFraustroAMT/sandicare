@@ -105,7 +105,7 @@
 
   .menu-slice__list {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 

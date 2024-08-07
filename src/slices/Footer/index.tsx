@@ -40,7 +40,57 @@ const Footer = ({ slice }: FooterProps): JSX.Element => {
           </div>
           <div className="footer-slice__column2">
             <div className="footer-slice__list">
-
+              <div className="footer-slice__list-col">
+                <div className="footer-slice__list-title">
+                  <h3>{slice.primary.label1}</h3>
+                </div>
+                <>
+                  {slice.primary.grouplabel1.map((item) => (
+                    <>
+                      <div className="footer-slice__links">
+                        <PrismicNextLink field={item.linktext} className="footer-slice__list-link">
+                          <>{item.text}</>
+                        </PrismicNextLink>
+                      </div>
+                    </>
+                  )
+                  )}
+                </>
+              </div>
+              <div className="footer-slice__list-col">
+                <div className="footer-slice__list-title">
+                  <h3>{slice.primary.label2}</h3>
+                </div>
+                <>
+                  {slice.primary.grouplabel2.map((item) => (
+                    <>
+                      <div className="footer-slice__links">
+                        <PrismicNextLink field={item.linktext} className="footer-slice__list-link">
+                          <>{item.text}</>
+                        </PrismicNextLink>
+                      </div>
+                    </>
+                  )
+                  )}
+                </>
+              </div>
+              <div className="footer-slice__list-col">
+                <div className="footer-slice__list-title">
+                  <h3>{slice.primary.label3}</h3>
+                </div>
+                <>
+                  {slice.primary.grouplabel3.map((item) => (
+                    <>
+                      <div className="footer-slice__links">
+                        <PrismicNextLink field={item.linktext} className="footer-slice__list-link">
+                          <>{item.text}</>
+                        </PrismicNextLink>
+                      </div>
+                    </>
+                  )
+                  )}
+                </>
+              </div>
             </div>
           </div>
         </div>

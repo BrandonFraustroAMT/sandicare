@@ -83,6 +83,105 @@
 						]
 					}
 				]
+			},
+			"label1": {
+				"__TYPE__": "FieldContent",
+				"value": "month",
+				"type": "Text"
+			},
+			"grouplabel1": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"linktext",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io"
+									}
+								}
+							],
+							[
+								"text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "fifty",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"label2": {
+				"__TYPE__": "FieldContent",
+				"value": "sky",
+				"type": "Text"
+			},
+			"grouplabel2": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"linktext",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com"
+									}
+								}
+							],
+							[
+								"text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "expression",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			},
+			"label3": {
+				"__TYPE__": "FieldContent",
+				"value": "merely",
+				"type": "Text"
+			},
+			"grouplabel3": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"linktext",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com"
+									}
+								}
+							],
+							[
+								"text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "nobody",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
 			}
 		},
 		"items": []

@@ -1884,6 +1884,81 @@ export interface FooterSliceDefaultPrimaryGroupredesItem {
 }
 
 /**
+ * Item in *Footer → Default → Primary → GroupLabel1*
+ */
+export interface FooterSliceDefaultPrimaryGrouplabel1Item {
+  /**
+   * LinkText field in *Footer → Default → Primary → GroupLabel1*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.grouplabel1[].linktext
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linktext: prismic.LinkField;
+
+  /**
+   * Text field in *Footer → Default → Primary → GroupLabel1*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.grouplabel1[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Footer → Default → Primary → GroupLabel2*
+ */
+export interface FooterSliceDefaultPrimaryGrouplabel2Item {
+  /**
+   * LinkText field in *Footer → Default → Primary → GroupLabel2*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.grouplabel2[].linktext
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linktext: prismic.LinkField;
+
+  /**
+   * Text field in *Footer → Default → Primary → GroupLabel2*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.grouplabel2[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Item in *Footer → Default → Primary → GroupLabel3*
+ */
+export interface FooterSliceDefaultPrimaryGrouplabel3Item {
+  /**
+   * LinkText field in *Footer → Default → Primary → GroupLabel3*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.grouplabel3[].linktext
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linktext: prismic.LinkField;
+
+  /**
+   * Text field in *Footer → Default → Primary → GroupLabel3*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.grouplabel3[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Footer → Default → Primary*
  */
 export interface FooterSliceDefaultPrimary {
@@ -1927,6 +2002,72 @@ export interface FooterSliceDefaultPrimary {
    */
   groupredes: prismic.GroupField<
     Simplify<FooterSliceDefaultPrimaryGroupredesItem>
+  >;
+
+  /**
+   * label1 field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.label1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label1: prismic.KeyTextField;
+
+  /**
+   * GroupLabel1 field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.grouplabel1[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grouplabel1: prismic.GroupField<
+    Simplify<FooterSliceDefaultPrimaryGrouplabel1Item>
+  >;
+
+  /**
+   * Label2 field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.label2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label2: prismic.KeyTextField;
+
+  /**
+   * GroupLabel2 field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.grouplabel2[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grouplabel2: prismic.GroupField<
+    Simplify<FooterSliceDefaultPrimaryGrouplabel2Item>
+  >;
+
+  /**
+   * Label3 field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.label3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label3: prismic.KeyTextField;
+
+  /**
+   * GroupLabel3 field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.grouplabel3[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  grouplabel3: prismic.GroupField<
+    Simplify<FooterSliceDefaultPrimaryGrouplabel3Item>
   >;
 }
 
@@ -3018,6 +3159,9 @@ declare module "@prismicio/client" {
       EmpresasHomeSliceDefault,
       FooterSlice,
       FooterSliceDefaultPrimaryGroupredesItem,
+      FooterSliceDefaultPrimaryGrouplabel1Item,
+      FooterSliceDefaultPrimaryGrouplabel2Item,
+      FooterSliceDefaultPrimaryGrouplabel3Item,
       FooterSliceDefaultPrimary,
       FooterSliceVariation,
       FooterSliceDefault,

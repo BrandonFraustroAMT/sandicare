@@ -60,6 +60,99 @@
               }
             }
           }
+        },
+        "label1": {
+          "type": "Text",
+          "config": {
+            "label": "label1",
+            "placeholder": ""
+          }
+        },
+        "grouplabel1": {
+          "type": "Group",
+          "config": {
+            "label": "GroupLabel1",
+            "repeat": true,
+            "fields": {
+              "linktext": {
+                "type": "Link",
+                "config": {
+                  "label": "LinkText",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "label2": {
+          "type": "Text",
+          "config": {
+            "label": "Label2",
+            "placeholder": ""
+          }
+        },
+        "grouplabel2": {
+          "type": "Group",
+          "config": {
+            "label": "GroupLabel2",
+            "repeat": true,
+            "fields": {
+              "linktext": {
+                "type": "Link",
+                "config": {
+                  "label": "LinkText",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "label3": {
+          "type": "Text",
+          "config": {
+            "label": "Label3",
+            "placeholder": ""
+          }
+        },
+        "grouplabel3": {
+          "type": "Group",
+          "config": {
+            "label": "GroupLabel3",
+            "repeat": true,
+            "fields": {
+              "linktext": {
+                "type": "Link",
+                "config": {
+                  "label": "LinkText",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
         }
       },
       "items": {}
