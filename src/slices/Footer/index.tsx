@@ -94,6 +94,7 @@ const Footer = ({ slice }: FooterProps): JSX.Element => {
             </div>
           </div>
         </div>
+        <p className="copyright">Copyright © Todos los derechos reservados para el uso intelectual de Sandicare 2024 | Página hecha por Plomo Media</p>
       </div>
       
     </section>

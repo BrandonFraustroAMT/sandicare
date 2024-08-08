@@ -72,7 +72,11 @@
 
 }
 .footer-slice__list-title{
-    font-size: 1rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+.footer-slice__list-link {
+    color: rgb(87, 87, 87);
 }
 .footer-slice__list-link:hover {
     text-decoration: underline;
@@ -80,6 +84,11 @@
 .footer-slice__links {
     display: flex;
     flex-direction: column;
+}
+.copyright {
+    padding: 0 30px;
+    font-size: 0.7rem;
+    text-align: center;
 }
 @media (min-width: 480px) {
 
@@ -115,6 +124,9 @@
     }
     .footer-slice__socialmedia {
         width: 80%;
+    }
+    .copyright {
+        font-size: 1rem;
     }
 }
 @media (min-width: 1200px) {
