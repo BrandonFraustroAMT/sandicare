@@ -68,12 +68,14 @@
 
 .menu-slice__link {
   padding: 10px 20px;
-  background-color: #D9D9D9;
+  background-color: var(--redButton);
+  color: var(--whiteBG);
   border-radius: 10px;
   transition: scale 2s ease-in;
 }
 
 .menu-slice__link:hover {
+  background-color: var(--redText);
   transform: scale(1.1);
 }
 

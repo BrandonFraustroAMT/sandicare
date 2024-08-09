@@ -47,9 +47,13 @@
 
 .formulario-slice__link {
     padding: 10px 20px;
-    background-color: #D9D9D9;
+    background-color: var(--redButton);
+    color: var(--whiteBG);
     border-radius: 10px;
     font-size: 0.8rem;
+}
+.formulario-slice__link:hover {
+    background-color: var(--redText);
 }
 
 @media (min-width: 480px) {

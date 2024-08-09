@@ -66,7 +66,7 @@
 }
 
 .servicios-slice__list-subtitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 2rem;
     padding: 20px 0;
     text-align: center;
@@ -84,8 +84,12 @@
 .servicios-slice__link {
     padding: 10px 20px;
     margin-right: 20px;
-    background-color: #D9D9D9;
+    background-color: var(--redButton);
+    color: var(--whiteBG);
     border-radius: 10px;
+}
+.servicios-slice__link:hover {
+    background-color: var(--redText);
 }
 
 .servicios-slice__item-list {

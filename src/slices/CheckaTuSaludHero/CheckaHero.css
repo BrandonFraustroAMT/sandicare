@@ -44,8 +44,12 @@
 }
 .checkat-hero__link {
     padding: 10px 20px;
-    background-color: #D9D9D9;
+    background-color: var(--redButton);
+    color: var(--whiteBG);
     border-radius: 10px;
+}
+.checkat-hero__link:hover {
+    background-color: var(--redText);
 }
 
 
