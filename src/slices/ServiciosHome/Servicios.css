@@ -31,7 +31,7 @@
 }
 
 .servicios-slice__list {
-    width: 70%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -40,6 +40,7 @@
 .servicios-slice__text {
     border-bottom: 1px solid #000;
     padding-bottom: 10px;
+    font-size: 0.7rem;
 }
 .servicios-slice__text:hover {
     cursor: pointer;
@@ -155,6 +156,9 @@
     }
     .servicios-slice__column {
         width: 40%;
+    }
+    .servicios-slice__list {
+        width: 70%;
     }
     .servicios-slice__list-title {
         text-align: left;
