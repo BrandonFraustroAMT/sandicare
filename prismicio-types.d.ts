@@ -742,45 +742,51 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
 
+type MembresiasDocumentDataSlicesSlice =
+  | MembresiaPlusSlice
+  | MembresiasHeroSlice
+  | MembresiaFamiliarSlice
+  | MembresiaIndividualSlice
+  | MembresiaEmpresarialSlice;
+
+/**
+ * Content for Membresias documents
+ */
+interface MembresiasDocumentData {
+  /**
+   * Slice Zone field in *Membresias*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresias.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<MembresiasDocumentDataSlicesSlice>;
+}
+
+/**
+ * Membresias document from Prismic
+ *
+ * - **API ID**: `membresias`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MembresiasDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<MembresiasDocumentData>,
+    "membresias",
+    Lang
+  >;
+
 type NavbarDocumentDataSlicesSlice = MenuSlice;
 
 /**
  * Content for Navbar documents
  */
 interface NavbarDocumentData {
-  /**
-   * Logo field in *Navbar*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.logo
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo: prismic.ImageField<never>;
-
-  /**
-   * Boton Link field in *Navbar*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.boton_link
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  boton_link: prismic.LinkField;
-
-  /**
-   * BotonText field in *Navbar*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navbar.botontext
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  botontext: prismic.KeyTextField;
-
   /**
    * Slice Zone field in *Navbar*
    *
@@ -850,6 +856,7 @@ export type AllDocumentTypes =
   | CheckatusaludDocument
   | FooterDocument
   | HomeDocument
+  | MembresiasDocument
   | NavbarDocument
   | SandicheckDocument;
 
@@ -2375,6 +2382,549 @@ export type HeroSandicheckSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *MembresiaEmpresarial → Default → Primary → GroupBenefits*
+ */
+export interface MembresiaEmpresarialSliceDefaultPrimaryGroupbenefitsItem {
+  /**
+   * Text field in *MembresiaEmpresarial → Default → Primary → GroupBenefits*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_empresarial.default.primary.groupbenefits[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *MembresiaEmpresarial → Default → Primary*
+ */
+export interface MembresiaEmpresarialSliceDefaultPrimary {
+  /**
+   * Title field in *MembresiaEmpresarial → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_empresarial.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * GroupBenefits field in *MembresiaEmpresarial → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_empresarial.default.primary.groupbenefits[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupbenefits: prismic.GroupField<
+    Simplify<MembresiaEmpresarialSliceDefaultPrimaryGroupbenefitsItem>
+  >;
+
+  /**
+   * Image field in *MembresiaEmpresarial → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_empresarial.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Price field in *MembresiaEmpresarial → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_empresarial.default.primary.price
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  price: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for MembresiaEmpresarial Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembresiaEmpresarialSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MembresiaEmpresarialSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MembresiaEmpresarial*
+ */
+type MembresiaEmpresarialSliceVariation = MembresiaEmpresarialSliceDefault;
+
+/**
+ * MembresiaEmpresarial Shared Slice
+ *
+ * - **API ID**: `membresia_empresarial`
+ * - **Description**: MembresiaEmpresarial
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembresiaEmpresarialSlice = prismic.SharedSlice<
+  "membresia_empresarial",
+  MembresiaEmpresarialSliceVariation
+>;
+
+/**
+ * Item in *MembresiaFamiliar → Default → Primary → GroupBenefits*
+ */
+export interface MembresiaFamiliarSliceDefaultPrimaryGroupbenefitsItem {
+  /**
+   * Text field in *MembresiaFamiliar → Default → Primary → GroupBenefits*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_familiar.default.primary.groupbenefits[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *MembresiaFamiliar → Default → Primary*
+ */
+export interface MembresiaFamiliarSliceDefaultPrimary {
+  /**
+   * Title field in *MembresiaFamiliar → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_familiar.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *MembresiaFamiliar → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_familiar.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * GroupBenefits field in *MembresiaFamiliar → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_familiar.default.primary.groupbenefits[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupbenefits: prismic.GroupField<
+    Simplify<MembresiaFamiliarSliceDefaultPrimaryGroupbenefitsItem>
+  >;
+
+  /**
+   * Price field in *MembresiaFamiliar → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_familiar.default.primary.price
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  price: prismic.KeyTextField;
+
+  /**
+   * Deadline field in *MembresiaFamiliar → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_familiar.default.primary.deadline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  deadline: prismic.KeyTextField;
+
+  /**
+   * Image field in *MembresiaFamiliar → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_familiar.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * LinkButton field in *MembresiaFamiliar → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_familiar.default.primary.linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *MembresiaFamiliar → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_familiar.default.primary.labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for MembresiaFamiliar Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembresiaFamiliarSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MembresiaFamiliarSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MembresiaFamiliar*
+ */
+type MembresiaFamiliarSliceVariation = MembresiaFamiliarSliceDefault;
+
+/**
+ * MembresiaFamiliar Shared Slice
+ *
+ * - **API ID**: `membresia_familiar`
+ * - **Description**: MembresiaFamiliar
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembresiaFamiliarSlice = prismic.SharedSlice<
+  "membresia_familiar",
+  MembresiaFamiliarSliceVariation
+>;
+
+/**
+ * Item in *MembresiaIndividual → Default → Primary → GroupBenefits*
+ */
+export interface MembresiaIndividualSliceDefaultPrimaryGroupbenefitsItem {
+  /**
+   * Text field in *MembresiaIndividual → Default → Primary → GroupBenefits*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_individual.default.primary.groupbenefits[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *MembresiaIndividual → Default → Primary*
+ */
+export interface MembresiaIndividualSliceDefaultPrimary {
+  /**
+   * Title field in *MembresiaIndividual → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_individual.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *MembresiaIndividual → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_individual.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * GroupBenefits field in *MembresiaIndividual → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_individual.default.primary.groupbenefits[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupbenefits: prismic.GroupField<
+    Simplify<MembresiaIndividualSliceDefaultPrimaryGroupbenefitsItem>
+  >;
+
+  /**
+   * Price field in *MembresiaIndividual → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_individual.default.primary.price
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  price: prismic.KeyTextField;
+
+  /**
+   * Deadline field in *MembresiaIndividual → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_individual.default.primary.deadline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  deadline: prismic.KeyTextField;
+
+  /**
+   * Restrictions field in *MembresiaIndividual → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_individual.default.primary.restrictions
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  restrictions: prismic.KeyTextField;
+
+  /**
+   * LinkButton field in *MembresiaIndividual → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_individual.default.primary.linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *MembresiaIndividual → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_individual.default.primary.labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for MembresiaIndividual Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembresiaIndividualSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MembresiaIndividualSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MembresiaIndividual*
+ */
+type MembresiaIndividualSliceVariation = MembresiaIndividualSliceDefault;
+
+/**
+ * MembresiaIndividual Shared Slice
+ *
+ * - **API ID**: `membresia_individual`
+ * - **Description**: MembresiaIndividual
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembresiaIndividualSlice = prismic.SharedSlice<
+  "membresia_individual",
+  MembresiaIndividualSliceVariation
+>;
+
+/**
+ * Item in *MembresiaPlus → Default → Primary → GroupBenefits*
+ */
+export interface MembresiaPlusSliceDefaultPrimaryGroupbenefitsItem {
+  /**
+   * Text field in *MembresiaPlus → Default → Primary → GroupBenefits*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_plus.default.primary.groupbenefits[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *MembresiaPlus → Default → Primary*
+ */
+export interface MembresiaPlusSliceDefaultPrimary {
+  /**
+   * Title field in *MembresiaPlus → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_plus.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *MembresiaPlus → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_plus.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * GroupBenefits field in *MembresiaPlus → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_plus.default.primary.groupbenefits[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupbenefits: prismic.GroupField<
+    Simplify<MembresiaPlusSliceDefaultPrimaryGroupbenefitsItem>
+  >;
+
+  /**
+   * Price field in *MembresiaPlus → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_plus.default.primary.price
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  price: prismic.KeyTextField;
+
+  /**
+   * Deadline field in *MembresiaPlus → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_plus.default.primary.deadline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  deadline: prismic.KeyTextField;
+
+  /**
+   * Restrictions field in *MembresiaPlus → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_plus.default.primary.restrictions
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  restrictions: prismic.KeyTextField;
+
+  /**
+   * Image field in *MembresiaPlus → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_plus.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * LinkButton field in *MembresiaPlus → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_plus.default.primary.linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *MembresiaPlus → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_plus.default.primary.labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for MembresiaPlus Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembresiaPlusSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MembresiaPlusSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MembresiaPlus*
+ */
+type MembresiaPlusSliceVariation = MembresiaPlusSliceDefault;
+
+/**
+ * MembresiaPlus Shared Slice
+ *
+ * - **API ID**: `membresia_plus`
+ * - **Description**: MembresiaPlus
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembresiaPlusSlice = prismic.SharedSlice<
+  "membresia_plus",
+  MembresiaPlusSliceVariation
+>;
+
+/**
+ * Primary content in *MembresiasHero → Default → Primary*
+ */
+export interface MembresiasHeroSliceDefaultPrimary {
+  /**
+   * Title field in *MembresiasHero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresias_hero.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for MembresiasHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembresiasHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MembresiasHeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MembresiasHero*
+ */
+type MembresiasHeroSliceVariation = MembresiasHeroSliceDefault;
+
+/**
+ * MembresiasHero Shared Slice
+ *
+ * - **API ID**: `membresias_hero`
+ * - **Description**: MembresiasHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembresiasHeroSlice = prismic.SharedSlice<
+  "membresias_hero",
+  MembresiasHeroSliceVariation
+>;
+
+/**
  * Item in *Menu → Default → Primary → GroupMenu*
  */
 export interface MenuSliceDefaultPrimaryGroupmenuItem {
@@ -3093,6 +3643,9 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      MembresiasDocument,
+      MembresiasDocumentData,
+      MembresiasDocumentDataSlicesSlice,
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataSlicesSlice,
@@ -3179,6 +3732,30 @@ declare module "@prismicio/client" {
       HeroSandicheckSliceDefaultPrimary,
       HeroSandicheckSliceVariation,
       HeroSandicheckSliceDefault,
+      MembresiaEmpresarialSlice,
+      MembresiaEmpresarialSliceDefaultPrimaryGroupbenefitsItem,
+      MembresiaEmpresarialSliceDefaultPrimary,
+      MembresiaEmpresarialSliceVariation,
+      MembresiaEmpresarialSliceDefault,
+      MembresiaFamiliarSlice,
+      MembresiaFamiliarSliceDefaultPrimaryGroupbenefitsItem,
+      MembresiaFamiliarSliceDefaultPrimary,
+      MembresiaFamiliarSliceVariation,
+      MembresiaFamiliarSliceDefault,
+      MembresiaIndividualSlice,
+      MembresiaIndividualSliceDefaultPrimaryGroupbenefitsItem,
+      MembresiaIndividualSliceDefaultPrimary,
+      MembresiaIndividualSliceVariation,
+      MembresiaIndividualSliceDefault,
+      MembresiaPlusSlice,
+      MembresiaPlusSliceDefaultPrimaryGroupbenefitsItem,
+      MembresiaPlusSliceDefaultPrimary,
+      MembresiaPlusSliceVariation,
+      MembresiaPlusSliceDefault,
+      MembresiasHeroSlice,
+      MembresiasHeroSliceDefaultPrimary,
+      MembresiasHeroSliceVariation,
+      MembresiasHeroSliceDefault,
       MenuSlice,
       MenuSliceDefaultPrimaryGroupmenuItem,
       MenuSliceDefaultPrimary,

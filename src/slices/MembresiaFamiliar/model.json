@@ -1,0 +1,88 @@
+{
+  "id": "membresia_familiar",
+  "type": "SharedSlice",
+  "name": "MembresiaFamiliar",
+  "description": "MembresiaFamiliar",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "groupbenefits": {
+          "type": "Group",
+          "config": {
+            "label": "GroupBenefits",
+            "repeat": true,
+            "fields": {
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "price": {
+          "type": "Text",
+          "config": {
+            "label": "Price",
+            "placeholder": ""
+          }
+        },
+        "deadline": {
+          "type": "Text",
+          "config": {
+            "label": "Deadline",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "linkbutton": {
+          "type": "Link",
+          "config": {
+            "label": "LinkButton",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "labelbutton": {
+          "type": "Text",
+          "config": {
+            "label": "LabelButton",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

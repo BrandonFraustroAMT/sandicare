@@ -1,0 +1,41 @@
+{
+  "format": "custom",
+  "id": "membresias",
+  "label": "Membresias",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "membresias",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "membresia_plus": {
+              "type": "SharedSlice"
+            },
+            "membresias_hero": {
+              "type": "SharedSlice"
+            },
+            "membresia_familiar": {
+              "type": "SharedSlice"
+            },
+            "membresia_individual": {
+              "type": "SharedSlice"
+            },
+            "membresia_empresarial": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}
