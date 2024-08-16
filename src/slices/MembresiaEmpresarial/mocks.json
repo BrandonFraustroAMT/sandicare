@@ -59,6 +59,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "opposite",
 				"type": "Text"
+			},
+			"deadline": {
+				"__TYPE__": "FieldContent",
+				"value": "after",
+				"type": "Text"
 			}
 		},
 		"items": []

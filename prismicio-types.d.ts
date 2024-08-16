@@ -2423,6 +2423,16 @@ export interface MembresiaEmpresarialSliceDefaultPrimary {
   >;
 
   /**
+   * Deadline field in *MembresiaEmpresarial → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: membresia_empresarial.default.primary.deadline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  deadline: prismic.KeyTextField;
+
+  /**
    * Image field in *MembresiaEmpresarial → Default → Primary*
    *
    * - **Field Type**: Image

@@ -37,6 +37,13 @@
             }
           }
         },
+        "deadline": {
+          "type": "Text",
+          "config": {
+            "label": "Deadline",
+            "placeholder": ""
+          }
+        },
         "image": {
           "type": "Image",
           "config": {
