@@ -55,8 +55,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: hsla(0,0%,100%,0.9);
-  backdrop-filter: blur(12px);
   transition: transform 0.3s ease-in-out;
   transform: translateX(100%);
   z-index: 10; 
@@ -144,7 +142,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
   }
 }
 

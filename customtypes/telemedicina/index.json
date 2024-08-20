@@ -1,0 +1,41 @@
+{
+  "format": "custom",
+  "id": "telemedicina",
+  "label": "Telemedicina",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "telemedicina",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "porque_sandicheck": {
+              "type": "SharedSlice"
+            },
+            "proceso_sandicheck": {
+              "type": "SharedSlice"
+            },
+            "hero_sandicheck": {
+              "type": "SharedSlice"
+            },
+            "empieza_sandicheck": {
+              "type": "SharedSlice"
+            },
+            "concepto_sandicheck": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

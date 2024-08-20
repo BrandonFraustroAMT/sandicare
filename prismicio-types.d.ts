@@ -888,6 +888,45 @@ export type SandicheckDocument<Lang extends string = string> =
     Lang
   >;
 
+type TelemedicinaDocumentDataSlicesSlice =
+  | PorqueSandicheckSlice
+  | ProcesoSandicheckSlice
+  | HeroSandicheckSlice
+  | EmpiezaSandicheckSlice
+  | ConceptoSandicheckSlice;
+
+/**
+ * Content for Telemedicina documents
+ */
+interface TelemedicinaDocumentData {
+  /**
+   * Slice Zone field in *Telemedicina*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: telemedicina.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<TelemedicinaDocumentDataSlicesSlice>;
+}
+
+/**
+ * Telemedicina document from Prismic
+ *
+ * - **API ID**: `telemedicina`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TelemedicinaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TelemedicinaDocumentData>,
+    "telemedicina",
+    Lang
+  >;
+
 type UnetealequipoDocumentDataSlicesSlice = UneteAlEquipoSlice;
 
 /**
@@ -932,6 +971,7 @@ export type AllDocumentTypes =
   | NavbarDocument
   | NosotrosDocument
   | SandicheckDocument
+  | TelemedicinaDocument
   | UnetealequipoDocument;
 
 /**
@@ -4175,6 +4215,9 @@ declare module "@prismicio/client" {
       SandicheckDocument,
       SandicheckDocumentData,
       SandicheckDocumentDataSlicesSlice,
+      TelemedicinaDocument,
+      TelemedicinaDocumentData,
+      TelemedicinaDocumentDataSlicesSlice,
       UnetealequipoDocument,
       UnetealequipoDocumentData,
       UnetealequipoDocumentDataSlicesSlice,
