@@ -1,0 +1,64 @@
+{
+  "id": "nosotros_mapa",
+  "type": "SharedSlice",
+  "name": "NosotrosMapa",
+  "description": "NosotrosMapa",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "text": {
+          "type": "Text",
+          "config": {
+            "label": "Text",
+            "placeholder": ""
+          }
+        },
+        "imagemapa": {
+          "type": "Image",
+          "config": {
+            "label": "ImageMapa",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "groupmapa": {
+          "type": "Group",
+          "config": {
+            "label": "GroupMapa",
+            "repeat": true,
+            "fields": {
+              "cantidad": {
+                "type": "Text",
+                "config": {
+                  "label": "Cantidad",
+                  "placeholder": ""
+                }
+              },
+              "textocantidad": {
+                "type": "Text",
+                "config": {
+                  "label": "TextoCantidad",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

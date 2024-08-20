@@ -1,0 +1,37 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing veniam sint quis veniam ea dolore. Aute mollit sint fugiat."
+						}
+					}
+				]
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"value": "old",
+				"type": "Text"
+			},
+			"linkbutton": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"labelbutton": {
+				"__TYPE__": "FieldContent",
+				"value": "break",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

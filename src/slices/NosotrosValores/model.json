@@ -1,0 +1,59 @@
+{
+  "id": "nosotros_valores",
+  "type": "SharedSlice",
+  "name": "NosotrosValores",
+  "description": "NosotrosValores",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "groupvalores": {
+          "type": "Group",
+          "config": {
+            "label": "GroupValores",
+            "repeat": true,
+            "fields": {
+              "subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Subtitle",
+                  "placeholder": ""
+                }
+              },
+              "descripcion": {
+                "type": "Text",
+                "config": {
+                  "label": "Descripcion",
+                  "placeholder": ""
+                }
+              },
+              "icono": {
+                "type": "Image",
+                "config": {
+                  "label": "Icono",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

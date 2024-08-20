@@ -1,0 +1,50 @@
+{
+  "id": "nosotros_slider",
+  "type": "SharedSlice",
+  "name": "NosotrosSlider",
+  "description": "NosotrosSlider",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "groupslider": {
+          "type": "Group",
+          "config": {
+            "label": "GroupSlider",
+            "repeat": true,
+            "fields": {
+              "subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Subtitle",
+                  "placeholder": ""
+                }
+              },
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

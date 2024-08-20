@@ -52,22 +52,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: fixed; /* Fijo en la pantalla */
+  position: fixed;
   top: 0;
   left: 0;
   background-color: hsla(0,0%,100%,0.9);
   backdrop-filter: blur(12px);
   transition: transform 0.3s ease-in-out;
   transform: translateX(100%);
-  z-index: 10; /* Asegúrate de que esté encima de otros elementos */
+  z-index: 10; 
 }
 
 .menu-slice__links-container.open {
   transform: translateX(0);
 }
 .menu-slice__links-container.close {
-  width: 50px; /* Cambia esto al ancho que desees cuando esté cerrado */
+  width: 50px; 
   transform: translateX(100%);
+}
+.menu-slice__logo-mobile{
+  display: block;
+  width: 30%;
 }
 
 .menu-slice__list-links {
@@ -127,6 +131,9 @@
     transform: none;
   }
   .menu-slice__icon {
+    display: none;
+  }
+  .menu-slice__logo-mobile {
     display: none;
   }
   .menu-slice__links-container {

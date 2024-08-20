@@ -1,0 +1,29 @@
+{
+  "format": "custom",
+  "id": "unetealequipo",
+  "label": "Unetealequipo",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "unetealequipo",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "unete_al_equipo": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

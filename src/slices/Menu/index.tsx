@@ -40,6 +40,11 @@ const Menu = ({ slice }: MenuProps): JSX.Element => {
             </div>
             
             <div className={`menu-slice__links-container ${isMenuOpen ? 'open' : ''}`}>
+              <div className="menu-slice__logo-mobile">
+                <Link href={"/"} className="menu-slice__page">
+                  <PrismicNextImage alt="" field={slice.primary.logo} />
+                </Link>
+              </div>
               <div className="menu-slice__list-links">
                 {slice.primary.groupmenu.map((item, index) => (
                   item.linklabel ? (

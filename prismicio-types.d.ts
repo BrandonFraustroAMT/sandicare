@@ -811,6 +811,44 @@ interface NavbarDocumentData {
 export type NavbarDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<NavbarDocumentData>, "navbar", Lang>;
 
+type NosotrosDocumentDataSlicesSlice =
+  | NosotrosMapaSlice
+  | NosotrosValoresSlice
+  | NosotrosHeroSlice
+  | NosotrosSliderSlice;
+
+/**
+ * Content for Nosotros documents
+ */
+interface NosotrosDocumentData {
+  /**
+   * Slice Zone field in *Nosotros*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<NosotrosDocumentDataSlicesSlice>;
+}
+
+/**
+ * Nosotros document from Prismic
+ *
+ * - **API ID**: `nosotros`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NosotrosDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<NosotrosDocumentData>,
+    "nosotros",
+    Lang
+  >;
+
 type SandicheckDocumentDataSlicesSlice =
   | ProcesoSandicheckSlice
   | PorqueSandicheckSlice
@@ -850,6 +888,40 @@ export type SandicheckDocument<Lang extends string = string> =
     Lang
   >;
 
+type UnetealequipoDocumentDataSlicesSlice = UneteAlEquipoSlice;
+
+/**
+ * Content for Unetealequipo documents
+ */
+interface UnetealequipoDocumentData {
+  /**
+   * Slice Zone field in *Unetealequipo*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unetealequipo.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<UnetealequipoDocumentDataSlicesSlice>;
+}
+
+/**
+ * Unetealequipo document from Prismic
+ *
+ * - **API ID**: `unetealequipo`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type UnetealequipoDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<UnetealequipoDocumentData>,
+    "unetealequipo",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | BodyDocument
   | BodycontentDocument
@@ -858,7 +930,9 @@ export type AllDocumentTypes =
   | HomeDocument
   | MembresiasDocument
   | NavbarDocument
-  | SandicheckDocument;
+  | NosotrosDocument
+  | SandicheckDocument
+  | UnetealequipoDocument;
 
 /**
  * Primary content in *CheckaTuSaludAgenda → Default → Primary*
@@ -3042,6 +3116,357 @@ type MenuSliceVariation = MenuSliceDefault;
 export type MenuSlice = prismic.SharedSlice<"menu", MenuSliceVariation>;
 
 /**
+ * Primary content in *NosotrosHero → Default → Primary*
+ */
+export interface NosotrosHeroSliceDefaultPrimary {
+  /**
+   * Title field in *NosotrosHero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_hero.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *NosotrosHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_hero.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * LinkButton field in *NosotrosHero → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_hero.default.primary.linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *NosotrosHero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_hero.default.primary.labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for NosotrosHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NosotrosHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NosotrosHeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NosotrosHero*
+ */
+type NosotrosHeroSliceVariation = NosotrosHeroSliceDefault;
+
+/**
+ * NosotrosHero Shared Slice
+ *
+ * - **API ID**: `nosotros_hero`
+ * - **Description**: NosotrosHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NosotrosHeroSlice = prismic.SharedSlice<
+  "nosotros_hero",
+  NosotrosHeroSliceVariation
+>;
+
+/**
+ * Item in *NosotrosMapa → Default → Primary → GroupMapa*
+ */
+export interface NosotrosMapaSliceDefaultPrimaryGroupmapaItem {
+  /**
+   * Cantidad field in *NosotrosMapa → Default → Primary → GroupMapa*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_mapa.default.primary.groupmapa[].cantidad
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cantidad: prismic.KeyTextField;
+
+  /**
+   * TextoCantidad field in *NosotrosMapa → Default → Primary → GroupMapa*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_mapa.default.primary.groupmapa[].textocantidad
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  textocantidad: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *NosotrosMapa → Default → Primary*
+ */
+export interface NosotrosMapaSliceDefaultPrimary {
+  /**
+   * Subtitle field in *NosotrosMapa → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_mapa.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Text field in *NosotrosMapa → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_mapa.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * ImageMapa field in *NosotrosMapa → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_mapa.default.primary.imagemapa
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagemapa: prismic.ImageField<never>;
+
+  /**
+   * GroupMapa field in *NosotrosMapa → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_mapa.default.primary.groupmapa[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupmapa: prismic.GroupField<
+    Simplify<NosotrosMapaSliceDefaultPrimaryGroupmapaItem>
+  >;
+}
+
+/**
+ * Default variation for NosotrosMapa Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NosotrosMapaSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NosotrosMapaSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NosotrosMapa*
+ */
+type NosotrosMapaSliceVariation = NosotrosMapaSliceDefault;
+
+/**
+ * NosotrosMapa Shared Slice
+ *
+ * - **API ID**: `nosotros_mapa`
+ * - **Description**: NosotrosMapa
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NosotrosMapaSlice = prismic.SharedSlice<
+  "nosotros_mapa",
+  NosotrosMapaSliceVariation
+>;
+
+/**
+ * Item in *NosotrosSlider → Default → Primary → GroupSlider*
+ */
+export interface NosotrosSliderSliceDefaultPrimaryGroupsliderItem {
+  /**
+   * Subtitle field in *NosotrosSlider → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_slider.default.primary.groupslider[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Text field in *NosotrosSlider → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_slider.default.primary.groupslider[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Image field in *NosotrosSlider → Default → Primary → GroupSlider*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_slider.default.primary.groupslider[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *NosotrosSlider → Default → Primary*
+ */
+export interface NosotrosSliderSliceDefaultPrimary {
+  /**
+   * GroupSlider field in *NosotrosSlider → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_slider.default.primary.groupslider[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupslider: prismic.GroupField<
+    Simplify<NosotrosSliderSliceDefaultPrimaryGroupsliderItem>
+  >;
+}
+
+/**
+ * Default variation for NosotrosSlider Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NosotrosSliderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NosotrosSliderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NosotrosSlider*
+ */
+type NosotrosSliderSliceVariation = NosotrosSliderSliceDefault;
+
+/**
+ * NosotrosSlider Shared Slice
+ *
+ * - **API ID**: `nosotros_slider`
+ * - **Description**: NosotrosSlider
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NosotrosSliderSlice = prismic.SharedSlice<
+  "nosotros_slider",
+  NosotrosSliderSliceVariation
+>;
+
+/**
+ * Item in *NosotrosValores → Default → Primary → GroupValores*
+ */
+export interface NosotrosValoresSliceDefaultPrimaryGroupvaloresItem {
+  /**
+   * Subtitle field in *NosotrosValores → Default → Primary → GroupValores*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_valores.default.primary.groupvalores[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Descripcion field in *NosotrosValores → Default → Primary → GroupValores*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_valores.default.primary.groupvalores[].descripcion
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  descripcion: prismic.KeyTextField;
+
+  /**
+   * Icono field in *NosotrosValores → Default → Primary → GroupValores*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_valores.default.primary.groupvalores[].icono
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icono: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *NosotrosValores → Default → Primary*
+ */
+export interface NosotrosValoresSliceDefaultPrimary {
+  /**
+   * Title field in *NosotrosValores → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_valores.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * GroupValores field in *NosotrosValores → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: nosotros_valores.default.primary.groupvalores[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupvalores: prismic.GroupField<
+    Simplify<NosotrosValoresSliceDefaultPrimaryGroupvaloresItem>
+  >;
+}
+
+/**
+ * Default variation for NosotrosValores Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NosotrosValoresSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NosotrosValoresSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NosotrosValores*
+ */
+type NosotrosValoresSliceVariation = NosotrosValoresSliceDefault;
+
+/**
+ * NosotrosValores Shared Slice
+ *
+ * - **API ID**: `nosotros_valores`
+ * - **Description**: NosotrosValores
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NosotrosValoresSlice = prismic.SharedSlice<
+  "nosotros_valores",
+  NosotrosValoresSliceVariation
+>;
+
+/**
  * Item in *OrgulloHome → Default → Primary → GroupOrgullo*
  */
 export interface OrgulloHomeSliceDefaultPrimaryGrouporgulloItem {
@@ -3624,6 +4049,91 @@ export type ServiciosHomeSlice = prismic.SharedSlice<
   ServiciosHomeSliceVariation
 >;
 
+/**
+ * Primary content in *UneteAlEquipo → Default → Primary*
+ */
+export interface UneteAlEquipoSliceDefaultPrimary {
+  /**
+   * Title field in *UneteAlEquipo → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unete_al_equipo.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *UneteAlEquipo → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unete_al_equipo.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * LinkButton field in *UneteAlEquipo → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unete_al_equipo.default.primary.linkbutton
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkbutton: prismic.LinkField;
+
+  /**
+   * LabelButton field in *UneteAlEquipo → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unete_al_equipo.default.primary.labelbutton
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  labelbutton: prismic.KeyTextField;
+
+  /**
+   * Image field in *UneteAlEquipo → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: unete_al_equipo.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for UneteAlEquipo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type UneteAlEquipoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<UneteAlEquipoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *UneteAlEquipo*
+ */
+type UneteAlEquipoSliceVariation = UneteAlEquipoSliceDefault;
+
+/**
+ * UneteAlEquipo Shared Slice
+ *
+ * - **API ID**: `unete_al_equipo`
+ * - **Description**: UneteAlEquipo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type UneteAlEquipoSlice = prismic.SharedSlice<
+  "unete_al_equipo",
+  UneteAlEquipoSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -3659,9 +4169,15 @@ declare module "@prismicio/client" {
       NavbarDocument,
       NavbarDocumentData,
       NavbarDocumentDataSlicesSlice,
+      NosotrosDocument,
+      NosotrosDocumentData,
+      NosotrosDocumentDataSlicesSlice,
       SandicheckDocument,
       SandicheckDocumentData,
       SandicheckDocumentDataSlicesSlice,
+      UnetealequipoDocument,
+      UnetealequipoDocumentData,
+      UnetealequipoDocumentDataSlicesSlice,
       AllDocumentTypes,
       CheckaTuSaludAgendaSlice,
       CheckaTuSaludAgendaSliceDefaultPrimary,
@@ -3771,6 +4287,25 @@ declare module "@prismicio/client" {
       MenuSliceDefaultPrimary,
       MenuSliceVariation,
       MenuSliceDefault,
+      NosotrosHeroSlice,
+      NosotrosHeroSliceDefaultPrimary,
+      NosotrosHeroSliceVariation,
+      NosotrosHeroSliceDefault,
+      NosotrosMapaSlice,
+      NosotrosMapaSliceDefaultPrimaryGroupmapaItem,
+      NosotrosMapaSliceDefaultPrimary,
+      NosotrosMapaSliceVariation,
+      NosotrosMapaSliceDefault,
+      NosotrosSliderSlice,
+      NosotrosSliderSliceDefaultPrimaryGroupsliderItem,
+      NosotrosSliderSliceDefaultPrimary,
+      NosotrosSliderSliceVariation,
+      NosotrosSliderSliceDefault,
+      NosotrosValoresSlice,
+      NosotrosValoresSliceDefaultPrimaryGroupvaloresItem,
+      NosotrosValoresSliceDefaultPrimary,
+      NosotrosValoresSliceVariation,
+      NosotrosValoresSliceDefault,
       OrgulloHomeSlice,
       OrgulloHomeSliceDefaultPrimaryGrouporgulloItem,
       OrgulloHomeSliceDefaultPrimary,
@@ -3795,6 +4330,10 @@ declare module "@prismicio/client" {
       ServiciosHomeSliceDefaultPrimary,
       ServiciosHomeSliceVariation,
       ServiciosHomeSliceDefault,
+      UneteAlEquipoSlice,
+      UneteAlEquipoSliceDefaultPrimary,
+      UneteAlEquipoSliceVariation,
+      UneteAlEquipoSliceDefault,
     };
   }
 }

@@ -1,0 +1,38 @@
+{
+  "format": "custom",
+  "id": "nosotros",
+  "label": "Nosotros",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "nosotros",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "nosotros_mapa": {
+              "type": "SharedSlice"
+            },
+            "nosotros_valores": {
+              "type": "SharedSlice"
+            },
+            "nosotros_hero": {
+              "type": "SharedSlice"
+            },
+            "nosotros_slider": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}
