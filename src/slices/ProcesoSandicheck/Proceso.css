@@ -12,37 +12,38 @@
 }
 
 .proceso-sandicheck__title {
-    width: 100%;
+    width: 80%;
 }
 .proceso-sandicheck__title h2 {
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2rem;
+    line-height: 2rem;
     text-align: center;
 }
 
 .proceso-sandicheck__subtitle {
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
     padding-bottom: 30px;
-    width: 60%;
+    width: 80%;
     text-align: center;
 }
 
 .proceso-sandicheck__box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
 
 .proceso-sandicheck__box-column1 {
-    width: 50%;
+    width: 80%;
 }
 
 .proceso-sandicheck__box-img {
     width: 100%;
-    height: 400px;
+    height: 200px;
     background-color: #fff;
+    margin-bottom: 20px;
 }
 .proceso-sandicheck__box-img img{
     width: 100%;
@@ -51,7 +52,7 @@
 }
 
 .proceso-sandicheck__box-column2 {
-    width: 40%;
+    width: 80%;
 }
 
 .proceso-sandicheck__box-subtitle {
@@ -62,6 +63,80 @@
 }
 
 .proceso-sandicheck__box-description {
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding-bottom: 40px;
+    text-align: center;
+}
+
+@media (min-width: 480px) {
+    .proceso-sandicheck__title h2 {
+        font-size: 2.3rem;
+        line-height: 2.3rem;
+    }
+}
+@media (min-width: 768px) {
+    .proceso-sandicheck__title h2 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+    .proceso-sandicheck__subtitle {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        width: 75%;
+    }
+    .proceso-sandicheck__box-img {
+        height: 250px;
+    }
+    .proceso-sandicheck__box-subtitle {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+    }
+}
+@media (min-width: 992px) {
+    .proceso-sandicheck__title h2 {
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+    }
+    .proceso-sandicheck__subtitle {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        width: 70%;
+    }
+    .proceso-sandicheck__box-img {
+        height: 300px;
+    }
+    .proceso-sandicheck__box-description {
+        font-size: 1rem;
+        text-align: start;
+    }
+}
+@media (min-width: 1200px) {
+    .proceso-sandicheck__title h2 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .proceso-sandicheck__subtitle {
+        font-size: 1.6rem;
+        line-height: 2rem;
+        width: 60%;
+    }
+    .proceso-sandicheck__box {
+        flex-direction: row;
+    }
+    .proceso-sandicheck__box-column1 {
+        width: 50%;
+    }
+    .proceso-sandicheck__box-img {
+        height: 400px;
+    }
+    .proceso-sandicheck__box-column2 {
+        width: 40%;
+    }
+    .proceso-sandicheck__box-subtitle {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}
+@media (min-width: 1440px) {
+    
 }

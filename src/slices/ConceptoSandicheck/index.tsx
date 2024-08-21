@@ -15,6 +15,8 @@ export type ConceptoSandicheckProps =
 const ConceptoSandicheck = ({
   slice,
 }: ConceptoSandicheckProps): JSX.Element => {
+
+  
   return (
     <section
       data-slice-type={slice.slice_type}

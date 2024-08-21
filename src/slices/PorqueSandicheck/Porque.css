@@ -12,29 +12,31 @@
 }
 
 .porque-sandicheck__title {
-    width: 50%;
+    width: 80%;
 }
 
 .porque-sandicheck__title h2{
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
     text-align: center;
 }
 
 .porque-sandicheck__column {
     width: 80%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .porque-sandicheck__column1 {
-    width: 50%;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .porque-sandicheck__column-img {
     width: 100%;
-    height: 400px;
+    height: 200px;
     background-color: #fff;
 }
 .porque-sandicheck__column-img img {
@@ -44,7 +46,7 @@
 }
 
 .porque-sandicheck__column2 {
-    width: 40%;
+    width: 100%;
 }
 
 .porque-sandicheck__column2-container {
@@ -63,11 +65,87 @@
 }
 
 .porque-sandicheck__subtitle {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1rem;
     padding-bottom: 20px;
+    font-weight: 600;
 }
 
 .porque-sandicheck__description {
-    font-size: 1rem;
+    font-size: 0.8rem;
+}
+
+@media (min-width: 480px) {
+    .porque-sandicheck__column-img {
+        height: 400px;
+    }
+    .porque-sandicheck__subtitle {
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+    }
+}
+@media (min-width: 768px) {
+    .porque-sandicheck__title {
+        width: 70%;
+    }
+    .porque-sandicheck__title h2{
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+    .porque-sandicheck__column-img {
+        height: 400px;
+    }
+    .porque-sandicheck__subtitle {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+    .porque-sandicheck__description {
+        font-size: 1rem;
+    }
+}
+@media (min-width: 992px) {
+    .porque-sandicheck__title {
+        width: 60%;
+    }
+    .porque-sandicheck__title h2{
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+    }
+    .porque-sandicheck__column-img {
+        height: 300px;
+    }
+    .porque-sandicheck__column {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .porque-sandicheck__column1 {
+        width: 50%;
+    }
+    .porque-sandicheck__column2 {
+        width: 40%;
+    }
+    .porque-sandicheck__subtitle {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+    }
+}
+@media (min-width: 1200px) {
+    .porque-sandicheck__title {
+        width: 50%;
+    }
+    .porque-sandicheck__title h2{
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    
+    .porque-sandicheck__column-img {
+        height: 400px;
+    }
+    .porque-sandicheck__subtitle {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}
+@media (min-width: 1440px) {
+    
 }

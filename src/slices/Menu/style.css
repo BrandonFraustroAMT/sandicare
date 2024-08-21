@@ -52,9 +52,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
+  background-color: hsla(0, 0%, 100%, 1);
+  backdrop-filter: blur(12px);
   transition: transform 0.3s ease-in-out;
   transform: translateX(100%);
   z-index: 10; 
@@ -62,10 +64,12 @@
 
 .menu-slice__links-container.open {
   transform: translateX(0);
+  visibility: visible;
 }
 .menu-slice__links-container.close {
   width: 50px; 
   transform: translateX(100%);
+  visibility: hidden;
 }
 .menu-slice__logo-mobile{
   display: block;
@@ -111,9 +115,7 @@
 }
 
 .menu-slice__icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: static;
   cursor: pointer;
 }
 
@@ -140,6 +142,7 @@
     display: flex;
     position: relative;
     flex-direction: row;
+    background-color: transparent;
     align-items: center;
     justify-content: center;
   }

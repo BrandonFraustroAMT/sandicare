@@ -1,5 +1,4 @@
 .hero-sandicheck {
-    padding: 100px;
     width: 100%;
 }
 
@@ -9,20 +8,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px 0;
+    padding: 50px 0;
 }
 
 .hero-sandicheck__title {
-    width: 70%;
+    width: 80%;
 }
 .hero-sandicheck__title h2{
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2rem;
+    line-height: 2rem;
     text-align: center;
 }
 
 .hero-sandicheck__subtitle {
-    width: 50%;
+    width: 70%;
     text-align: center;
     font-size: 1.6rem;
     line-height: 2rem;
@@ -32,7 +31,7 @@
 .hero-sandicheck__btn {
     display: flex;
     justify-content: space-around;
-    width: 40%;
+    width: 100%;
 }
 
 .hero-sandicheck__link {
@@ -43,4 +42,71 @@
 }
 .hero-sandicheck__link:hover {
     background-color: var(--redText);
+}
+
+@media (min-width: 480px) {
+    .hero-sandicheck__btn {
+        width: 80%;
+    }
+}
+@media (min-width: 768px) {
+    .hero-sandicheck__title h2{
+        font-size: 2.3rem;
+        line-height: 2.3rem;
+    }
+    .hero-sandicheck__btn {
+        width: 60%;
+    }
+    .hero-sandicheck__subtitle {
+        width: 70%;
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+}
+@media (min-width: 992px) {
+    .hero-sandicheck__btn {
+        width: 40%;
+    }
+    
+    .hero-sandicheck__link {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    .hero-sandicheck__title {
+        width: 70%;
+    }
+    .hero-sandicheck__title h2{
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+    .hero-sandicheck__subtitle {
+        width: 50%;
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+    }
+}
+@media (min-width: 1200px) {
+    .hero-sandicheck {
+        padding: 100px;
+    }
+    .hero-sandicheck__btn {
+        width: 40%;
+    }
+    
+    .hero-sandicheck__link {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    .hero-sandicheck__title h2{
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .hero-sandicheck__subtitle {
+        width: 50%;
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+}
+@media (min-width: 1400px) {
+
 }
