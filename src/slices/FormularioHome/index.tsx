@@ -1,6 +1,6 @@
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 import './Formulario.css'
 import Form from "@/components/Form";
@@ -24,6 +24,7 @@ const FormularioHome = ({ slice }: FormularioHomeProps): JSX.Element => {
         <div className="formulario-slice__container">
           <div className="formulario-slice__column1">
             <div className="formulario-slice__image">
+              <PrismicNextImage field={slice.primary.image} />
             </div>
             {/* <div className="formulario-slice__subtitle">
               <>{slice.primary.subtitle}</>

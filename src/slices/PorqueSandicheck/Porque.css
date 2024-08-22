@@ -38,6 +38,8 @@
     width: 100%;
     height: 200px;
     background-color: #fff;
+    border: 1px solid #303030;
+    border-radius: .75em;
 }
 .porque-sandicheck__column-img img {
     width: 100%;
@@ -117,6 +119,7 @@
     .porque-sandicheck__column {
         flex-direction: row;
         justify-content: space-around;
+        align-items: flex-start;
     }
     .porque-sandicheck__column1 {
         width: 50%;

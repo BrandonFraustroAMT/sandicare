@@ -2272,6 +2272,16 @@ export interface FormularioHomeSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   labelbutton: prismic.KeyTextField;
+
+  /**
+   * Image field in *FormularioHome → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: formulario_home.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 }
 
 /**
