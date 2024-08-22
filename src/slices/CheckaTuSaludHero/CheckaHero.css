@@ -59,8 +59,6 @@
 .checkat-hero__video-container {
     padding: 10px 20px;
     height: 550px;
-    background-color: #fff;
-    border-radius: 10px;
 }
 .checkat-hero__video-container video{
     width: 100%;
