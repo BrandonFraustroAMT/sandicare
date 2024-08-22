@@ -1,12 +1,16 @@
+import { useState, useRef } from 'react';
 import './Form.css'
 
-export default async function Form() {
+const Form = async () => {
+  /* const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const formRef = useRef<HTMLFormElement>(null);
+
   function zf_ValidateAndSubmit(){
 		if(zf_CheckMandatory()){
 			if(zf_ValidCheck()){
 				if(isSalesIQIntegrationEnabled){
 					zf_addDataToSalesIQ();
-				}
+				} 
 				return true;
 			}else{
 				return false;
@@ -15,58 +19,77 @@ export default async function Form() {
 			return false;
 		}
 	}
-		function zf_CheckMandatory(){
-		for(let i = 0 ; i < zf_MandArray.length ; i ++) {
-		  	var fieldObj=document.forms.form[zf_MandArray[i]];
-		  	if(fieldObj) {
-				  	if(fieldObj.nodeName != null ){
-				  		if ( fieldObj.nodeName=='OBJECT' ) {
-								if(!zf_MandatoryCheckSignature(fieldObj)){
-									zf_ShowErrorMsg(zf_MandArray[i]);
-								 	return false;
-								}
-							}else if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length==0) {
-							 if(fieldObj.type =='file')
-								{
-								 fieldObj.focus();
-								 zf_ShowErrorMsg(zf_MandArray[i]);
-								 return false;
-								}
-				   	   	  	  fieldObj.focus();
-				   	   	  	  zf_ShowErrorMsg(zf_MandArray[i]);
-				   	   	  	  return false;
-							}  else if( fieldObj.nodeName=='SELECT' ) {// No I18N
-				  	   	   	 if(fieldObj.options[fieldObj.selectedIndex].value=='-Select-') {
-								fieldObj.focus();
-								zf_ShowErrorMsg(zf_MandArray[i]);
-								return false;
-							   }
-							} else if( fieldObj.type =='checkbox' || fieldObj.type =='radio' ){
-								if(fieldObj.checked == false){
-									fieldObj.focus();
-									zf_ShowErrorMsg(zf_MandArray[i]);
-									return false;
-			   					}
-							}
-				  	}else{
-				  		var checkedValsCount = 0;
-						var inpChoiceElems = fieldObj;
-							for(var ii = 0; ii < inpChoiceElems.length ; ii ++ ){
-						      	if(inpChoiceElems[ii].checked === true ){
-						      		checkedValsCount ++;
-						      	}
-							}
-							if ( checkedValsCount == 0) {
-									inpChoiceElems[0].focus();
-									zf_ShowErrorMsg(zf_MandArray[i]);
-									return false;
-							 	}
-					}
+	function zf_CheckMandatory() {
+		if (!formRef.current) return false;
+		const form = formRef.current;
+		const zf_MandArray = ['SingleLine', 'SingleLine1']; // Aquí debes definir tus campos obligatorios
+		for (let i = 0; i < zf_MandArray.length; i++) {
+		  const fieldObj = form[zf_MandArray[i]] as HTMLInputElement | HTMLSelectElement;
+		  if (fieldObj) {
+			if (fieldObj.nodeName === 'SELECT' && (fieldObj as HTMLSelectElement).value === '-Select-') {
+			  zf_ShowErrorMsg(zf_MandArray[i]);
+			  return false;
+			} else if (fieldObj.value.trim() === '') {
+			  zf_ShowErrorMsg(zf_MandArray[i]);
+			  return false;
+			} else if (fieldObj.type === 'checkbox' && !fieldObj.checked) {
+			  zf_ShowErrorMsg(zf_MandArray[i]);
+			  return false;
 			}
+		  }
 		}
 		return true;
-	}
-	function zf_ValidCheck(){
+	  }
+	  function zf_ValidCheck() {
+		if (!formRef.current) return false;
+		const form = formRef.current;
+		const zf_FieldArray = ['SingleLine', 'SingleLine1']; // Aquí debes definir tus campos que necesitan validación
+		let isValid = true;
+	
+		for (let ind = 0; ind < zf_FieldArray.length; ind++) {
+		  const fieldObj = form[zf_FieldArray[ind]] as HTMLInputElement;
+		  if (fieldObj) {
+			const checkType = fieldObj.getAttribute('checktype');
+			if (checkType === 'c2' && !zf_ValidateNumber(fieldObj)) {
+			  isValid = false;
+			  zf_ShowErrorMsg(zf_FieldArray[ind]);
+			  break;
+			} else if (checkType === 'c5' && !zf_ValidateEmailID(fieldObj)) {
+			  isValid = false;
+			  zf_ShowErrorMsg(zf_FieldArray[ind]);
+			  break;
+			}
+			// Agrega más validaciones según sea necesario
+		  }
+		}
+		return isValid;
+	  }
+	  function zf_ShowErrorMsg(uniqName: string) {
+		setErrors((prevErrors) => ({
+		  ...prevErrors,
+		  [uniqName]: 'Error en el campo ' + uniqName,
+		}));
+	  }
+	
+	  function zf_ValidateNumber(elem: HTMLInputElement): boolean {
+		const validChars = '-0123456789';
+		const numValue = elem.value.trim();
+		if (numValue) {
+		  for (let i = 0; i < numValue.length; i++) {
+			const strChar = numValue.charAt(i);
+			if (validChars.indexOf(strChar) === -1 || (strChar === '-' && i !== 0)) {
+			  return false;
+			}
+		  }
+		}
+		return true;
+	  }
+	
+	  function zf_ValidateEmailID(elem: HTMLInputElement): boolean {
+		const emailExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		return emailExp.test(elem.value.trim());
+	  } */
+	/* function zf_ValidCheck(){
 		var isValid = true;
 		for(let ind = 0 ; ind < zf_FieldArray.length ; ind++ ) {
 			var fieldObj=document.forms.form[zf_FieldArray[ind]];
@@ -325,7 +348,7 @@ export default async function Form() {
 	 			document.getElementsByName(compname+"_second")[0].focus();
 	 		}
 	 	}
-	}
+	} */
   return (
     <main>
       <div className='form-container'>
@@ -427,3 +450,5 @@ export default async function Form() {
     </main>
   );
 }
+
+export default Form;
