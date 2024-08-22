@@ -5,6 +5,7 @@ import "./style.css"
 
 import MenuNav from "@/components/MenuNav";
 import Footer from "@/components/Footer";
+import Form from "@/components/Form";
 
 const inter = Inter({ subsets: ["latin"] });
 
