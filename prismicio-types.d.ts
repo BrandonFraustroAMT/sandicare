@@ -1236,6 +1236,16 @@ export interface CheckaTuSaludHeroSliceDefaultPrimary {
   grouphero: prismic.GroupField<
     Simplify<CheckaTuSaludHeroSliceDefaultPrimaryGroupheroItem>
   >;
+
+  /**
+   * Image field in *CheckaTuSaludHero → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: checka_tu_salud_hero.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 }
 
 /**

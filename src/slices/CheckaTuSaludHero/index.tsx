@@ -1,7 +1,7 @@
 "use client"
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import './CheckaHero.css'
 import { useEffect, useState } from "react";
 
@@ -72,7 +72,9 @@ const CheckaTuSaludHero = ({ slice }: CheckaTuSaludHeroProps): JSX.Element => {
 
             {/* VIDEO */}
             <div className="checkat-hero__column2">
-                <div className="checkat-hero__video-container"></div>
+                <div className="checkat-hero__video-container">
+                <PrismicNextImage field={slice.primary.image} />
+                </div>
             </div>
           </div>
         </div>
