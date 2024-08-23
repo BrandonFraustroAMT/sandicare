@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './Form.css'
 
 const Form = () => {
@@ -10,10 +10,21 @@ const Form = () => {
   	PhoneNumber_countrycode: '',
   	Email: '',
   	Dropdown1: '-Select-',
+    UrlBack: '',  // Agrega el estado para el campo oculto
+    captchaResponse: '', // Captcha response, si decides implementarlo
     });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    // Captura la URL de referencia cuando la página se carga
+    const referrer = document.referrer || window.location.href;
+    setFormData((prevData) => ({
+      ...prevData,
+      zf_referrer_name: referrer,
+    }));
+  }, []);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -114,6 +125,7 @@ const Form = () => {
             <input type="hidden" name="zf_referrer_name" value="" />{/* <!-- To Track referrals , place the referrer name within the " " in the above hidden input field --> */}
             <input type="hidden" name="zf_redirect_url" value=""/>{/* <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field --> */}
             <input type="hidden" name="zc_gad" value=""/>{/* <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM --> */}
+            <input type="hidden" name="UrlBack" value={formData.UrlBack} />
             <div className="zf-templateWrapper">{/* <!---------template Header Starts Here----------> */}
                 <ul className="zf-tempHeadBdr">
                     <li className="zf-tempHeadContBdr">
