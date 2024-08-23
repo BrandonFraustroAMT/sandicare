@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import './Form.css'
 
 const Form = () => {
@@ -14,6 +15,7 @@ const Form = () => {
     captchaResponse: '', // Captcha response, si decides implementarlo
     });
 
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -32,6 +34,10 @@ const Form = () => {
       ...formData,
       [name]: value,
     });
+  };
+
+  const handleCaptchaChange = (value: string | null) => {
+    setCaptchaValue(value);
   };
 
   const zf_ValidateAndSubmit = () => {
@@ -212,6 +218,14 @@ const Form = () => {
                     </li>{/* <!---------Dropdown Ends Here----------> */}
                   </ul>
                 </div>{/* <!---------template Container Starts Here----------> */}
+                <div className='captcha-container'>
+                  <ReCAPTCHA
+                    sitekey="6Lec_S0qAAAAAF5lC1FVAZQW3jqeB_V6LoR2foMn"
+                    onChange={handleCaptchaChange}
+                    className="captcha"
+                  />
+                  {errors.captcha && <p>{errors.captcha}</p>}
+                </div>
                 <ul>
                   <li className="zf-fmFooter">
 					          <div className="zf-submit" id="zf_submit" onClick={zf_ValidateAndSubmit}>
