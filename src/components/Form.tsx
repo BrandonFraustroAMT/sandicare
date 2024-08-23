@@ -353,7 +353,7 @@ const Form = async () => {
     <main>
       <div className='form-container'>
         <div className="zf-templateWidth">
-          <form action='https://forms.zohopublic.com/jorgecueto/form/FormExample/formperma/LdnVYcN9vwM0Y1kVw5Q10CHQtRhURiXxhjn01N_WWZQ/htmlRecords/submit' name='form' method='POST' onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data' id='form'>
+          <form action='https://forms.zohopublic.com/jorgecueto/form/FormExample/formperma/LdnVYcN9vwM0Y1kVw5Q10CHQtRhURiXxhjn01N_WWZQ/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' id='form'>
             <input type="hidden" name="zf_referrer_name" value="" />{/* <!-- To Track referrals , place the referrer name within the " " in the above hidden input field --> */}
             <input type="hidden" name="zf_redirect_url" value=""/>{/* <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field --> */}
             <input type="hidden" name="zc_gad" value=""/>{/* <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM --> */}
