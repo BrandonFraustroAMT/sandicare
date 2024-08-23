@@ -376,7 +376,7 @@ const Form = async () => {
                         <label className="zf-labelName"></label>
                         <div className="zf-tempContDiv">
                           <span> 
-                            <input type="text" name="SingleLine" checkType="c1" value="" maxlength="255" fieldType={1} placeholder="Nombre"/>
+                            <input type="text" name="SingleLine" value="" maxLength={255} placeholder="Nombre"/>
                           </span> 
                           <p id="SingleLine_error" className="zf-errorMessage" style={{display:"none"}}>Invalid value</p>
                         </div>
@@ -387,7 +387,7 @@ const Form = async () => {
                         <label className="zf-labelName"> </label>
                         <div className="zf-tempContDiv">
                           <span> 
-                            <input type="text" name="SingleLine1" checkType="c1" value="" maxlength="255" fieldType={1} placeholder="Apellido"/>
+                            <input type="text" name="SingleLine1" value="" maxLength={255} placeholder="Apellido"/>
                           </span> 
                           <p id="SingleLine1_error" className="zf-errorMessage" style={{display:"none"}}>Invalid value</p>
                         </div>
@@ -402,7 +402,7 @@ const Form = async () => {
                         <div className="zf-tempContDiv zf-phonefld">
                           <div className="zf-phwrapper zf-phNumber">
                             <span> 
-                              <input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode" maxlength="20" checktype="c7" value="" phoneFormat="1" isCountryCodeEnabled={false} fieldType="11" id="international_PhoneNumber_countrycode" valType="number" phoneFormatType="1" placeholder="Telefono" />
+                              <input type="text" name="PhoneNumber_countrycode" maxLength={20} value="" id="international_PhoneNumber_countrycode" placeholder="Telefono" />
                             </span>
                             <div className="zf-clearBoth"></div>
                           </div>
@@ -415,7 +415,7 @@ const Form = async () => {
                         <label className="zf-labelName"></label>
                         <div className="zf-tempContDiv">
                           <span> 
-                            <input fieldType={9}  type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="Email"/>
+                            <input  type="text" maxLength={255} name="Email" value="" placeholder="Email"/>
                           </span> 
                           <p id="Email_error" className="zf-errorMessage" style={{display:"none"}}>Invalid value</p>
                         </div>
@@ -427,8 +427,8 @@ const Form = async () => {
                     <li className="zf-tempFrmWrapper zf-large">
                       <label className="zf-labelName"></label>
                       <div className="zf-tempContDiv">
-                        <select className="zf-form-sBox" name="Dropdown1" checktype="c1">
-                          <option selected="true" value="-Select-">&iquest;Necesitas bienestar personal o para los colaboradores de una empresa&#x3f;</option>
+                        <select className="zf-form-sBox" name="Dropdown1">
+                          <option selected={true} value="-Select-">&iquest;Necesitas bienestar personal o para los colaboradores de una empresa&#x3f;</option>
                           <option value="Bienestar&#x20;y&#x20;Salud&#x20;personal">Bienestar y Salud personal</option>
                           <option value="Bienestar&#x20;y&#x20;Salud&#x20;para&#x20;los&#x20;colaboradores">Bienestar y Salud para los colaboradores</option>
                         </select>
