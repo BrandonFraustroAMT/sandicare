@@ -743,6 +743,7 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 type MembresiasDocumentDataSlicesSlice =
+  | FormularioHomeSlice
   | MembresiaPlusSlice
   | MembresiasHeroSlice
   | MembresiaFamiliarSlice
@@ -850,6 +851,7 @@ export type NosotrosDocument<Lang extends string = string> =
   >;
 
 type SandicheckDocumentDataSlicesSlice =
+  | FormularioHomeSlice
   | ProcesoSandicheckSlice
   | PorqueSandicheckSlice
   | EmpiezaSandicheckSlice
@@ -889,6 +891,7 @@ export type SandicheckDocument<Lang extends string = string> =
   >;
 
 type TelemedicinaDocumentDataSlicesSlice =
+  | FormularioHomeSlice
   | PorqueSandicheckSlice
   | ProcesoSandicheckSlice
   | HeroSandicheckSlice

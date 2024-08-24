@@ -18,6 +18,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "formulario_home": {
+              "type": "SharedSlice"
+            },
             "membresia_plus": {
               "type": "SharedSlice"
             },

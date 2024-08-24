@@ -133,7 +133,7 @@ const Form = () => {
             <input type="hidden" name="zc_gad" value=""/>{/* <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM --> */}
             <input type="hidden" name="UrlBack" value={formData.UrlBack} />
             <div className="zf-templateWrapper">{/* <!---------template Header Starts Here----------> */}
-                <ul className="zf-tempHeadBdr">
+                {/* <ul className="zf-tempHeadBdr">
                     <li className="zf-tempHeadContBdr">
                         <h2 className="zf-frmTitle">
                             Completa el formulario y nos pondremos en contacto contigo lo antes posible
@@ -141,7 +141,7 @@ const Form = () => {
                         <p className="zf-frmDesc"></p>
                         <div className="zf-clearBoth"></div>
                     </li>
-                </ul>{/* <!---------template Header Ends Here----------> */}
+                </ul> */}
                 {/* <!---------template Container Starts Here----------> */}
                 <div className="zf-subContWrap zf-topAlign">
                   <ul>
