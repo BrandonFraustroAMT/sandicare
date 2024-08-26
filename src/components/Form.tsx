@@ -24,7 +24,7 @@ const Form = () => {
     const referrer = document.referrer || window.location.href;
     setFormData((prevData) => ({
       ...prevData,
-      zf_referrer_name: referrer,
+      UrlBack: referrer,
     }));
   }, []);
   
@@ -41,11 +41,15 @@ const Form = () => {
   };
 
   const zf_ValidateAndSubmit = () => {
-    if (zf_CheckMandatory()) {
-  		if (zf_ValidCheck()) {
-  		  // Aquí puedes agregar la lógica para la integración con SalesIQ u otros servicios
-  		  return true;
-  		}
+    if (zf_CheckMandatory() && zf_ValidCheck()) {
+  		if (captchaValue) {
+        formRef.current?.submit();
+      } else {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          captcha: 'Por favor completa el CAPTCHA',
+        }));
+      }
     }
     return false;
   }
