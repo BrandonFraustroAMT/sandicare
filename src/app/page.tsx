@@ -1,8 +1,4 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import { SliceZone } from "@prismicio/react";
-import { createClient } from "../prismicio";
-import { components } from "../slices";
 import Home from "./home/page";
 import "./style.css"
 

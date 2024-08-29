@@ -4,7 +4,6 @@ import "./globals.css";
 import "./style.css"
 
 import ClientLayout from "./ClientLayout";
-import Form from "@/components/Form";
 
 const inter = Inter({ subsets: ["latin"] });
 
