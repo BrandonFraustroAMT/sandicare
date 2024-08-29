@@ -55,16 +55,15 @@
 }
 
 .satisfaccion-slice__list-subtitle {
-    font-size: 2.1rem;
-    padding: 20px 0;
-    margin: 12px 0;
-    height: 120px;
+    font-size: 1.5rem;
+    height: 80px;
     text-align: center;
     line-height: 2rem;
 }
 
 .satisfaccion-slice__list-description {
     font-size: 1rem;
+    padding-top: 10px;
     height: 160px;
     text-align: center;
 }
@@ -98,7 +97,6 @@
     }
     .satisfaccion-slice__list-subtitle {
         font-size: 1.6rem;
-        margin-bottom: 30px;
         height: 100px;
         line-height: 1.3rem;
     }
@@ -123,8 +121,7 @@
     }
     .satisfaccion-slice__list-subtitle {
         font-size: 1.8rem;
-        margin-bottom: 30px;
-        height: 150px;
+        height: 100px;
         line-height: 1.5rem;
     }
     .satisfaccion-slice_img {
@@ -142,7 +139,6 @@
     }
     .satisfaccion-slice__list-subtitle {
         font-size: 1.6rem;
-        margin: 12px 0;
         line-height: 2rem;
     }
 }
