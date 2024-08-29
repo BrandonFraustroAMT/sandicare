@@ -40,6 +40,8 @@
     margin: 10px 10px;
     border-radius: 10px;
     height: 150px;
+    display: flex;
+    justify-content: center;
 }
 .orgullo-slice__img img{
     width: 100%;
@@ -72,6 +74,9 @@
     .orgullo-slice__list {
         flex-direction: row;
     }
+    .orgullo-slice__img {
+        width: 24%;
+    }
 }
 @media (min-width: 1200px) {
     .orgullo-slice__title h2{
@@ -81,6 +86,9 @@
     .orgullo-slice__subtitle {
         font-size: 1.4rem;
         line-height: 1.8rem;
+    }
+    .orgullo-slice__img {
+        width: 24%;
     }
 }
 @media (min-width: 1400px) {
