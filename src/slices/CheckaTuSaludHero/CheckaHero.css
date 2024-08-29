@@ -65,8 +65,7 @@
     width: 80%;
 }
 .checkat-hero__video-container {
-    padding: 10px 20px;
-    height: 550px;
+    height: 450px;
 }
 .checkat-hero__video-container video{
     width: 100%;
@@ -153,6 +152,10 @@
     }
     .checkat-hero__column2 {
         width: 50%;
+    }
+    .checkat-hero__video-container {
+        padding: 10px 20px;
+        height: 550px;
     }
 }
 @media (min-width: 1200px) {
