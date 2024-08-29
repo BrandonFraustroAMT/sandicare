@@ -15,38 +15,46 @@
 .checkat-hero__box {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 .checkat-hero__column1 {
-    width: 40%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .checkat-hero__title {
     width: 100%;
 }
 .checkat-hero__title h2{
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    text-align: center;
 }
 
 .checkat-hero__description {
     width: 90%;
     font-size: 1rem;
+    text-align: center;
 }
 .checkat-hero__btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     margin: 30px 0;
-    width: 64%;
+    width: 100%;
 }
 .checkat-hero__link {
     padding: 10px 20px;
     background-color: var(--redButton);
     color: var(--whiteBG);
     border-radius: 10px;
+    margin-right: 10px;
+    font-size: 0.8rem;
 }
 .checkat-hero__link:hover {
     background-color: var(--redText);
@@ -54,7 +62,7 @@
 
 
 .checkat-hero__column2 {
-    width: 50%;
+    width: 80%;
 }
 .checkat-hero__video-container {
     padding: 10px 20px;
@@ -84,7 +92,7 @@
     transition: transform 0.5s ease, opacity 0.5s ease;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
 }
   
 .word-container.active {
@@ -99,9 +107,63 @@
 
 .word {
     font-family: Gilroy, sans-serif;
-    font-size: 39px;
+    font-size: 1.5rem;
     font-weight: 600;
     line-height: 92%;
     color: #C8123C;
     padding: 10px 0;
+}
+
+@media (min-width: 768px) {
+    .checkat-hero__title h2{
+        font-size: 2.3rem;
+        line-height: 2.3rem;
+    }
+    .word {
+        font-size: 1.3rem;
+    }
+}
+@media (min-width: 992px) {
+    .checkat-hero__box {
+        flex-direction: row;
+    }
+    .checkat-hero__column1 {
+        width: 40%;
+        align-items: flex-start;
+    }
+    .checkat-hero__title h2{
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        text-align: start;
+    }
+    .word-container {
+        justify-content: start;
+    }
+    .word {
+        font-size: 1.5rem;
+    }
+    .checkat-hero__description {
+        text-align: start;
+    }
+    .checkat-hero__btn {
+        justify-content: flex-start;
+    }
+    .checkat-hero__link {
+        font-size: 0.9rem;
+    }
+    .checkat-hero__column2 {
+        width: 50%;
+    }
+}
+@media (min-width: 1200px) {
+    .checkat-hero__title h2{
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .word {
+        font-size: 2rem;
+    }
+    .checkat-hero__link {
+        font-size: 1rem;
+    }
 }

@@ -26,254 +26,256 @@ const CheckaTuSaludSlider = ({
 
   useEffect(() => {
     /* 1er elemento */
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: true,
-        pin: "#first-column1",
-        trigger: "#first-column1",
-        start: "top 35%",
-        end: "bottom bottom",
-        toggleActions: "play pause none none",
-        pinSpacing: false, // Para evitar el espacio adicional después del pin
-        endTrigger: "#pin-marker",
-        markers: false,
-        onLeave: () => {
-          gsap.set("#first-column1", { y: 1100 });
+    if(innerWidth > 1300) {
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: true,
+          pin: "#first-column1",
+          trigger: "#first-column1",
+          start: "top 35%",
+          end: "bottom bottom",
+          toggleActions: "play pause none none",
+          pinSpacing: false, // Para evitar el espacio adicional después del pin
+          endTrigger: "#pin-marker",
+          markers: false,
+          onLeave: () => {
+            gsap.set("#first-column1", { y: 1100 });
+          },
         },
-      },
-    })
-    .to('#first-column1', {
-      y: 0,
-    });
-
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: 2,
-        trigger: "#second-column1",
-        start: "top 60%",
-        end: "top 20%",
-        toggleActions: "play pause none none",
-        markers: false,
-      },
-    })
-    .to('#second-column1', {
-      y: -200,
-      duration: 3,
-    });
-
-    /* 2do elemento */
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: true,
-        pin: true,
-        trigger: "#first-column2",
-        start: "top 35%",
-        end: "bottom bottom",
-        toggleActions: "play pause none none",
-        pinSpacing: false, // Para evitar el espacio adicional después del pin
-        endTrigger: "#pin-marker2",
-        markers: false,
-        onLeave: () => {
-          gsap.set("#first-column2", { y: 1100 });
+      })
+      .to('#first-column1', {
+        y: 0,
+      });
+  
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: 2,
+          trigger: "#second-column1",
+          start: "top 60%",
+          end: "top 20%",
+          toggleActions: "play pause none none",
+          markers: false,
         },
-      },
-    })
-    .to('#first-column2', {
-      y: 0,
-    });
-
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: 2,
-        trigger: "#second-column2",
-        start: "top 60%",
-        end: "top 20%",
-        toggleActions: "play pause none none",
-        markers: false,
-      },
-    })
-    .to('#second-column2', {
-      y: -200,
-      duration: 3,
-    });
-
-    /* 3er elemento */
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: true,
-        pin: true,
-        trigger: "#first-column3",
-        start: "top 35%",
-        end: "bottom bottom",
-        toggleActions: "play pause none none",
-        pinSpacing: false, // Para evitar el espacio adicional después del pin
-        endTrigger: "#pin-marker3",
-        markers: false,
-        onLeave: () => {
-          gsap.set("#first-column3", { y: 1100 });
+      })
+      .to('#second-column1', {
+        y: -200,
+        duration: 3,
+      });
+  
+      /* 2do elemento */
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: true,
+          pin: true,
+          trigger: "#first-column2",
+          start: "top 35%",
+          end: "bottom bottom",
+          toggleActions: "play pause none none",
+          pinSpacing: false, // Para evitar el espacio adicional después del pin
+          endTrigger: "#pin-marker2",
+          markers: false,
+          onLeave: () => {
+            gsap.set("#first-column2", { y: 1100 });
+          },
         },
-      },
-    })
-    .to('#first-column3', {
-      y: 0,
-    });
-
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: 2,
-        trigger: "#second-column3",
-        start: "top 60%",
-        end: "top 20%",
-        toggleActions: "play pause none none",
-        markers: false,
-      },
-    })
-    .to('#second-column3', {
-      y: -200,
-      duration: 3,
-    });
-
-    /* 4to elemento */
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: true,
-        pin: true,
-        trigger: "#first-column4",
-        start: "top 35%",
-        end: "bottom bottom",
-        toggleActions: "play pause none none",
-        pinSpacing: false, // Para evitar el espacio adicional después del pin
-        endTrigger: "#pin-marker4",
-        markers: false,
-        onLeave: () => {
-          gsap.set("#first-column4", { y: 1100 });
+      })
+      .to('#first-column2', {
+        y: 0,
+      });
+  
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: 2,
+          trigger: "#second-column2",
+          start: "top 60%",
+          end: "top 20%",
+          toggleActions: "play pause none none",
+          markers: false,
         },
-      },
-    })
-    .to('#first-column4', {
-      y: 0,
-    });
-
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: 2,
-        trigger: "#second-column4",
-        start: "top 60%",
-        end: "top 20%",
-        toggleActions: "play pause none none",
-        markers: false,
-      },
-    })
-    .to('#second-column4', {
-      y: -200,
-      duration: 3,
-    });
-    /* 5to elemento */
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: true,
-        pin: true,
-        trigger: "#first-column5",
-        start: "top 35%",
-        end: "bottom bottom",
-        toggleActions: "play pause none none",
-        pinSpacing: false, // Para evitar el espacio adicional después del pin
-        endTrigger: "#pin-marker5",
-        markers: false,
-        onLeave: () => {
-          gsap.set("#first-column5", { y: 1100 });
+      })
+      .to('#second-column2', {
+        y: -200,
+        duration: 3,
+      });
+  
+      /* 3er elemento */
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: true,
+          pin: true,
+          trigger: "#first-column3",
+          start: "top 35%",
+          end: "bottom bottom",
+          toggleActions: "play pause none none",
+          pinSpacing: false, // Para evitar el espacio adicional después del pin
+          endTrigger: "#pin-marker3",
+          markers: false,
+          onLeave: () => {
+            gsap.set("#first-column3", { y: 1100 });
+          },
         },
-      },
-    })
-    .to('#first-column5', {
-      y: 0,
-    });
-
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: 2,
-        trigger: "#second-column5",
-        start: "top 60%",
-        end: "top 20%",
-        toggleActions: "play pause none none",
-        markers: false,
-      },
-    })
-    .to('#second-column5', {
-      y: -200,
-      duration: 3,
-    });
-
-    /* 6to elemento */
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: true,
-        pin: true,
-        trigger: "#first-column6",
-        start: "top 35%",
-        end: "bottom bottom",
-        toggleActions: "play pause none none",
-        pinSpacing: false, // Para evitar el espacio adicional después del pin
-        endTrigger: "#pin-marker6",
-        markers: false,
-        onLeave: () => {
-          gsap.set("#first-column6", { y: 1100 });
+      })
+      .to('#first-column3', {
+        y: 0,
+      });
+  
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: 2,
+          trigger: "#second-column3",
+          start: "top 60%",
+          end: "top 20%",
+          toggleActions: "play pause none none",
+          markers: false,
         },
-      },
-    })
-    .to('#first-column6', {
-      y: 0,
-    });
-
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: 2,
-        trigger: "#second-column6",
-        start: "top 60%",
-        end: "top 20%",
-        toggleActions: "play pause none none",
-        markers: false,
-      },
-    })
-    .to('#second-column6', {
-      y: -200,
-      duration: 3,
-    });
-    /* 7mo elemento */
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: true,
-        pin: true,
-        trigger: "#first-column7",
-        start: "top 35%",
-        end: "bottom bottom",
-        toggleActions: "play pause none none",
-        pinSpacing: false, // Para evitar el espacio adicional después del pin
-        endTrigger: "#pin-marker7",
-        markers: false,
-        onLeave: () => {
-          gsap.set("#first-column7", { y: 1100 });
+      })
+      .to('#second-column3', {
+        y: -200,
+        duration: 3,
+      });
+  
+      /* 4to elemento */
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: true,
+          pin: true,
+          trigger: "#first-column4",
+          start: "top 35%",
+          end: "bottom bottom",
+          toggleActions: "play pause none none",
+          pinSpacing: false, // Para evitar el espacio adicional después del pin
+          endTrigger: "#pin-marker4",
+          markers: false,
+          onLeave: () => {
+            gsap.set("#first-column4", { y: 1100 });
+          },
         },
-      },
-    })
-    .to('#first-column7', {
-      y: 0,
-    });
-
-    gsap.timeline({
-      scrollTrigger: {
-        scrub: 2,
-        trigger: "#second-column7",
-        start: "top 60%",
-        end: "top 20%",
-        toggleActions: "play pause none none",
-        markers: false,
-      },
-    })
-    .to('#second-column7', {
-      y: -200,
-      duration: 3,
-    });
+      })
+      .to('#first-column4', {
+        y: 0,
+      });
+  
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: 2,
+          trigger: "#second-column4",
+          start: "top 60%",
+          end: "top 20%",
+          toggleActions: "play pause none none",
+          markers: false,
+        },
+      })
+      .to('#second-column4', {
+        y: -200,
+        duration: 3,
+      });
+      /* 5to elemento */
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: true,
+          pin: true,
+          trigger: "#first-column5",
+          start: "top 35%",
+          end: "bottom bottom",
+          toggleActions: "play pause none none",
+          pinSpacing: false, // Para evitar el espacio adicional después del pin
+          endTrigger: "#pin-marker5",
+          markers: false,
+          onLeave: () => {
+            gsap.set("#first-column5", { y: 1100 });
+          },
+        },
+      })
+      .to('#first-column5', {
+        y: 0,
+      });
+  
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: 2,
+          trigger: "#second-column5",
+          start: "top 60%",
+          end: "top 20%",
+          toggleActions: "play pause none none",
+          markers: false,
+        },
+      })
+      .to('#second-column5', {
+        y: -200,
+        duration: 3,
+      });
+  
+      /* 6to elemento */
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: true,
+          pin: true,
+          trigger: "#first-column6",
+          start: "top 35%",
+          end: "bottom bottom",
+          toggleActions: "play pause none none",
+          pinSpacing: false, // Para evitar el espacio adicional después del pin
+          endTrigger: "#pin-marker6",
+          markers: false,
+          onLeave: () => {
+            gsap.set("#first-column6", { y: 1100 });
+          },
+        },
+      })
+      .to('#first-column6', {
+        y: 0,
+      });
+  
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: 2,
+          trigger: "#second-column6",
+          start: "top 60%",
+          end: "top 20%",
+          toggleActions: "play pause none none",
+          markers: false,
+        },
+      })
+      .to('#second-column6', {
+        y: -200,
+        duration: 3,
+      });
+      /* 7mo elemento */
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: true,
+          pin: true,
+          trigger: "#first-column7",
+          start: "top 35%",
+          end: "bottom bottom",
+          toggleActions: "play pause none none",
+          pinSpacing: false, // Para evitar el espacio adicional después del pin
+          endTrigger: "#pin-marker7",
+          markers: false,
+          onLeave: () => {
+            gsap.set("#first-column7", { y: 1100 });
+          },
+        },
+      })
+      .to('#first-column7', {
+        y: 0,
+      });
+  
+      gsap.timeline({
+        scrollTrigger: {
+          scrub: 2,
+          trigger: "#second-column7",
+          start: "top 60%",
+          end: "top 20%",
+          toggleActions: "play pause none none",
+          markers: false,
+        },
+      })
+      .to('#second-column7', {
+        y: -200,
+        duration: 3,
+      });
+    }
   }, []);
 
 
