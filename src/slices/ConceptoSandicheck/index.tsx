@@ -1,7 +1,9 @@
+"use client"
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import './Concepto.css'
 import { PrismicNextImage } from "@prismicio/next";
+import { useState, useEffect } from 'react';
 
 /**
  * Props for `ConceptoSandicheck`.
@@ -16,6 +18,22 @@ const ConceptoSandicheck = ({
   slice,
 }: ConceptoSandicheckProps): JSX.Element => {
 
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const updateScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 992);
+    };
+
+    // Set the initial value
+    updateScreenSize();
+
+    // Add event listener
+    window.addEventListener('resize', updateScreenSize);
+
+    // Cleanup event listener
+    return () => window.removeEventListener('resize', updateScreenSize);
+  }, []);
   
   return (
     <section
@@ -57,39 +75,42 @@ const ConceptoSandicheck = ({
               {slice.primary.groupslider.map((item, index) => (
                 // Render the item
                 <div className="concepto-sandicheck__list-column" key={index}>
-                    {
-                      index % 2 == 0 ? (
-                        <><div className="concepto-sandicheck__list-column1">
-                        <div className="concepto-sandicheck__list-title">
-                          <>{item.title}</>
-                        </div>
-                        <div className="concepto-sandicheck__list-subtitle">
-                          <>{item.subtitle}</>
-                        </div>
-                      </div><div className="concepto-sandicheck__list-column2">
+                  {
+                    isLargeScreen && (index % 2) !== 0 ? (
+                      <>
+                        <div className="concepto-sandicheck__list-column2">
                           <div className="concepto-sandicheck__list-img">
                             <PrismicNextImage field={item.image} />
                           </div>
-                        </div></>
-                      ) : (
-                        <>
-                          <div className="concepto-sandicheck__list-column2">
-                            <div className="concepto-sandicheck__list-img">
-                              <PrismicNextImage field={item.image} />
-                            </div>
+                        </div>
+                        <div className="concepto-sandicheck__list-column1">
+                          <div className="concepto-sandicheck__list-title">
+                            <>{item.title}</>
                           </div>
-                          <div className="concepto-sandicheck__list-column1">
-                            <div className="concepto-sandicheck__list-title">
-                              <>{item.title}</>
-                            </div>
-                            <div className="concepto-sandicheck__list-subtitle">
-                              <>{item.subtitle}</>
-                            </div>
+                          <div className="concepto-sandicheck__list-subtitle">
+                            <>{item.subtitle}</>
                           </div>
-                        </>
-                      )
-                    }
-                  </div>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="concepto-sandicheck__list-column1">
+                          <div className="concepto-sandicheck__list-title">
+                            <>{item.title}</>
+                          </div>
+                          <div className="concepto-sandicheck__list-subtitle">
+                            <>{item.subtitle}</>
+                          </div>
+                        </div>
+                        <div className="concepto-sandicheck__list-column2">
+                          <div className="concepto-sandicheck__list-img">
+                            <PrismicNextImage field={item.image} />
+                          </div>
+                        </div>
+                      </>
+                    )
+                  }
+                </div>
               ))}
             </>
           </div>

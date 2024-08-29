@@ -172,9 +172,9 @@ ol, ul {
 .zf-tempFrmWrapper {
 	width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 10px 15px;
+    padding-bottom: 10px;
     margin: 1px 0;
 }
 
@@ -191,7 +191,7 @@ ol, ul {
 }
 
 .inputs {
-    width: 50%;
+    width: 100%;
     margin: 0 5px;
 }
 
@@ -812,4 +812,14 @@ ol, ul {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+@media (min-width: 992px) {
+	.zf-tempFrmWrapper {
+		flex-direction: row;
+		padding: 10px 15px;
+	}
+	.inputs {
+		width: 50%;
+	}
 }
