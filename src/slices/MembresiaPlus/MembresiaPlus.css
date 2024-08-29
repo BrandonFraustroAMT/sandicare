@@ -27,12 +27,12 @@
     width: 100%;
 }
 .membresiaplus-title h2{
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
     text-align: center;
 }
 .membresiaplus-subtitle{
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     color: #6B6967;
     font-weight: 600;
@@ -48,18 +48,20 @@
 }
 
 .membresiaplus-list__text{
+    font-size: 0.8rem;
     padding: 7px 0;
     color: #6B6967;
+    text-align: center;
 }
 
 .membresiaplus-price{
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 30px 0;
     font-weight: 600;
     color: #C8123C;
 }
 .membresiaplus-deadline{
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     color: #6B6967;
     padding-top: 10px;
@@ -69,7 +71,7 @@
     content: '*';
 }
 .membresiaplus-restrictions{
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #6B6967;
     font-weight: 600;
 }
@@ -91,8 +93,33 @@
     background-color: var(--redButton);
     color: var(--whiteBG);
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 .membresiaplus__link:hover{
     background-color: var(--redText);
+}
+
+@media (min-width: 992px) {
+    .membresiaplus-title h2{
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    .membresiaplus-subtitle{
+        font-size: 2rem;
+    }
+    .membresiaplus-list__text{
+        font-size: 1rem;
+    }
+    .membresiaplus-price{
+        font-size: 3rem;
+    }
+    .membresiaplus-deadline{
+        font-size: 1rem;
+    }
+    .membresiaplus-restrictions{
+        font-size: 1rem;
+    }
+    .membresiaplus__link{
+        font-size: 1rem;
+    }
 }

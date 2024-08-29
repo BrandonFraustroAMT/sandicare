@@ -14,8 +14,27 @@
     width: 100%;
 }
 .membresias-title h2{
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2rem;
+    line-height: 2rem;
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    .membresias-title h2{
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+}
+@media (min-width: 992px) {
+    .membresias-title h2{
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+    }
+}
+@media (min-width: 1200px) {
+    .membresias-title h2{
+        font-size: 3rem;
+        line-height: 3rem;
+    }
 }
 

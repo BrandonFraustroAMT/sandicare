@@ -65,7 +65,7 @@
     width: 80%;
 }
 .checkat-hero__video-container {
-    height: 450px;
+    height: 310px;
 }
 .checkat-hero__video-container video{
     width: 100%;
@@ -120,6 +120,9 @@
     }
     .word {
         font-size: 1.3rem;
+    }
+    .checkat-hero__video-container {
+        height: 450px;
     }
 }
 @media (min-width: 992px) {
