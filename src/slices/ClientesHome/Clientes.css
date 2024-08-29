@@ -44,6 +44,16 @@
     height: 100%;
     object-fit: contain;
 }
+.clientes-slice__img video{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.clientes-slice__img iframe{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
 .clientes-slice__text {
     width: 70%;
