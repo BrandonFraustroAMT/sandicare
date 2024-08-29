@@ -83,8 +83,9 @@
     justify-content: center;
 }
 .servicios-slice__link {
-    padding: 10px 20px;
+    padding: 10px 15px;
     margin-right: 20px;
+    font-size: 0.8rem;
     background-color: var(--redButton);
     color: var(--whiteBG);
     border-radius: 10px;
@@ -172,6 +173,10 @@
     }
     .servicios-slice__buttons {
         justify-content: flex-start;
+    }
+    .servicios-slice__link {
+        padding: 10px 20px;
+        font-size: 1rem;
     }
 }
 @media (min-width: 1200px) {
