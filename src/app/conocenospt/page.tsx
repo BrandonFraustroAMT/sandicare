@@ -1,6 +1,6 @@
 import './agenda.css'
 
-export default async function Page() {
+export default function Page() {
   return (
     <main className='main-container'>
       {/* <div className='agenda-container'>

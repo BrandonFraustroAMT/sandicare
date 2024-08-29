@@ -109,7 +109,7 @@
 }
 
 .menu-slice__btn {
-  display: flex;
+  display: none;
   justify-content: center;
   margin: 20px 0;
 }
@@ -145,6 +145,11 @@
     background-color: transparent;
     align-items: center;
     justify-content: center;
+  }
+  .menu-slice__btn {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
   }
 }
 

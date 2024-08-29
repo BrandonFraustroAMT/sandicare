@@ -63,6 +63,7 @@
 
 .checkat-hero__column2 {
     width: 80%;
+    display: none;
 }
 .checkat-hero__video-container {
     height: 310px;
@@ -155,6 +156,7 @@
     }
     .checkat-hero__column2 {
         width: 50%;
+        display: block;
     }
     .checkat-hero__video-container {
         padding: 10px 20px;

@@ -5,7 +5,6 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import Image from "next/image";
 import './style.css'
-import Button from "@/components/Button";
 import { useState } from "react";
 
 /**
@@ -23,6 +22,9 @@ const Menu = ({ slice }: MenuProps): JSX.Element => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <section
@@ -34,21 +36,21 @@ const Menu = ({ slice }: MenuProps): JSX.Element => {
         <header className="menu-slice__container">
           <div className="menu-slice__list">
             <div className="menu-slice__logo">
-              <Link href={"/"} className="menu-slice__page">
+              <Link href={"/"} className="menu-slice__page" onClick={closeMenu}>
                 <PrismicNextImage alt="" field={slice.primary.logo} />
               </Link>
             </div>
             
             <div className={`menu-slice__links-container ${isMenuOpen ? 'open' : ''}`}>
               <div className="menu-slice__logo-mobile">
-                <Link href={"/"} className="menu-slice__page">
+                <Link href={"/"} className="menu-slice__page" onClick={closeMenu}>
                   <PrismicNextImage alt="" field={slice.primary.logo} />
                 </Link>
               </div>
               <div className="menu-slice__list-links">
                 {slice.primary.groupmenu.map((item, index) => (
                   item.linklabel ? (
-                  <Link key={index} href={item.linklabel} className="menu-slice__page">
+                  <Link key={index} href={item.linklabel} className="menu-slice__page" onClick={closeMenu}>
                     {item.label}
                   </Link>
                   ) : null
@@ -56,7 +58,7 @@ const Menu = ({ slice }: MenuProps): JSX.Element => {
               </div>
               
               <div className="menu-slice__btn">
-                <PrismicNextLink field={slice.primary.linkbutton} className="menu-slice__link">
+                <PrismicNextLink field={slice.primary.linkbutton} className="menu-slice__link" onClick={closeMenu}>
                   <>{slice.primary.labelbutton}</>
                 </PrismicNextLink>
               </div>

@@ -49,6 +49,7 @@
 }
 .hero-slice__video {
     width: 80%;
+    display: none;
 }
 
 .hero-slice__video-container {
@@ -114,6 +115,7 @@
     }
     .hero-slice__video {
         width: 50%;
+        display: block;
     }
     .hero-slice__video-container {
         height: 600px;

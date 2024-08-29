@@ -60,6 +60,7 @@
 
 .unete-col2 {
     width: 80%;
+    display: none;
 }
 
 .unete-image {
@@ -114,6 +115,7 @@
     }
     .unete-col2 {
         width: 60%;
+        display: block;
     }
 }
 @media (min-width: 1200px) {
