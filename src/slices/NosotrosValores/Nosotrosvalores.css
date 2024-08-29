@@ -18,16 +18,14 @@
     width: 100%;
 }
 .nosotrosvalores-title h2{
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 2rem;
+    line-height: 2rem;
     text-align: center;
 }
 
 .nosotrosvalores-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .nosotrosvalores-list__data {
@@ -40,11 +38,13 @@
     flex-direction: row;
 }
 
-.nosotrosvalores-col1 {
-    width: 12%;
-}
 .nosotrosvalores-col2 {
     width: 90%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .nosotrosvalores-img {
@@ -59,7 +59,71 @@
 }
 
 .nosotrosvalores-subtitle {
-    font-size: 1.6rem;
-    line-height: 2rem;
-    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.nosotrosvalores-description{
+    width: 80%;
+    font-size: 0.8rem;
+    text-align: center;
+}
+@media (min-width: 480px) {
+    .nosotrosvalores-title h2{
+        font-size: 2.3rem;
+        line-height: 2.3rem;
+    }
+}
+@media (min-width: 768px) {
+    .nosotrosvalores-title h2{
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+    .nosotrosvalores-subtitle {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+}
+@media (min-width: 992px) {
+    .nosotrosvalores-title h2{
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+    }
+    .nosotrosvalores-list {
+        display: flex;
+        flex-direction: row;
+    }
+    .nosotrosvalores-col1 {
+        width: 12%;
+    }
+    .nosotrosvalores-col2 {
+        width: 90%;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
+    }
+    .nosotrosvalores-subtitle {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        text-align: start;
+    }
+    .nosotrosvalores-description{
+        font-size: 1rem;
+        text-align: start;
+    }
+}
+@media (min-width: 1200px) {
+    .nosotrosvalores-title h2{
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+    .nosotrosvalores-subtitle {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+}
+@media (min-width: 1440px) {
 }
