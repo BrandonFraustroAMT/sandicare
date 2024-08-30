@@ -221,14 +221,6 @@ const Form = () => {
                       <div className="zf-clearBoth"></div>
                     </li>{/* <!---------Dropdown Ends Here----------> */}
                     <li className="tempFrmWrapper small" style={{display:"none;"}} id="Website-li"> 
-                      <label className="zf-labelName"></label>
-                        <div className="zf-tempContDiv">
-                          <span> 
-                            <input  type="text" maxLength={255} name="Email" placeholder="Email" value={formData.Email} onChange={handleChange}/>
-                          </span> 
-                          {errors.Email && <p className="zf-errorMessage">{errors.Email}</p>}
-                        </div>
-                        <div className="zf-clearBoth"></div>
                       <div className="tempContDiv">
                         <span> 
                           <input type="hidden" id="Website-arialabel" aria-describedby="hint-Website" inputMode="url" autoComplete="off" maxLength={2083} name="Website" value={formData.UrlBack} placeholder="URL Origen" />
