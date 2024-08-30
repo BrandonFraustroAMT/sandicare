@@ -18,7 +18,7 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="proceso-sandicheck">
+      {/* <div className="proceso-sandicheck">
         <div className="proceso-sandicheck__container">
           <div className="proceso-sandicheck__title">
             <h2><PrismicRichText field={slice.primary.title} /></h2>
@@ -42,7 +42,7 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
