@@ -26,9 +26,9 @@ const UneteAlEquipo = ({ slice }: UneteAlEquipoProps): JSX.Element => {
               <div className="unete-title"><h2><PrismicRichText field={slice.primary.title} /></h2></div>
               <div className="unete-subtitle"><>{slice.primary.subtitle}</></div>
               <div className="unete-button">
-                <PrismicNextLink field={slice.primary.linkbutton} className="unete__link">
+                <a href="mailto:rh@clinicadigital.mx" className="unete__link">
                   <>{slice.primary.labelbutton}</>
-                </PrismicNextLink>
+                </a>
               </div>
             </div>
             <div className="unete-col2">
