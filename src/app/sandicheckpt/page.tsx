@@ -26,7 +26,7 @@ export default function Page() {
           position: "absolute", width: "100%", height: "100%", top: "0", left: "0",
           border: "none"
         }}
-          src="https://www.canva.com/design/;DAGPL5NMRqM/8s7VLUERDqteS28Agpnp-g/view?embed" allow="fullscreen">
+          src="https://www.canva.com/design/DAGPL5NMRqM/8s7VLUERDqteS28Agpnp-g/view?embed" allow="fullscreen">
         </iframe>
       </div>
     </main>
