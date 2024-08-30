@@ -229,18 +229,9 @@ const Form = () => {
                           {errors.Email && <p className="zf-errorMessage">{errors.Email}</p>}
                         </div>
                         <div className="zf-clearBoth"></div>
-                      <label className="labelName" htmlFor="Website-arialabel"></label>
-                      <div className="subFrmFieldsHidden subFrmFieldsHiddenCont">
-                        <em>
-                          <svg className="icon icon-Denied-1-01">
-                            <use xlinkHref="#icon-rules-denied-01"></use>
-                          </svg>
-                        </em>
-                        <span>N/A</span>
-                      </div>
                       <div className="tempContDiv">
                         <span> 
-                          <input id="Website-arialabel" aria-describedby="hint-Website" inputMode="url" autoComplete="off" type="text" maxLength={2083} name="Website" value={formData.UrlBack} placeholder="URL Origen" />
+                          <input type="hidden" id="Website-arialabel" aria-describedby="hint-Website" inputMode="url" autoComplete="off" maxLength={2083} name="Website" value={formData.UrlBack} placeholder="URL Origen" />
                         </span>
                       </div>
                       <div className="clearBoth"></div></li>
