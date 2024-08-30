@@ -20,7 +20,7 @@ export default function Page() {
        borderRadius: "8px", willChange: "transform"}}>
         {!iframeLoaded && <p>Loading...</p>}
         <iframe loading="lazy" style={{position: "absolute", width: "100%", height: "100%", top: "0", left: "0", border: "none", padding: "0",margin: "0"}}
-          src="https://www.canva.com/design/DAGPLDtawxc/8PMqXyXcW0tyIQsmv7qKMA/view?embed" allowFullScreen={true} allow="fullscreen">
+          src="https://www.canva.com/design/DAGPLDtawxc/8PMqXyXcW0tyIQsmv7qKMA/view?embed" allow="fullscreen">
         </iframe>
       </div>
     </main>
