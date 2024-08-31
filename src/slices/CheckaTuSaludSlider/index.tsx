@@ -1,11 +1,11 @@
 'use client'
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useEmblaCarousel from 'embla-carousel-react'
 import './CheckatSlider.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -23,6 +23,7 @@ export type CheckaTuSaludSliderProps =
 const CheckaTuSaludSlider = ({
   slice,
 }: CheckaTuSaludSliderProps): JSX.Element => {
+  const [emblaRef, emblaApi] = useEmblaCarousel()
 
   useEffect(() => {
     /* 1er elemento */
@@ -496,6 +497,42 @@ const CheckaTuSaludSlider = ({
               </div>
             </div>
             <div id="pin-marker7"></div>
+          </div>
+
+          <div className="carrusel-container embla">
+          <div className="embla" ref={emblaRef}>
+            <div className="embla__container">
+              {slice.primary.groupslider.map((item, index) => (
+                  <div className="carrusel__box embla__slide" key={index}>
+                    <div className="carrusel__columns-list">
+                      <div className="carrusel__column1">
+                        <div className="carrusel__list1">
+                          <div className="carrusel__icon">
+                            <PrismicNextImage field={item.icon} />
+                          </div>
+                          <div className="carrusel__number">
+                            <>{item.number}</>
+                          </div>
+                        </div>
+                        <div className="carrusel__list2">
+                          <div className="carrusel__title">
+                            <h2><PrismicRichText field={item.title} /></h2>
+                          </div>
+                          <div className="carrusel__description">
+                            <>{item.description}</>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="carrusel__column2">
+                        <div className="carrusel__img">
+                          <PrismicNextImage field={item.image} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
           </div>
         </div>
       </div>

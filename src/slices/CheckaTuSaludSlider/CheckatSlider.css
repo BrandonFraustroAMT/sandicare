@@ -14,9 +14,7 @@
 }
 
 .checkat-slider__column {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
+    display: none;
 }
 
 .checkat-slider__box {
@@ -102,10 +100,115 @@
     margin-bottom: 30px;
 }
 
+.embla {
+    overflow: hidden;
+  }
+  .embla__container {
+    display: flex;
+  }
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+.carrusel-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+.carrusel__box{
+    width: 100%;
+    height: auto;
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.carrusel__columns-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.carrusel__column1{
+    width: 30%;
+    height: 100%;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    padding: 21px 11px;
+}
+.carrusel__list1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+.carrusel__icon {
+    width: 20%;
+    height: auto;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+.carrusel__number {
+    font-size: 1rem;
+}
+.carrusel__list2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+}
+.carrusel__title {
+    width: 100%;
+}
+.carrusel__title h2{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+.carrusel__description {
+    font-size: 0.8rem;
+    text-align: center;
+}
+.carrusel__column2{
+    width: 30%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+.carrusel__img {
+    position: static;
+    width: 100%;
+}
+
 @media (min-width: 480px) {
-    
+    .carrusel__column1{
+        width: 40%;
+    }
+    .carrusel__column2{
+        width: 40%;
+    }
+    .carrusel__icon {
+        width: 15%;
+    }
 }
 @media (min-width: 768px) {
+    .carrusel__column1{
+        width: 50%;
+    }
+    .carrusel__column2{
+        width: 50%;
+    }
+    .carrusel__icon {
+        width: 10%;
+    }
 }
 @media (min-width: 992px) {
     .checkat-slider__columns-list{
@@ -149,6 +252,11 @@
     }
 }
 @media (min-width: 1300px) {
+    .checkat-slider__column {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
     .checkat-slider__columns-list{
         flex-direction: row;
     }
@@ -165,6 +273,9 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+    }
+    .carrusel-container {
+        display: none;
     }
 }
 @media (min-width: 1440px) {
