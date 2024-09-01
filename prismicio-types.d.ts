@@ -3704,6 +3704,41 @@ export type PorqueSandicheckSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *ProcesoSandicheck → Default → Primary → GroupProcesoSandicheck*
+ */
+export interface ProcesoSandicheckSliceDefaultPrimaryGroupprocesosandicheckItem {
+  /**
+   * Subtitle field in *ProcesoSandicheck → Default → Primary → GroupProcesoSandicheck*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.groupprocesosandicheck[].subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *ProcesoSandicheck → Default → Primary → GroupProcesoSandicheck*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.groupprocesosandicheck[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Image field in *ProcesoSandicheck → Default → Primary → GroupProcesoSandicheck*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.groupprocesosandicheck[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *ProcesoSandicheck → Default → Primary*
  */
 export interface ProcesoSandicheckSliceDefaultPrimary {
@@ -3756,6 +3791,18 @@ export interface ProcesoSandicheckSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * GroupProcesoSandicheck field in *ProcesoSandicheck → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.groupprocesosandicheck[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  groupprocesosandicheck: prismic.GroupField<
+    Simplify<ProcesoSandicheckSliceDefaultPrimaryGroupprocesosandicheckItem>
+  >;
 }
 
 /**
@@ -4383,6 +4430,7 @@ declare module "@prismicio/client" {
       PorqueSandicheckSliceVariation,
       PorqueSandicheckSliceDefault,
       ProcesoSandicheckSlice,
+      ProcesoSandicheckSliceDefaultPrimaryGroupprocesosandicheckItem,
       ProcesoSandicheckSliceDefaultPrimary,
       ProcesoSandicheckSliceVariation,
       ProcesoSandicheckSliceDefault,

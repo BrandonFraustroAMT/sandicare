@@ -49,6 +49,37 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "groupprocesosandicheck": {
+          "type": "Group",
+          "config": {
+            "label": "GroupProcesoSandicheck",
+            "repeat": true,
+            "fields": {
+              "subtitle": {
+                "type": "Text",
+                "config": {
+                  "label": "Subtitle",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
         }
       },
       "items": {}
