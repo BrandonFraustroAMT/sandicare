@@ -1,7 +1,7 @@
 "use client"
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useEmblaCarousel from 'embla-carousel-react'
@@ -277,6 +277,13 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
     }
   }, []);
 
+  const handleClick = (label: string) => {
+    gtag('event', 'click', {
+      event_category: 'Button',
+      event_label: label,
+    });
+  };
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -305,6 +312,23 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
               <div className="proceso-sandicheck__box-description">
                 <>{slice.primary.groupprocesosandicheck[0]?.description}</>
               </div>
+              {
+                slice.primary.groupprocesosandicheck[0]?.descarga === true ?
+                (
+                  <div className="proceso-sandicheck__buttons">
+                    <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_ios} className="proceso-sandicheck__link" onClick={() => handleClick(item.labelbutton)}>
+                      <>{slice.primary.groupprocesosandicheck[0]?.label_descarga_ios}</>
+                    </PrismicNextLink>
+                    <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_android} className="proceso-sandicheck__link" onClick={() => handleClick(item.labelbutton)}>
+                      <>{slice.primary.groupprocesosandicheck[0]?.label_descarga_android}</>
+                    </PrismicNextLink>
+                  </div>
+                )
+                :
+                (
+                  <div></div>
+                )
+              }
             </div>
           </div>
           <div id="pin-markerPS"></div>
@@ -429,6 +453,23 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
                       <div className="carrusel-sandicheck__box-description">
                         <>{item.description}</>
                       </div>
+                        {
+                          item.descarga === true ?
+                          (
+                            <div className="proceso-sandicheck__buttons">
+                              <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_ios} className="proceso-sandicheck__link" onClick={() => handleClick(item.labelbutton)}>
+                                <>{slice.primary.groupprocesosandicheck[0]?.label_descarga_ios}</>
+                              </PrismicNextLink>
+                              <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_android} className="proceso-sandicheck__link" onClick={() => handleClick(item.labelbutton)}>
+                                <>{slice.primary.groupprocesosandicheck[0]?.label_descarga_android}</>
+                              </PrismicNextLink>
+                            </div>
+                          )
+                          :
+                          (
+                            <div></div>
+                          )
+                        }
                     </div>
                   </div>
                 ))}

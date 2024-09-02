@@ -77,7 +77,6 @@
 							[
 								"image",
 								{
-									"__TYPE__": "ImageContent",
 									"origin": {
 										"id": "main",
 										"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
@@ -95,7 +94,53 @@
 										},
 										"background": "transparent"
 									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
 									"thumbnails": {}
+								}
+							],
+							[
+								"descarga",
+								{
+									"__TYPE__": "BooleanContent",
+									"value": false
+								}
+							],
+							[
+								"link_descarga_ios",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev"
+									}
+								}
+							],
+							[
+								"label_descarga_ios",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "darkness",
+									"type": "Text"
+								}
+							],
+							[
+								"link_descarga_android",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev"
+									}
+								}
+							],
+							[
+								"label_descarga_android",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "neighbor",
+									"type": "Text"
 								}
 							]
 						]

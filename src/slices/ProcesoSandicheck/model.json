@@ -77,6 +77,45 @@
                   "constraint": {},
                   "thumbnails": []
                 }
+              },
+              "descarga": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Descarga",
+                  "default_value": false,
+                  "placeholder_true": "true",
+                  "placeholder_false": "false"
+                }
+              },
+              "link_descarga_ios": {
+                "type": "Link",
+                "config": {
+                  "label": "Link Descarga Ios",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "label_descarga_ios": {
+                "type": "Text",
+                "config": {
+                  "label": "Label Descarga Ios",
+                  "placeholder": ""
+                }
+              },
+              "link_descarga_android": {
+                "type": "Link",
+                "config": {
+                  "label": "Link Descarga Android",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "label_descarga_android": {
+                "type": "Text",
+                "config": {
+                  "label": "Label Descarga Android",
+                  "placeholder": ""
+                }
               }
             }
           }

@@ -3736,6 +3736,57 @@ export interface ProcesoSandicheckSliceDefaultPrimaryGroupprocesosandicheckItem 
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Descarga field in *ProcesoSandicheck → Default → Primary → GroupProcesoSandicheck*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: proceso_sandicheck.default.primary.groupprocesosandicheck[].descarga
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  descarga: prismic.BooleanField;
+
+  /**
+   * Link Descarga Ios field in *ProcesoSandicheck → Default → Primary → GroupProcesoSandicheck*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.groupprocesosandicheck[].link_descarga_ios
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_descarga_ios: prismic.LinkField;
+
+  /**
+   * Label Descarga Ios field in *ProcesoSandicheck → Default → Primary → GroupProcesoSandicheck*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.groupprocesosandicheck[].label_descarga_ios
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label_descarga_ios: prismic.KeyTextField;
+
+  /**
+   * Link Descarga Android field in *ProcesoSandicheck → Default → Primary → GroupProcesoSandicheck*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.groupprocesosandicheck[].link_descarga_android
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_descarga_android: prismic.LinkField;
+
+  /**
+   * Label Descarga Android field in *ProcesoSandicheck → Default → Primary → GroupProcesoSandicheck*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proceso_sandicheck.default.primary.groupprocesosandicheck[].label_descarga_android
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label_descarga_android: prismic.KeyTextField;
 }
 
 /**
