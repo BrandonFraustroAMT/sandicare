@@ -13,6 +13,13 @@ export type CoberturaHomeProps =
  * Component for "CoberturaHome" Slices.
  */
 const CoberturaHome = ({ slice }: CoberturaHomeProps): JSX.Element => {
+  const handleClick = (label: string) => {
+    gtag('event', 'click', {
+      event_category: 'Button',
+      event_label: label,
+    });
+  };
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -27,7 +34,7 @@ const CoberturaHome = ({ slice }: CoberturaHomeProps): JSX.Element => {
             <>{slice.primary.subtitle}</>
           </div>
           <div className="cobertura-slice__button">
-            <PrismicNextLink field={slice.primary.linkbutton} className="cobertura-slice__link">
+            <PrismicNextLink field={slice.primary.linkbutton} className="cobertura-slice__link" onClick={() => handleClick(item.labelbutton)}>
               <>{slice.primary.labelbutton}</>
             </PrismicNextLink>
           </div>

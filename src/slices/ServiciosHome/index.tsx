@@ -23,6 +23,13 @@ const ServiciosHome = ({ slice }: ServiciosHomeProps): JSX.Element => {
     setSelectedIndex(index);
   }
 
+  const handleClick = (label: string) => {
+    gtag('event', 'click', {
+      event_category: 'Button',
+      event_label: label,
+    });
+  };
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -112,10 +119,12 @@ const ServiciosHome = ({ slice }: ServiciosHomeProps): JSX.Element => {
                       </div>
 
                       <div className="servicios-slice__buttons">
-                        <PrismicNextLink field={slice.primary.groupservicioshome[selectedIndex].linkbutton1} className="servicios-slice__link">
+                        <PrismicNextLink field={slice.primary.groupservicioshome[selectedIndex].linkbutton1} className="servicios-slice__link"
+                          onClick={() => handleClick(item.labelbutton)}>
                           <>{slice.primary.groupservicioshome[selectedIndex].labelbutton1}</>
                         </PrismicNextLink>
-                        <PrismicNextLink field={slice.primary.groupservicioshome[selectedIndex].linkbutton2} className="servicios-slice__link">
+                        <PrismicNextLink field={slice.primary.groupservicioshome[selectedIndex].linkbutton2} className="servicios-slice__link"
+                          onClick={() => handleClick(item.labelbutton)}>
                           <>{slice.primary.groupservicioshome[selectedIndex].labelbutton2}</>
                         </PrismicNextLink>
                       </div>
