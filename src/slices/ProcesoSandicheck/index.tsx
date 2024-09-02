@@ -65,14 +65,14 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
           scrub: true,
           pin: true,
           trigger: "#first-col2",
-          start: "top 35%",
+          start: "top 20%",
           end: "bottom bottom",
           toggleActions: "play pause none none",
           pinSpacing: false, // Para evitar el espacio adicional después del pin
           endTrigger: "#pin-markerPS2",
           markers: false,
           onLeave: () => {
-            gsap.set("#first-col2", { y: 1100 });
+            gsap.set("#first-col2", { y: 900 });
           },
         },
       })
@@ -102,7 +102,7 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      {/* <div className="proceso-sandicheck">
+      <div className="proceso-sandicheck">
         <div className="proceso-sandicheck__container">
           <div className="proceso-sandicheck__title">
             <h2><PrismicRichText field={slice.primary.title} /></h2>
@@ -171,7 +171,7 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };
