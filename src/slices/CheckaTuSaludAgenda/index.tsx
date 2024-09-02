@@ -1,3 +1,4 @@
+"use client"
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
@@ -16,6 +17,13 @@ export type CheckaTuSaludAgendaProps =
 const CheckaTuSaludAgenda = ({
   slice,
 }: CheckaTuSaludAgendaProps): JSX.Element => {
+  const handleClick = (label: string) => {
+    gtag('event', 'click', {
+      event_category: 'Button',
+      event_label: label,
+    });
+  };
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -25,7 +33,7 @@ const CheckaTuSaludAgenda = ({
         <div className="checkat-agenda__container">
           <div className="checkat-agenda__title"><h2><PrismicRichText field={slice.primary.title} /></h2></div>
           <div className="checkat-agenda__btn">
-            <PrismicNextLink field={slice.primary.linkbutton} className="checkat-agenda__link">
+            <PrismicNextLink field={slice.primary.linkbutton} className="checkat-agenda__link" onClick={() => handleClick(item.labelbutton)}>
               <>{slice.primary.labelbutton}</>
             </PrismicNextLink>
           </div>

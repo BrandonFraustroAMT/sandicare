@@ -1,3 +1,4 @@
+"use client"
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -13,6 +14,12 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
+  const handleClick = (label: string) => {
+    gtag('event', 'click', {
+      event_category: 'Button',
+      event_label: label,
+    });
+  };
 
   return (
     <section
@@ -31,7 +38,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <div className="hero-slice__buttons">
               <>
                 {slice.primary.groupbutton.map((item, index) => (
-                  <PrismicNextLink key={index} field={item.linkbutton} className="hero-slice__link">
+                  <PrismicNextLink key={index} field={item.linkbutton} className="hero-slice__link" onClick={() => handleClick(item.labelbutton)}>
                     <>{item.labelbutton}</>
                   </PrismicNextLink>
                 ))}
