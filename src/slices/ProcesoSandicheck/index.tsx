@@ -129,7 +129,7 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
           </div>
           <div id="pin-markerPS"></div>
 
-          {/* <div className="proceso-sandicheck__box">
+          <div className="proceso-sandicheck__box">
             <div className="proceso-sandicheck__box-column1" id="first-col2">
               <div className="proceso-sandicheck__box-img">
                 <PrismicNextImage field={slice.primary.groupprocesosandicheck[1]?.image} />
@@ -144,7 +144,7 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
               </div>
             </div>
           </div>
-          <div id="pin-markerPS2"></div> */}
+          <div id="pin-markerPS2"></div>
 
           {/* Carrusel */}
           <div className="carrusel-container-proceso embla">
