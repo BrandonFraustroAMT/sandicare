@@ -13,6 +13,12 @@ export type HeroSandicheckProps =
  * Component for "HeroSandicheck" Slices.
  */
 const HeroSandicheck = ({ slice }: HeroSandicheckProps): JSX.Element => {
+  const handleClick = (label: string) => {
+    gtag('event', 'click', {
+      event_category: 'Button',
+      event_label: label,
+    });
+  };
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -32,7 +38,7 @@ const HeroSandicheck = ({ slice }: HeroSandicheckProps): JSX.Element => {
           <>
             {slice.primary.grouphero.map((item) => (
               <>
-                <PrismicNextLink field={item.linkbutton} className="hero-sandicheck__link">
+                <PrismicNextLink field={item.linkbutton} className="hero-sandicheck__link" onClick={() => handleClick(item.labelbutton)}>
                   <>{item.labelbutton}</>
                 </PrismicNextLink>
               </>
