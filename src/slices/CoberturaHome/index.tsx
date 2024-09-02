@@ -1,3 +1,4 @@
+"use client"
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import './Cobertura.css'
@@ -34,7 +35,7 @@ const CoberturaHome = ({ slice }: CoberturaHomeProps): JSX.Element => {
             <>{slice.primary.subtitle}</>
           </div>
           <div className="cobertura-slice__button">
-            <PrismicNextLink field={slice.primary.linkbutton} className="cobertura-slice__link" onClick={() => handleClick(item.labelbutton)}>
+            <PrismicNextLink field={slice.primary.linkbutton} className="cobertura-slice__link" onClick={() => handleClick(slice.primary.labelbutton)}>
               <>{slice.primary.labelbutton}</>
             </PrismicNextLink>
           </div>

@@ -120,11 +120,11 @@ const ServiciosHome = ({ slice }: ServiciosHomeProps): JSX.Element => {
 
                       <div className="servicios-slice__buttons">
                         <PrismicNextLink field={slice.primary.groupservicioshome[selectedIndex].linkbutton1} className="servicios-slice__link"
-                          onClick={() => handleClick(item.labelbutton)}>
+                          onClick={() => handleClick(slice.primary.groupservicioshome[selectedIndex].labelbutton1)}>
                           <>{slice.primary.groupservicioshome[selectedIndex].labelbutton1}</>
                         </PrismicNextLink>
                         <PrismicNextLink field={slice.primary.groupservicioshome[selectedIndex].linkbutton2} className="servicios-slice__link"
-                          onClick={() => handleClick(item.labelbutton)}>
+                          onClick={() => handleClick(slice.primary.groupservicioshome[selectedIndex].labelbutton2)}>
                           <>{slice.primary.groupservicioshome[selectedIndex].labelbutton2}</>
                         </PrismicNextLink>
                       </div>

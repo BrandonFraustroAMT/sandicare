@@ -1,3 +1,4 @@
+"use client"
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -14,6 +15,12 @@ export type UneteAlEquipoProps =
  * Component for "UneteAlEquipo" Slices.
  */
 const UneteAlEquipo = ({ slice }: UneteAlEquipoProps): JSX.Element => {
+  const handleClick = (label: string) => {
+    gtag('event', 'click', {
+      event_category: 'Button',
+      event_label: label,
+    });
+  };
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -26,7 +33,7 @@ const UneteAlEquipo = ({ slice }: UneteAlEquipoProps): JSX.Element => {
               <div className="unete-title"><h2><PrismicRichText field={slice.primary.title} /></h2></div>
               <div className="unete-subtitle"><>{slice.primary.subtitle}</></div>
               <div className="unete-button">
-                <a href="mailto:rh@clinicadigital.mx" className="unete__link">
+                <a href="mailto:rh@clinicadigital.mx" onClick={() => handleClick(slice.primary.labelbutton)} className="unete__link">
                   <>{slice.primary.labelbutton}</>
                 </a>
               </div>
