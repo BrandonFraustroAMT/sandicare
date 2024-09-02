@@ -33,6 +33,12 @@ const CheckaTuSaludHero = ({ slice }: CheckaTuSaludHeroProps): JSX.Element => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const handleClick = (label: string) => {
+    gtag('event', 'click', {
+      event_category: 'Button',
+      event_label: label,
+    });
+  };
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -58,10 +64,10 @@ const CheckaTuSaludHero = ({ slice }: CheckaTuSaludHeroProps): JSX.Element => {
 
               <div className="checkat-hero__btn">
                 <>
-                  {slice.primary.grouphero.map((item) => (
+                  {slice.primary.grouphero.map((item, index) => (
                     // Render the item
                     <>
-                      <PrismicNextLink field={item.linkbutton} className="checkat-hero__link">
+                      <PrismicNextLink field={item.linkbutton} key={index} className="checkat-hero__link" onClick={() => handleClick(item.labelbutton)}>
                         <>{item.labelbutton}</>
                       </PrismicNextLink>
                     </>
