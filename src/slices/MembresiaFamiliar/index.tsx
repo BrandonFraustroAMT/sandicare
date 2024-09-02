@@ -1,3 +1,4 @@
+"use client"
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -12,6 +13,13 @@ export type MembresiaFamiliarProps =
  * Component for "MembresiaFamiliar" Slices.
  */
 const MembresiaFamiliar = ({ slice }: MembresiaFamiliarProps): JSX.Element => {
+  const handleClick = (label: string) => {
+    gtag('event', 'click', {
+      event_category: 'Button',
+      event_label: label,
+    });
+  };
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -48,7 +56,7 @@ const MembresiaFamiliar = ({ slice }: MembresiaFamiliarProps): JSX.Element => {
               <PrismicNextImage field={slice.primary.image} />
             </div>
             <div className="membresiaplus-button">
-              <PrismicNextLink field={slice.primary.linkbutton} className="membresiaplus__link">
+              <PrismicNextLink field={slice.primary.linkbutton} className="membresiaplus__link" onClick={() => handleClick(item.labelbutton)}>
                 <>{slice.primary.labelbutton}</>
               </PrismicNextLink>
             </div>

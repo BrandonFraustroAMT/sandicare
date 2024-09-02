@@ -1,3 +1,4 @@
+"use client"
 import { Content } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -16,6 +17,13 @@ export type MembresiaIndividualProps =
 const MembresiaIndividual = ({
   slice,
 }: MembresiaIndividualProps): JSX.Element => {
+  const handleClick = (label: string) => {
+    gtag('event', 'click', {
+      event_category: 'Button',
+      event_label: label,
+    });
+  };
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -52,7 +60,7 @@ const MembresiaIndividual = ({
               <>{slice.primary.restrictions}</>
             </div>
             <div className="membresiaindividual-button">
-              <PrismicNextLink field={slice.primary.linkbutton} className="membresiaindividual__link">
+              <PrismicNextLink field={slice.primary.linkbutton} className="membresiaindividual__link" onClick={() => handleClick(item.labelbutton)}>
                 <>{slice.primary.labelbutton}</>
               </PrismicNextLink>
             </div>
