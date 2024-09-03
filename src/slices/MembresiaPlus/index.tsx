@@ -62,7 +62,7 @@ const MembresiaPlus = ({ slice }: MembresiaPlusProps): JSX.Element => {
               <PrismicNextImage field={slice.primary.image} />
             </div>
             <div className="membresiaplus-button">
-              <PrismicNextLink field={slice.primary.linkbutton} className="membresiaplus__link" onClick={() => handleClick(slice.primary.labelbutton)}>
+              <PrismicNextLink field={slice.primary.linkbutton} className="membresiaplus__link" onClick={() => handleClick(slice.primary.labelbutton ?? 'Default Label')}>
                 <>{slice.primary.labelbutton}</>
               </PrismicNextLink>
             </div>

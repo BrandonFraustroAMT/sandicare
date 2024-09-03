@@ -37,7 +37,7 @@ const CoberturaHome = ({ slice }: CoberturaHomeProps): JSX.Element => {
             <>{slice.primary.subtitle}</>
           </div>
           <div className="cobertura-slice__button">
-            <PrismicNextLink field={slice.primary.linkbutton} className="cobertura-slice__link" onClick={() => handleClick(slice.primary.labelbutton)}>
+            <PrismicNextLink field={slice.primary.linkbutton} className="cobertura-slice__link" onClick={() => handleClick(slice.primary.labelbutton ?? 'Default Label')}>
               <>{slice.primary.labelbutton}</>
             </PrismicNextLink>
           </div>

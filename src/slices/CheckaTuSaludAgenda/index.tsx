@@ -35,7 +35,7 @@ const CheckaTuSaludAgenda = ({
         <div className="checkat-agenda__container">
           <div className="checkat-agenda__title"><h2><PrismicRichText field={slice.primary.title} /></h2></div>
           <div className="checkat-agenda__btn">
-            <PrismicNextLink field={slice.primary.linkbutton} className="checkat-agenda__link" onClick={() => handleClick(slice.primary.labelbutton)}>
+            <PrismicNextLink field={slice.primary.linkbutton} className="checkat-agenda__link" onClick={() => handleClick(slice.primary.labelbutton ?? 'Default Label')}>
               <>{slice.primary.labelbutton}</>
             </PrismicNextLink>
           </div>

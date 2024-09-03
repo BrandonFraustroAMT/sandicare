@@ -62,7 +62,7 @@ const MembresiaIndividual = ({
               <>{slice.primary.restrictions}</>
             </div>
             <div className="membresiaindividual-button">
-              <PrismicNextLink field={slice.primary.linkbutton} className="membresiaindividual__link" onClick={() => handleClick(slice.primary.labelbutton)}>
+              <PrismicNextLink field={slice.primary.linkbutton} className="membresiaindividual__link" onClick={() => handleClick(slice.primary.labelbutton ?? 'Default Label')}>
                 <>{slice.primary.labelbutton}</>
               </PrismicNextLink>
             </div>

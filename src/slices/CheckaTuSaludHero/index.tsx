@@ -69,7 +69,7 @@ const CheckaTuSaludHero = ({ slice }: CheckaTuSaludHeroProps): JSX.Element => {
                   {slice.primary.grouphero.map((item, index) => (
                     // Render the item
                     <>
-                      <PrismicNextLink field={item.linkbutton} key={index} className="checkat-hero__link" onClick={() => handleClick(item.labelbutton)}>
+                      <PrismicNextLink field={item.linkbutton} key={index} className="checkat-hero__link" onClick={() => handleClick(item.labelbutton ?? 'Default Label')}>
                         <>{item.labelbutton}</>
                       </PrismicNextLink>
                     </>

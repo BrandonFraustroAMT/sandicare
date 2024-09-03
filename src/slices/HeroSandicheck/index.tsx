@@ -41,7 +41,7 @@ const HeroSandicheck = ({ slice }: HeroSandicheckProps): JSX.Element => {
           <>
             {slice.primary.grouphero.map((item) => (
               <>
-                <PrismicNextLink field={item.linkbutton} className="hero-sandicheck__link" onClick={() => handleClick(item.labelbutton)}>
+                <PrismicNextLink field={item.linkbutton} className="hero-sandicheck__link" onClick={() => handleClick(item.labelbutton ?? 'Default Label')}>
                   <>{item.labelbutton}</>
                 </PrismicNextLink>
               </>

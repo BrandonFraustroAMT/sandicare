@@ -40,7 +40,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <div className="hero-slice__buttons">
               <>
                 {slice.primary.groupbutton.map((item, index) => (
-                  <PrismicNextLink key={index} field={item.linkbutton} className="hero-slice__link" onClick={() => handleClick(item.labelbutton)}>
+                  <PrismicNextLink key={index} field={item.linkbutton} className="hero-slice__link" onClick={() => handleClick(item.labelbutton ?? 'Default Label')}>
                     <>{item.labelbutton}</>
                   </PrismicNextLink>
                 ))}

@@ -33,7 +33,7 @@ const NosotrosHero = ({ slice }: NosotrosHeroProps): JSX.Element => {
           <div className="nosotroshero-title"><h2><PrismicRichText field={slice.primary.title} /></h2></div>
           <div className="nosotroshero-subtitle"><>{slice.primary.subtitle}</></div>
           <div className="nosotroshero-button">
-            <PrismicNextLink field={slice.primary.linkbutton} className="nosotroshero__link" onClick={() => handleClick(slice.primary.labelbutton)}>
+            <PrismicNextLink field={slice.primary.linkbutton} className="nosotroshero__link" onClick={() => handleClick(slice.primary.labelbutton ?? 'Default Label')}>
               <>{slice.primary.labelbutton}</>
             </PrismicNextLink>
           </div>
