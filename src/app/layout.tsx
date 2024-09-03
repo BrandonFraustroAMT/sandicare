@@ -36,6 +36,13 @@ export default function RootLayout({
             `,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('event', 'conversion', {'send_to': 'AW-16565622841/ob5UCL6By88ZELmwjds9'});
+            `,
+          }}
+        />
       </Head>
       <body className={inter.className}>
         <div className="container-background">
