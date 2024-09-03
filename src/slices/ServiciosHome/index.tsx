@@ -24,10 +24,12 @@ const ServiciosHome = ({ slice }: ServiciosHomeProps): JSX.Element => {
   }
 
   const handleClick = (label: string) => {
-    gtag('event', 'click', {
-      event_category: 'Button',
-      event_label: label,
-    });
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'click', {
+        event_category: 'Button',
+        event_label: label,
+      });
+    }
   };
 
   return (

@@ -15,10 +15,12 @@ export type NosotrosHeroProps = SliceComponentProps<Content.NosotrosHeroSlice>;
  */
 const NosotrosHero = ({ slice }: NosotrosHeroProps): JSX.Element => {
   const handleClick = (label: string) => {
-    gtag('event', 'click', {
-      event_category: 'Button',
-      event_label: label,
-    });
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'click', {
+        event_category: 'Button',
+        event_label: label,
+      });
+    }
   };
 
   return (

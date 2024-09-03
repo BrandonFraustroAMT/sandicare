@@ -4,6 +4,8 @@ import "./globals.css";
 import "./style.css"
 
 import ClientLayout from "./ClientLayout";
+import Head from "next/head";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,17 +21,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16565622841"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-16565622841');
-          `,
-        }} />
-      </head>
+      <Head>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=AW-16565622841`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16565622841');
+            `,
+          }}
+        />
+      </Head>
       <body className={inter.className}>
         <div className="container-background">
             {/* CIRCULO ROJO */}
@@ -56,6 +63,7 @@ export default function RootLayout({
         </div>
         <ClientLayout>{children}</ClientLayout>
       </body>
+      <GoogleTagManager gtmId="AW-16565622841" />
     </html>
   );
 }

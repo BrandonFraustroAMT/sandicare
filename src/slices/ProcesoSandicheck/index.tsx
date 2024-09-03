@@ -278,10 +278,12 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
   }, []);
 
   const handleClick = (label: string) => {
-    gtag('event', 'click', {
-      event_category: 'Button',
-      event_label: label,
-    });
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'click', {
+        event_category: 'Button',
+        event_label: label,
+      });
+    }
   };
 
   return (
@@ -316,10 +318,10 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
                 slice.primary.groupprocesosandicheck[0]?.descarga === true ?
                 (
                   <div className="proceso-sandicheck__buttons">
-                    <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_ios} className="proceso-sandicheck__link" onClick={() => handleClick(item.labelbutton)}>
+                    <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_ios} className="proceso-sandicheck__link" onClick={() => handleClick(slice.primary.groupprocesosandicheck[0]?.label_descarga_ios)}>
                       <>{slice.primary.groupprocesosandicheck[0]?.label_descarga_ios}</>
                     </PrismicNextLink>
-                    <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_android} className="proceso-sandicheck__link" onClick={() => handleClick(item.labelbutton)}>
+                    <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_android} className="proceso-sandicheck__link" onClick={() => handleClick(slice.primary.groupprocesosandicheck[0]?.label_descarga_android)}>
                       <>{slice.primary.groupprocesosandicheck[0]?.label_descarga_android}</>
                     </PrismicNextLink>
                   </div>
@@ -457,10 +459,10 @@ const ProcesoSandicheck = ({ slice }: ProcesoSandicheckProps): JSX.Element => {
                           item.descarga === true ?
                           (
                             <div className="proceso-sandicheck__buttons">
-                              <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_ios} className="proceso-sandicheck__link" onClick={() => handleClick(item.labelbutton)}>
+                              <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_ios} className="proceso-sandicheck__link" onClick={() => handleClick(slice.primary.groupprocesosandicheck[0]?.label_descarga_ios)}>
                                 <>{slice.primary.groupprocesosandicheck[0]?.label_descarga_ios}</>
                               </PrismicNextLink>
-                              <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_android} className="proceso-sandicheck__link" onClick={() => handleClick(item.labelbutton)}>
+                              <PrismicNextLink field={slice.primary.groupprocesosandicheck[0]?.link_descarga_android} className="proceso-sandicheck__link" onClick={() => handleClick(slice.primary.groupprocesosandicheck[0]?.label_descarga_android)}>
                                 <>{slice.primary.groupprocesosandicheck[0]?.label_descarga_android}</>
                               </PrismicNextLink>
                             </div>
