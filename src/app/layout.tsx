@@ -24,7 +24,7 @@ export default function RootLayout({
       <Head>
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=AW-16565622841`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-PJ5P1N4XW9`}
         />
         <script
           dangerouslySetInnerHTML={{
@@ -32,7 +32,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-16565622841');
+              gtag('config', 'G-PJ5P1N4XW9');
             `,
           }}
         />
@@ -70,7 +70,7 @@ export default function RootLayout({
         </div>
         <ClientLayout>{children}</ClientLayout>
       </body>
-      <GoogleTagManager gtmId="AW-16565622841" />
+      <GoogleTagManager gtmId="G-PJ5P1N4XW9" />
     </html>
   );
 }
