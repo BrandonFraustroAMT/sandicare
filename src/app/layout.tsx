@@ -5,7 +5,7 @@ import "./style.css"
 
 import ClientLayout from "./ClientLayout";
 import Head from "next/head";
-import { GoogleTagManager } from '@next/third-parties/google'
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -71,6 +71,7 @@ export default function RootLayout({
         <ClientLayout>{children}</ClientLayout>
       </body>
       <GoogleTagManager gtmId="G-PJ5P1N4XW9" />
+      <GoogleAnalytics gaId="G-PJ5P1N4XW9" />
     </html>
   );
 }
