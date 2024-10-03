@@ -11,7 +11,7 @@ export default function ClientLayout({
   const pathname = usePathname();
 
   // Lista de rutas donde no se quiere mostrar el MenuNav ni el Footer
-  const noLayoutRoutes = ['/conocenospt', '/sandicheckpt', '/checkatusaludpt', '/telemedicinapt', '/gracias'];
+  const noLayoutRoutes = ['/conocenospt', '/sandicheckpt', '/checkatusaludpt', '/telemedicinapt', '/gracias', '/avisodeprivacidad'];
 
   const isNoLayoutRoute = noLayoutRoutes.includes(pathname);
 

@@ -1,0 +1,51 @@
+.aviso-container{
+    width: 100%;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aviso-title{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1F1F1F;
+}
+
+.aviso-text {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.aviso-subtitle {
+    color: #6B6967;
+    font-size: 1rem;
+    text-transform: uppercase;
+    width: 100%;
+    padding-left: 30px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.aviso-paragraph {
+    color: #6B6967;
+    font-size: 1rem;
+    text-align: justify;
+    margin: 0;
+    font-weight: 400;
+}
+
+.aviso-text__content{
+    color: #6B6967;
+    font-size: 1rem;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0;
+    font-weight: 600;
+}
